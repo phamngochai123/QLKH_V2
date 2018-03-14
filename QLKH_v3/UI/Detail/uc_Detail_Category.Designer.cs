@@ -171,6 +171,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(118, 30);
             this.btn_xoa.TabIndex = 17;
             this.btn_xoa.Text = "Xóa danh mục";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -181,6 +182,7 @@
             this.btn_sua.Size = new System.Drawing.Size(118, 30);
             this.btn_sua.TabIndex = 16;
             this.btn_sua.Text = "Sửa danh mục";
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // uc_Detail_Category
             // 

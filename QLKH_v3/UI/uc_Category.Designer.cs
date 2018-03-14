@@ -36,26 +36,23 @@
             this.col2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_them = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_xoa = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_sua = new DevExpress.XtraEditors.SimpleButton();
             this.txt_ghi_chu = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_name_category = new DevExpress.XtraEditors.TextEdit();
             this.Status = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name_category.Properties)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +61,9 @@
             // 
             this.panelBody.Controls.Add(this.grcCategory);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBody.Location = new System.Drawing.Point(0, 224);
+            this.panelBody.Location = new System.Drawing.Point(0, 175);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(893, 255);
+            this.panelBody.Size = new System.Drawing.Size(893, 304);
             this.panelBody.TabIndex = 5;
             // 
             // grcCategory
@@ -75,7 +72,7 @@
             this.grcCategory.Location = new System.Drawing.Point(2, 2);
             this.grcCategory.MainView = this.grvCategory;
             this.grcCategory.Name = "grcCategory";
-            this.grcCategory.Size = new System.Drawing.Size(889, 251);
+            this.grcCategory.Size = new System.Drawing.Size(889, 300);
             this.grcCategory.TabIndex = 0;
             this.grcCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvCategory});
@@ -97,7 +94,6 @@
             this.grvCategory.OptionsFind.ShowClearButton = false;
             this.grvCategory.OptionsFind.ShowFindButton = false;
             this.grvCategory.OptionsView.ShowGroupPanel = false;
-            this.grvCategory.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvCategory_FocusedRowChanged);
             this.grvCategory.DoubleClick += new System.EventHandler(this.grvCategory_DoubleClick);
             // 
             // gridColumn3
@@ -151,9 +147,31 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 3;
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Người tạo";
+            this.gridColumn5.FieldName = "CreatedBy";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Người sửa";
+            this.gridColumn4.FieldName = "UpdatedBy";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            // 
             // panelheader
             // 
-            this.panelheader.Controls.Add(this.groupControl1);
+            this.panelheader.Controls.Add(this.simpleButton2);
+            this.panelheader.Controls.Add(this.simpleButton1);
+            this.panelheader.Controls.Add(this.btn_them);
             this.panelheader.Controls.Add(this.txt_ghi_chu);
             this.panelheader.Controls.Add(this.labelControl2);
             this.panelheader.Controls.Add(this.labelControl1);
@@ -161,55 +179,39 @@
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(893, 224);
+            this.panelheader.Size = new System.Drawing.Size(893, 175);
             this.panelheader.TabIndex = 4;
             // 
-            // groupControl1
+            // simpleButton2
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.Controls.Add(this.btn_them);
-            this.groupControl1.Controls.Add(this.btn_xoa);
-            this.groupControl1.Controls.Add(this.btn_sua);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(2, 149);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(889, 73);
-            this.groupControl1.TabIndex = 7;
-            this.groupControl1.Text = "Chức năng";
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Location = new System.Drawing.Point(502, 130);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(81, 30);
+            this.simpleButton2.TabIndex = 6;
+            this.simpleButton2.Text = "Hủy";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(414, 130);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(82, 30);
+            this.simpleButton1.TabIndex = 5;
+            this.simpleButton1.Text = "xác nhận";
             // 
             // btn_them
             // 
             this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Appearance.Options.UseFont = true;
-            this.btn_them.Location = new System.Drawing.Point(12, 32);
+            this.btn_them.Location = new System.Drawing.Point(119, 130);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(118, 30);
             this.btn_them.TabIndex = 4;
             this.btn_them.Text = "Thêm danh mục";
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_xoa.Appearance.Options.UseFont = true;
-            this.btn_xoa.Location = new System.Drawing.Point(311, 32);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(118, 30);
-            this.btn_xoa.TabIndex = 6;
-            this.btn_xoa.Text = "Xóa danh mục";
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sua.Appearance.Options.UseFont = true;
-            this.btn_sua.Location = new System.Drawing.Point(161, 32);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(118, 30);
-            this.btn_sua.TabIndex = 5;
-            this.btn_sua.Text = "Sửa danh mục";
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // txt_ghi_chu
             // 
@@ -217,7 +219,7 @@
             this.txt_ghi_chu.Name = "txt_ghi_chu";
             this.txt_ghi_chu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ghi_chu.Properties.Appearance.Options.UseFont = true;
-            this.txt_ghi_chu.Size = new System.Drawing.Size(464, 96);
+            this.txt_ghi_chu.Size = new System.Drawing.Size(464, 71);
             this.txt_ghi_chu.TabIndex = 3;
             // 
             // labelControl2
@@ -257,26 +259,6 @@
             this.Status.Visible = true;
             this.Status.VisibleIndex = 4;
             // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Người sửa";
-            this.gridColumn4.FieldName = "UpdatedBy";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.OptionsColumn.ReadOnly = true;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Người tạo";
-            this.gridColumn5.FieldName = "CreatedBy";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.OptionsColumn.ReadOnly = true;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
-            // 
             // uc_Category
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,8 +275,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name_category.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -307,10 +287,7 @@
         private DevExpress.XtraGrid.GridControl grcCategory;
         private DevExpress.XtraGrid.Views.Grid.GridView grvCategory;
         private DevExpress.XtraEditors.PanelControl panelheader;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btn_them;
-        private DevExpress.XtraEditors.SimpleButton btn_xoa;
-        private DevExpress.XtraEditors.SimpleButton btn_sua;
         private DevExpress.XtraEditors.MemoEdit txt_ghi_chu;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -323,5 +300,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
