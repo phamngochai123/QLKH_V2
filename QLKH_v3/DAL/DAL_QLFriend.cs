@@ -6,62 +6,64 @@ using System.Threading.Tasks;
 
 namespace QLKH_v3.DAL
 {
-    class DAL_QLCategory
+    class DAL_QLFriend
     {
         QLKHEntities _db = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
-        public List<category> Get_List_Category()
+        public List<friend> Get_List_Friend()
         {
-            List<category> lst_Category = new List<category>();
+            List<friend> lst_Friend = new List<friend>();
             try
             {
-                _db = new QLKHEntities();
-                lst_Category = (from data in _db.categories
-                                where (data.Status == true)
-                                select data).AsEnumerable().ToList();
+                lst_Friend = (from data in _db.friend
+                            where (data.Status == true)
+                            select data).AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
 
                 throw;
             }
-            return lst_Category;
+            return lst_Friend;
         }
-        public category Get_Category(int id_category)
+        public friend Get_Friend(int id_Friend)
         {
-            category Category = new category();
+            friend Friend = new friend();
             try
             {
-                Category = (from data in _db.categories
-                            where (data.Status == true && data.id == id_category)
-                            select data).FirstOrDefault();
+                Friend = (from data in _db.friend
+                        where (data.Status == true && data.id == id_Friend)
+                        select data).FirstOrDefault();
             }
             catch (Exception ex)
             {
 
                 throw;
             }
-            return Category;
+            return Friend;
         }
+
         /// <summary>
-        ///  function insert and update and delete category
+        ///  function insert and update and delete User
         /// </summary>
-        /// <param name="ctgr"></param>         model category
+        /// <param name="ctgr"></param>         model User
         /// <param name="action_status"></param>        status: (add; edit; insert)
         /// <returns></returns>
-        public bool Add_and_Edit_Category(category ctgr,int action_status)
+        public bool Add_and_Edit_Friend(friend ctgr, int action_status)
         {
             bool check = false;
             try
             {
-                if ( Util.Cnv_Int(ctgr.id.ToString()) > 0)
+                if (Util.Cnv_Int(ctgr.id.ToString()) > 0)
                 {
-                    category data_edit = new category();
-                    data_edit = Get_Category(ctgr.id);
+                    friend data_edit = new friend();
+                    data_edit = Get_Friend(ctgr.id);
 
-                    if (action_status == Variable.action_status.is_update) {            // update data
-                        data_edit.Name = ctgr.Name;
+                    if (action_status == Variable.action_status.is_update)
+                    {            // update data
+                        //data_edit.UserName = ctgr.UserName;
+                        //data_edit.PassWord = ctgr.PassWord;
                         data_edit.Note = ctgr.Note;
                         data_edit.UpdatedAt = DateTime.Now;
                     }
@@ -72,7 +74,7 @@ namespace QLKH_v3.DAL
                 }
                 else
                 {
-                    _db.categories.Add(ctgr);                                           // add data
+                    _db.friend.Add(ctgr);                                           // add data
                 }
                 _db.SaveChanges();
                 check = true;

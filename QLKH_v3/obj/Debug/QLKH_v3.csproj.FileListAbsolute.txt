@@ -184,3 +184,23 @@ C:\Users\thang\OneDrive\Documents\Visual Studio 2013\Projects\QLKH\QLKH_v3\bin\D
 C:\Users\thang\OneDrive\Documents\Visual Studio 2013\Projects\QLKH\QLKH_v3\bin\Debug\ja\DevExpress.XtraVerticalGrid.v16.1.resources.dll
 C:\Users\thang\OneDrive\Documents\Visual Studio 2013\Projects\QLKH\QLKH_v3\bin\Debug\ru\DevExpress.XtraVerticalGrid.v16.1.resources.dll
 C:\Users\thang\OneDrive\Documents\Visual Studio 2013\Projects\QLKH\QLKH_v3\obj\Debug\QLKH_v3.csproj.CoreCompileInputs.cache
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\QLKH_v3.exe.config
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.exe
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.pdb
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\QLKH_v3.exe
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\QLKH_v3.pdb
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.dll
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.SqlServer.dll
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.xml
+F:\work\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.SqlServer.xml
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.csprojResolveAssemblyReference.cache
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Detail_Infor.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Main.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Properties.Resources.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_Category.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.ucQLKhachHang.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.ucQLLaiSuat.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.ucQLUser.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_Category.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.csproj.GenerateResource.Cache
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.exe.licenses

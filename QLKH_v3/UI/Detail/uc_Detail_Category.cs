@@ -65,6 +65,8 @@ namespace QLKH_v3.UI.Detail
                     if (check == true)
                     {
                         Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                        Detail_Infor detail = new Detail_Infor();
+                        detail.Close();
                     }
                     else
                     {
@@ -83,7 +85,7 @@ namespace QLKH_v3.UI.Detail
             category ctgr = new category();
             try
             {
-                if (CheckValidate() == true)
+                if (Util.Show_Message_YesNo("Xóa", "Chắc chắn xóa ?") == true)
                 {
                     ctgr.UpdatedAt = DateTime.Now;
                     ctgr.Status = false;
@@ -92,6 +94,7 @@ namespace QLKH_v3.UI.Detail
                     if (check == true)
                     {
                         Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                        
                     }
                     else
                     {
