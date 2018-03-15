@@ -17,9 +17,9 @@ namespace QLKH_v3.DAL
             List<customer> lst_Customer = new List<customer>();
             try
             {
-                lst_Customer = (from data in _db.customer
-                            where (data.Status == true)
-                            select data).AsEnumerable().ToList();
+                lst_Customer = (from data in _db.customers
+                                where (data.Status == true)
+                                select data).AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -33,9 +33,9 @@ namespace QLKH_v3.DAL
             customer Customer = new customer();
             try
             {
-                Customer = (from data in _db.customer
-                        where (data.Status == true && data.id == id_Customer)
-                        select data).FirstOrDefault();
+                Customer = (from data in _db.customers
+                            where (data.Status == true && data.id == id_Customer)
+                            select data).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -50,9 +50,9 @@ namespace QLKH_v3.DAL
             List<friend> lst_friend_of_customer = new List<friend>();
             try
             {
-                lst_friend_of_customer = (from data in _db.friend
-                          where (data.Status == true && data.CustomerId == id_Customer)
-                            select data).AsEnumerable().ToList();
+                lst_friend_of_customer = (from data in _db.friends
+                                          where (data.Status == true && data.CustomerId == id_Customer)
+                                          select data).AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -67,9 +67,9 @@ namespace QLKH_v3.DAL
             List<historyPaid> lst_history_of_customer = new List<historyPaid>();
             try
             {
-                lst_history_of_customer = (from data in _db.historyPaid
-                          where (data.Status == true && data.CustomerId == id_Customer && data.TypePaid == true)
-                          select data).AsEnumerable().ToList();
+                lst_history_of_customer = (from data in _db.historyPaids
+                                           where (data.Status == true && data.CustomerId == id_Customer && data.TypePaid == true)
+                                           select data).AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace QLKH_v3.DAL
             List<historyPaid> lst_history_of_customer = new List<historyPaid>();
             try
             {
-                lst_history_of_customer = (from data in _db.historyPaid
+                lst_history_of_customer = (from data in _db.historyPaids
                                            where (data.Status == true && data.CustomerId == id_Customer && data.TypePaid == false)
                                            select data).AsEnumerable().ToList();
             }
@@ -125,7 +125,7 @@ namespace QLKH_v3.DAL
                 }
                 else
                 {
-                    _db.customer.Add(ctgr);                                           // add data
+                    _db.customers.Add(ctgr);                                           // add data
                 }
                 _db.SaveChanges();
                 check = true;

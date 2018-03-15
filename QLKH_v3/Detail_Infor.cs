@@ -13,7 +13,8 @@ namespace QLKH_v3
 {
     public partial class Detail_Infor : DevExpress.XtraEditors.XtraForm
     {
-
+        public user _user { set; get; }
+        //public int _userId { set; get; }
         Variable.Variable variable = new Variable.Variable();
         public String Str_Flag { set; get; }
         public DataRow Data { set; get; }
@@ -33,7 +34,12 @@ namespace QLKH_v3
                 uc_Detail_Category.Dock = DockStyle.Fill;
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(uc_Detail_Category);
+                uc_Detail_Category._user = _user;
             }
+        }
+        public void close_form()
+        {
+            this.Close();
         }
     }
 }

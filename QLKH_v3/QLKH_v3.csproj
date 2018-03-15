@@ -98,6 +98,8 @@
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DAL_QLCategory.cs" />
+    <Compile Include="DAL\DAL_QLCustomer.cs" />
+    <Compile Include="DAL\DAL_QLFriend.cs" />
     <Compile Include="DAL\DAL_QLLaiSuat.cs" />
     <Compile Include="DAL\DAL_QLUser.cs" />
     <Compile Include="Detail_Infor.cs">
@@ -131,6 +133,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Message\Message.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\InterestRate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,6 +198,9 @@
     <Compile Include="Variable\Variable.cs" />
     <EmbeddedResource Include="Detail_Infor.resx">
       <DependentUpon>Detail_Infor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

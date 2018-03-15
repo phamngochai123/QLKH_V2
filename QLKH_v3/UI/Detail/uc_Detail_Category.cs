@@ -12,7 +12,8 @@ namespace QLKH_v3.UI.Detail
 {
     public partial class uc_Detail_Category : UserControl
     {
-
+        public user _user { set; get; }
+        //public int _userId { set; get; }
         DAL.DAL_QLCategory DAL_QLCategory = new DAL.DAL_QLCategory();
         Util.Util Util = new Util.Util();
         Message.Message Message = new Message.Message();
@@ -33,8 +34,8 @@ namespace QLKH_v3.UI.Detail
                 txt_Note.Text = Data_Category["Note"].ToString().Trim();
                 txt_UpdateAt.Text = Data_Category["UpdatedAt"].ToString().Trim();
                 txt_CreateAt.Text = Data_Category["CreatedAt"].ToString().Trim();
-                txt_CreateBy.Text = Data_Category["CreatedBy"].ToString().Trim();
-                txt_UpdateBy.Text = Data_Category["UpdatedBy"].ToString().Trim();
+                txt_CreateBy.Text = Data_Category["UserCreate"].ToString().Trim();
+                txt_UpdateBy.Text = Data_Category["UserUpdated"].ToString().Trim();
             }
         }
         private bool CheckValidate()
@@ -61,12 +62,11 @@ namespace QLKH_v3.UI.Detail
                     ctgr.Note = txt_Note.Text.Trim();
                     ctgr.UpdatedAt = DateTime.Now;
                     ctgr.id = _ID_CATEGORY;
-                    bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_update);
+                    bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_update, _user);
                     if (check == true)
                     {
                         Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
-                        Detail_Infor detail = new Detail_Infor();
-                        detail.Close();
+                        ((Form)this.TopLevelControl).Close();
                     }
                     else
                     {
@@ -90,11 +90,11 @@ namespace QLKH_v3.UI.Detail
                     ctgr.UpdatedAt = DateTime.Now;
                     ctgr.Status = false;
                     ctgr.id = _ID_CATEGORY;
-                    bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_delete);
+                    bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_delete, _user);
                     if (check == true)
                     {
-                        Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
-                        
+                        Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_delete_data);
+                        ((Form)this.TopLevelControl).Close();
                     }
                     else
                     {

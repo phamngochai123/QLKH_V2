@@ -204,3 +204,4 @@ F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.ucQLUser.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_Category.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.csproj.GenerateResource.Cache
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.exe.licenses
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Login.resources

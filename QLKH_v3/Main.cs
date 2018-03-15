@@ -18,6 +18,8 @@ namespace QLKH_v3
 {
     public partial class Main : RibbonForm
     {
+        public user _user { set; get; }
+        //public int _userId { set; get; }
         public Main()
         {
             InitializeComponent();
@@ -75,10 +77,24 @@ namespace QLKH_v3
 
         private void Main_Load(object sender, EventArgs e)
         {
-            UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
-            ucQLLaiSuat.Dock = DockStyle.Fill;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(ucQLLaiSuat);
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            _user = login._user;
+            //_userId = login._userId;
+            if (_user != null)
+            {
+                this.Show();
+                UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
+                ucQLLaiSuat.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(ucQLLaiSuat);
+            }
+            else
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void btnQLDanhMuc_ItemClick(object sender, ItemClickEventArgs e)
@@ -87,6 +103,8 @@ namespace QLKH_v3
             uc_Category.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(uc_Category);
+            uc_Category._user = _user;
+            //uc_Category._userId = _userId;
         }
 
     }

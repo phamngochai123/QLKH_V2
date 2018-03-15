@@ -16,5 +16,10 @@ namespace QLKH_v3.UI
         {
             InitializeComponent();
         }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,9 +16,9 @@ namespace QLKH_v3.DAL
             List<friend> lst_Friend = new List<friend>();
             try
             {
-                lst_Friend = (from data in _db.friend
-                            where (data.Status == true)
-                            select data).AsEnumerable().ToList();
+                lst_Friend = (from data in _db.friends
+                              where (data.Status == true)
+                              select data).AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -32,9 +32,9 @@ namespace QLKH_v3.DAL
             friend Friend = new friend();
             try
             {
-                Friend = (from data in _db.friend
-                        where (data.Status == true && data.id == id_Friend)
-                        select data).FirstOrDefault();
+                Friend = (from data in _db.friends
+                          where (data.Status == true && data.id == id_Friend)
+                          select data).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace QLKH_v3.DAL
                 }
                 else
                 {
-                    _db.friend.Add(ctgr);                                           // add data
+                    _db.friends.Add(ctgr);                                           // add data
                 }
                 _db.SaveChanges();
                 check = true;

@@ -14,6 +14,7 @@ namespace QLKH_v3.Util
         public void Show_Message_Error(string title, string message)
         {
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
         public void Show_Message_Notification(string title, string message)
         {

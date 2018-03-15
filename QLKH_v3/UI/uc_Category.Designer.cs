@@ -39,8 +39,8 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_cancel_category = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_add_category = new DevExpress.XtraEditors.SimpleButton();
             this.btn_them = new DevExpress.XtraEditors.SimpleButton();
             this.txt_ghi_chu = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -150,7 +150,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Người tạo";
-            this.gridColumn5.FieldName = "CreatedBy";
+            this.gridColumn5.FieldName = "UserCreate";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.ReadOnly = true;
@@ -160,7 +160,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Người sửa";
-            this.gridColumn4.FieldName = "UpdatedBy";
+            this.gridColumn4.FieldName = "UserUpdated";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.ReadOnly = true;
@@ -169,8 +169,8 @@
             // 
             // panelheader
             // 
-            this.panelheader.Controls.Add(this.simpleButton2);
-            this.panelheader.Controls.Add(this.simpleButton1);
+            this.panelheader.Controls.Add(this.btn_cancel_category);
+            this.panelheader.Controls.Add(this.btn_add_category);
             this.panelheader.Controls.Add(this.btn_them);
             this.panelheader.Controls.Add(this.txt_ghi_chu);
             this.panelheader.Controls.Add(this.labelControl2);
@@ -182,25 +182,29 @@
             this.panelheader.Size = new System.Drawing.Size(893, 175);
             this.panelheader.TabIndex = 4;
             // 
-            // simpleButton2
+            // btn_cancel_category
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(502, 130);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(81, 30);
-            this.simpleButton2.TabIndex = 6;
-            this.simpleButton2.Text = "Hủy";
+            this.btn_cancel_category.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel_category.Appearance.Options.UseFont = true;
+            this.btn_cancel_category.Enabled = false;
+            this.btn_cancel_category.Location = new System.Drawing.Point(502, 130);
+            this.btn_cancel_category.Name = "btn_cancel_category";
+            this.btn_cancel_category.Size = new System.Drawing.Size(81, 30);
+            this.btn_cancel_category.TabIndex = 6;
+            this.btn_cancel_category.Text = "Hủy";
+            this.btn_cancel_category.Click += new System.EventHandler(this.btn_cancel_category_Click);
             // 
-            // simpleButton1
+            // btn_add_category
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(414, 130);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(82, 30);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "xác nhận";
+            this.btn_add_category.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_category.Appearance.Options.UseFont = true;
+            this.btn_add_category.Enabled = false;
+            this.btn_add_category.Location = new System.Drawing.Point(414, 130);
+            this.btn_add_category.Name = "btn_add_category";
+            this.btn_add_category.Size = new System.Drawing.Size(82, 30);
+            this.btn_add_category.TabIndex = 5;
+            this.btn_add_category.Text = "xác nhận";
+            this.btn_add_category.Click += new System.EventHandler(this.btn_add_category_Click);
             // 
             // btn_them
             // 
@@ -219,6 +223,7 @@
             this.txt_ghi_chu.Name = "txt_ghi_chu";
             this.txt_ghi_chu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ghi_chu.Properties.Appearance.Options.UseFont = true;
+            this.txt_ghi_chu.Properties.ReadOnly = true;
             this.txt_ghi_chu.Size = new System.Drawing.Size(464, 71);
             this.txt_ghi_chu.TabIndex = 3;
             // 
@@ -246,6 +251,7 @@
             this.txt_name_category.Name = "txt_name_category";
             this.txt_name_category.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name_category.Properties.Appearance.Options.UseFont = true;
+            this.txt_name_category.Properties.ReadOnly = true;
             this.txt_name_category.Size = new System.Drawing.Size(464, 22);
             this.txt_name_category.TabIndex = 0;
             // 
@@ -300,7 +306,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_cancel_category;
+        private DevExpress.XtraEditors.SimpleButton btn_add_category;
     }
 }

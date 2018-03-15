@@ -26,5 +26,23 @@ namespace QLKH_v3.DAL
             }
             return lst_user;
         }
+
+        public user Check_Login(string username, string password)
+        {
+            QLKHEntities _DB = new QLKHEntities();
+            user user = new user();
+            try
+            {
+                user = (from data in _DB.users
+                        where data.UserName == username && data.PassWord == password && data.Status == true
+                        select data).FirstOrDefault();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return user;
+        }
     }
 }
