@@ -167,6 +167,12 @@
     <Compile Include="UI\Detail\uc_Detail_Category.Designer.cs">
       <DependentUpon>uc_Detail_Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Detail\uc_Detail_IntetesRate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Detail\uc_Detail_IntetesRate.Designer.cs">
+      <DependentUpon>uc_Detail_IntetesRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ucQLKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Detail\uc_Detail_Category.resx">
       <DependentUpon>uc_Detail_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Detail\uc_Detail_IntetesRate.resx">
+      <DependentUpon>uc_Detail_IntetesRate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ucQLKhachHang.resx">
       <DependentUpon>ucQLKhachHang.cs</DependentUpon>
