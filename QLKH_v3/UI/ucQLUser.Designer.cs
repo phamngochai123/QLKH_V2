@@ -283,7 +283,7 @@
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(118, 30);
             this.btn_them.TabIndex = 11;
-            this.btn_them.Text = "Thêm danh mục";
+            this.btn_them.Text = "Thêm tài khoản";
             // 
             // txt_add_ghi_chu_user
             // 
@@ -351,15 +351,19 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6});
+            this.grvUser.DetailTabHeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left;
             this.grvUser.GridControl = this.grcUser;
             this.grvUser.Name = "grvUser";
             this.grvUser.OptionsFind.AlwaysVisible = true;
+            this.grvUser.DoubleClick += new System.EventHandler(this.grvUser_DoubleClick);
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Tên tài khoản";
             this.gridColumn1.FieldName = "UserName";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -368,6 +372,8 @@
             this.gridColumn2.Caption = "Họ tên";
             this.gridColumn2.FieldName = "FullName";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -376,6 +382,8 @@
             this.gridColumn3.Caption = "CMND";
             this.gridColumn3.FieldName = "IdCard";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -384,6 +392,8 @@
             this.gridColumn7.Caption = "Địa chỉ";
             this.gridColumn7.FieldName = "Address";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             // 
@@ -392,6 +402,8 @@
             this.gridColumn4.Caption = "Số điện thoại";
             this.gridColumn4.FieldName = "PhoneNumber";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -400,6 +412,8 @@
             this.gridColumn5.Caption = "Ngày sinh";
             this.gridColumn5.FieldName = "BirthDay";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
@@ -408,6 +422,8 @@
             this.gridColumn6.Caption = "Giới tính";
             this.gridColumn6.FieldName = "Sex";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 

@@ -227,3 +227,5 @@ E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_Category.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.csproj.GenerateResource.Cache
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.exe.licenses
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_IntetesRate.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_IntetesRate.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_User.resources
