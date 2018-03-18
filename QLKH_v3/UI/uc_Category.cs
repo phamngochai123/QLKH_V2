@@ -89,16 +89,17 @@ namespace QLKH_v3.UI
             {
                 DataRow row = grvCategory.GetDataRow(info.RowHandle);
 
-               Detail_Infor Detail_Infor = new Detail_Infor();
-               Detail_Infor.Str_Flag = Variable.detail_infor.Category;
-               Detail_Infor.Data = row;
-               //Detail_Infor._userId = _userId;
-               Detail_Infor._user = _user;
-               //Detail_Infor.ShowDialog();
-               DialogResult dialog_result = Detail_Infor.ShowDialog();
-               if (dialog_result == DialogResult.Cancel) {
-                   Load_Data();
-               }
+                Detail_Infor Detail_Infor = new Detail_Infor();
+                Detail_Infor.Str_Flag = Variable.detail_infor.Category;
+                Detail_Infor.Data = row;
+                //Detail_Infor._userId = _userId;
+                Detail_Infor._user = _user;
+                //Detail_Infor.ShowDialog();
+                DialogResult dialog_result = Detail_Infor.ShowDialog();
+                if (dialog_result == DialogResult.Cancel)
+                {
+                    Load_Data();
+                }
             }
         }
 
@@ -147,6 +148,12 @@ namespace QLKH_v3.UI
             txt_ghi_chu.ReadOnly = true;
             txt_name_category.Text = "";
             txt_ghi_chu.Text = "";
+        }
+
+        private void btn_chitiet_Click(object sender, EventArgs e)
+        {
+            var test = grvCategory.GetFocusedRowCellValue("id");
+            MessageBox.Show(test.ToString());
         }
 
     }

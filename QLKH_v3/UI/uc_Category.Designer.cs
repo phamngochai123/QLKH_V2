@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_Category));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelBody = new DevExpress.XtraEditors.PanelControl();
             this.grcCategory = new DevExpress.XtraGrid.GridControl();
             this.grvCategory = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -38,6 +40,8 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_chitiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
             this.btn_cancel_category = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add_category = new DevExpress.XtraEditors.SimpleButton();
@@ -51,6 +55,7 @@
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_chitiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).BeginInit();
@@ -72,6 +77,8 @@
             this.grcCategory.Location = new System.Drawing.Point(2, 2);
             this.grcCategory.MainView = this.grvCategory;
             this.grcCategory.Name = "grcCategory";
+            this.grcCategory.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btn_chitiet});
             this.grcCategory.Size = new System.Drawing.Size(889, 300);
             this.grcCategory.TabIndex = 0;
             this.grcCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -86,7 +93,8 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn5,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn6});
             this.grvCategory.GridControl = this.grcCategory;
             this.grvCategory.Name = "grvCategory";
             this.grvCategory.OptionsFind.AlwaysVisible = true;
@@ -166,6 +174,25 @@
             this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.Caption = "Lịch sử trả tiền";
+            this.gridColumn6.ColumnEdit = this.btn_chitiet;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 6;
+            // 
+            // btn_chitiet
+            // 
+            this.btn_chitiet.AutoHeight = false;
+            this.btn_chitiet.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_chitiet.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            this.btn_chitiet.Name = "btn_chitiet";
+            this.btn_chitiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_chitiet.Click += new System.EventHandler(this.btn_chitiet_Click);
             // 
             // panelheader
             // 
@@ -278,6 +305,7 @@
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_chitiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
@@ -308,5 +336,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.SimpleButton btn_cancel_category;
         private DevExpress.XtraEditors.SimpleButton btn_add_category;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_chitiet;
     }
 }
