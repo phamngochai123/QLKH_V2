@@ -40,22 +40,30 @@ namespace QLKH_v3
 
         private void HandleLogin()
         {
-            if (checkValidate())
+            try
             {
-                user user = new user();
-                user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
-                if (user != null)
+                if (checkValidate())
                 {
-                    //Util.Show_Message_Notification(Message.msg_notification, "Đăng nhập thành công");
-                    _user = user;
-                    //_userId = user.id;
-                    this.Hide();
-                }
-                else
-                {
-                    Util.Show_Message_Notification(Message.msg_notification, "Tài khoản hoặc mật khẩu không chính xác !!!");
+                    user user = new user();
+                    user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
+                    if (user != null)
+                    {
+                        //Util.Show_Message_Notification(Message.msg_notification, "Đăng nhập thành công");
+                        _user = user;
+                        //_userId = user.id;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        Util.Show_Message_Notification(Message.msg_notification, "Tài khoản hoặc mật khẩu không chính xác !!!");
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Util.Show_Message_Error(Message.msg_error, ex.Message);
+            }
+           
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
