@@ -538,6 +538,7 @@
             this.btnQLKhachHang.Caption = "Quản lý khách hàng";
             this.btnQLKhachHang.Id = 391;
             this.btnQLKhachHang.Name = "btnQLKhachHang";
+            this.btnQLKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLKhachHang_ItemClick);
             // 
             // btnLichSuThanhToan
             // 

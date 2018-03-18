@@ -15,16 +15,16 @@ namespace QLKH_v3
     public partial class historyPaid
     {
         public int id { get; set; }
-        public Nullable<System.DateTime> PaidDate { get; set; }
-        public Nullable<int> Money { get; set; }
-        public Nullable<bool> TypePaid { get; set; }
-        public Nullable<int> CustomerId { get; set; }
+        public System.DateTime PaidDate { get; set; }
+        public int Money { get; set; }
+        public bool TypePaid { get; set; }
+        public int CustomerId { get; set; }
         public string Note { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<System.DateTime> CreatedAt { get; set; }
-        public Nullable<System.DateTime> UpdatedAt { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
-        public Nullable<int> UpdatedBy { get; set; }
+        public bool Status { get; set; }
+        public System.DateTime CreatedAt { get; set; }
+        public System.DateTime UpdatedAt { get; set; }
+        public int CreatedBy { get; set; }
+        public int UpdatedBy { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual user user { get; set; }

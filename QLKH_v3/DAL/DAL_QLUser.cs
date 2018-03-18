@@ -14,6 +14,7 @@ namespace QLKH_v3.DAL
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
         public List<user> Get_Data_User() {
+            _DB = new QLKHEntities();
            List<user>  lst_user = new List<user>();
             try
             {
@@ -77,6 +78,13 @@ namespace QLKH_v3.DAL
                         data_edit.FullName = ctgr.FullName;
                         data_edit.Note = ctgr.Note;
                         data_edit.UpdatedAt = DateTime.Now;
+                        data_edit.Sex = ctgr.Sex;
+                        data_edit.Type = ctgr.Type;
+                        data_edit.PhoneNumber = ctgr.PhoneNumber;
+                        data_edit.IdCard = ctgr.IdCard;
+                        data_edit.BirthDay = ctgr.BirthDay;
+                        data_edit.Address = ctgr.Address;
+                        data_edit.PassWord = ctgr.PassWord;
                     }
                     else if (action_status == Variable.action_status.is_delete)         // delete data
                     {

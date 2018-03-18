@@ -15,16 +15,16 @@ namespace QLKH_v3
     public partial class historyInterestRate
     {
         public int id { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public Nullable<double> Percents { get; set; }
-        public Nullable<int> InterestRateId { get; set; }
+        public System.DateTime StartDate { get; set; }
+        public System.DateTime EndDate { get; set; }
+        public double Percents { get; set; }
+        public int InterestRateId { get; set; }
         public string Note { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<System.DateTime> CreatedAt { get; set; }
-        public Nullable<System.DateTime> UpdatedAt { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
-        public Nullable<int> UpdatedBy { get; set; }
+        public bool Status { get; set; }
+        public System.DateTime CreatedAt { get; set; }
+        public System.DateTime UpdatedAt { get; set; }
+        public int CreatedBy { get; set; }
+        public int UpdatedBy { get; set; }
     
         public virtual interestRate interestRate { get; set; }
         public virtual user user { get; set; }

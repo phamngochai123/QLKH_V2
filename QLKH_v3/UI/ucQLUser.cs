@@ -28,7 +28,7 @@ namespace QLKH_v3.UI
         {
             try
             {
-                grcUser.DataSource = Dal_User.Get_Data_User();
+                grcUser.DataSource = Util.ConvertToDataTable(Dal_User.Get_Data_User());
             }
             catch (Exception ex)
             {
@@ -38,6 +38,7 @@ namespace QLKH_v3.UI
         }
         private void ucQLUser_Load(object sender, EventArgs e)
         {
+            Dictionary comboSource = new Dictionary();
             Load_Data();
         }
 
@@ -58,6 +59,11 @@ namespace QLKH_v3.UI
                     Load_Data();
                 }
             }
+        }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

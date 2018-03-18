@@ -38,7 +38,7 @@ namespace QLKH_v3
             return true;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void HandleLogin()
         {
             if (checkValidate())
             {
@@ -46,7 +46,7 @@ namespace QLKH_v3
                 user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
                 if (user != null)
                 {
-                    Util.Show_Message_Notification(Message.msg_notification, "Đăng nhập thành công");
+                    //Util.Show_Message_Notification(Message.msg_notification, "Đăng nhập thành công");
                     _user = user;
                     //_userId = user.id;
                     this.Hide();
@@ -55,6 +55,19 @@ namespace QLKH_v3
                 {
                     Util.Show_Message_Notification(Message.msg_notification, "Tài khoản hoặc mật khẩu không chính xác !!!");
                 }
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            HandleLogin();
+        }
+
+        private void Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                HandleLogin();
             }
         }
     }

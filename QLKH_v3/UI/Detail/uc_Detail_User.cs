@@ -33,6 +33,10 @@ namespace QLKH_v3.UI.Detail
                 txt_fullname.Text = Data_User["FullName"].ToString().Trim();
                 txt_idCard_user.Text = Data_User["IdCard"].ToString().Trim();
                 txt_phone_user.Text = Data_User["PhoneNumber"].ToString().Trim();
+                txt_address_user.Text = Data_User["Address"].ToString().Trim();
+                radio_sex_user.EditValue = Data_User["Sex"];
+                radio_type_user.EditValue = Data_User["Type"];
+                birthDay_user.Text = (DateTime.Parse(Data_User["BirthDay"].ToString().Trim())).ToString(Variable.format_date);
             }
         }
         private bool CheckValidate()
@@ -56,7 +60,15 @@ namespace QLKH_v3.UI.Detail
                 if (CheckValidate() == true)
                 {
                     //ctgr.UserName = txt_name_category.Text.Trim();
+                    ctgr.FullName = txt_fullname.Text.Trim();
+                    ctgr.PhoneNumber = txt_phone_user.Text.Trim();
+                    ctgr.Address = txt_address_user.Text.Trim();
                     ctgr.Note = txt_Note.Text.Trim();
+                    ctgr.PassWord = txt_password_user.Text.Trim();
+                    ctgr.BirthDay = DateTime.Parse(birthDay_user.Text.Trim());
+                    ctgr.Sex = (bool)radio_sex_user.EditValue;
+                    ctgr.Type = (string)radio_type_user.EditValue;
+                    ctgr.IdCard = txt_idCard_user.Text.Trim();
                     ctgr.UpdatedAt = DateTime.Now;
                     ctgr.id = _ID_USER;
                     bool check = DAL_QLUser.Add_and_Edit_User(ctgr, Variable.action_status.is_update);

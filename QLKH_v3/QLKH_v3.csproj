@@ -179,6 +179,7 @@
     <Compile Include="UI\Detail\uc_Detail_User.Designer.cs">
       <DependentUpon>uc_Detail_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Dictionary.cs" />
     <Compile Include="UI\ucQLKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -253,6 +254,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\category.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

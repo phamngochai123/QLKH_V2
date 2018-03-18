@@ -19,13 +19,13 @@ namespace QLKH_v3
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Relationship { get; set; }
-        public Nullable<System.DateTime> CreatedAt { get; set; }
-        public Nullable<System.DateTime> UpdatedAt { get; set; }
-        public Nullable<int> CustomerId { get; set; }
+        public System.DateTime CreatedAt { get; set; }
+        public System.DateTime UpdatedAt { get; set; }
+        public int CustomerId { get; set; }
         public string Note { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
-        public Nullable<int> UpdatedBy { get; set; }
+        public bool Status { get; set; }
+        public int CreatedBy { get; set; }
+        public int UpdatedBy { get; set; }
     
         public virtual customer customer { get; set; }
         public virtual user user { get; set; }

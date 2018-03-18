@@ -18,6 +18,8 @@ namespace QLKH_v3
         {
             this.categories = new HashSet<category>();
             this.categories1 = new HashSet<category>();
+            this.categories2 = new HashSet<category>();
+            this.categories3 = new HashSet<category>();
             this.customers = new HashSet<customer>();
             this.customers1 = new HashSet<customer>();
             this.friends = new HashSet<friend>();
@@ -42,9 +44,13 @@ namespace QLKH_v3
         public string Note { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<bool> Sex { get; set; }
+        public string Type { get; set; }
+        public string Address { get; set; }
     
         public virtual ICollection<category> categories { get; set; }
         public virtual ICollection<category> categories1 { get; set; }
+        public virtual ICollection<category> categories2 { get; set; }
+        public virtual ICollection<category> categories3 { get; set; }
         public virtual ICollection<customer> customers { get; set; }
         public virtual ICollection<customer> customers1 { get; set; }
         public virtual ICollection<friend> friends { get; set; }

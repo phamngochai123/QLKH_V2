@@ -22,20 +22,20 @@ namespace QLKH_v3
     
         public int id { get; set; }
         public string FullName { get; set; }
-        public Nullable<System.DateTime> BirthDay { get; set; }
+        public System.DateTime BirthDay { get; set; }
         public string IdCard { get; set; }
         public string PhoneNumber { get; set; }
         public string FamilyPhoneNumber { get; set; }
-        public Nullable<int> Money { get; set; }
-        public Nullable<System.DateTime> CreatedAt { get; set; }
-        public Nullable<System.DateTime> UpdatedAt { get; set; }
-        public Nullable<int> InterestId { get; set; }
-        public Nullable<int> CategoryId { get; set; }
+        public int Money { get; set; }
+        public System.DateTime CreatedAt { get; set; }
+        public System.DateTime UpdatedAt { get; set; }
+        public int InterestId { get; set; }
+        public int CategoryId { get; set; }
         public string Note { get; set; }
-        public Nullable<bool> Status { get; set; }
+        public bool Status { get; set; }
         public string Address { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
-        public Nullable<int> UpdatedBy { get; set; }
+        public int CreatedBy { get; set; }
+        public int UpdatedBy { get; set; }
     
         public virtual category category { get; set; }
         public virtual interestRate interestRate { get; set; }

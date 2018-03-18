@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QLKHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="QLKHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="category">
     <Key>
       <PropertyRef Name="id" />
@@ -10,91 +10,91 @@
     <Property Name="UpdatedAt" Type="datetime" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
     <Property Name="Status" Type="bit" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="customer">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
-    <Property Name="BirthDay" Type="date" />
-    <Property Name="IdCard" Type="nchar" MaxLength="12" />
-    <Property Name="PhoneNumber" Type="nchar" MaxLength="15" />
-    <Property Name="FamilyPhoneNumber" Type="nchar" MaxLength="15" />
-    <Property Name="Money" Type="int" />
-    <Property Name="CreatedAt" Type="datetime" />
-    <Property Name="UpdatedAt" Type="datetime" />
-    <Property Name="InterestId" Type="int" />
-    <Property Name="CategoryId" Type="int" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="BirthDay" Type="date" Nullable="false" />
+    <Property Name="IdCard" Type="nchar" MaxLength="12" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="FamilyPhoneNumber" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="InterestId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
-    <Property Name="Status" Type="bit" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="friend">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FullName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" />
-    <Property Name="PhoneNumber" Type="nchar" MaxLength="15" />
-    <Property Name="Relationship" Type="nvarchar" MaxLength="20" />
-    <Property Name="CreatedAt" Type="datetime" />
-    <Property Name="UpdatedAt" Type="datetime" />
-    <Property Name="CustomerId" Type="int" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Relationship" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
-    <Property Name="Status" Type="bit" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="historyInterestRate">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="StartDate" Type="date" />
-    <Property Name="EndDate" Type="date" />
-    <Property Name="Percents" Type="float" />
-    <Property Name="InterestRateId" Type="int" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="Percents" Type="float" Nullable="false" />
+    <Property Name="InterestRateId" Type="int" Nullable="false" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
-    <Property Name="Status" Type="bit" />
-    <Property Name="CreatedAt" Type="datetime" />
-    <Property Name="UpdatedAt" Type="datetime" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="historyPaid">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PaidDate" Type="datetime" />
-    <Property Name="Money" Type="int" />
-    <Property Name="TypePaid" Type="bit" />
-    <Property Name="CustomerId" Type="int" />
+    <Property Name="PaidDate" Type="datetime" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+    <Property Name="TypePaid" Type="bit" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
-    <Property Name="Status" Type="bit" />
-    <Property Name="CreatedAt" Type="datetime" />
-    <Property Name="UpdatedAt" Type="datetime" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="interestRate">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nchar" MaxLength="10" />
-    <Property Name="CreatedAt" Type="datetime" />
-    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
-    <Property Name="Status" Type="bit" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -122,9 +122,11 @@
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
     <Property Name="Status" Type="bit" />
     <Property Name="Sex" Type="bit" />
+    <Property Name="Type" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <Association Name="FK_category_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="category" Type="Self.category" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -136,7 +138,31 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_category_user1">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="category" Type="Self.category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="category">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_category_user2">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="category" Type="Self.category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="category">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_category_user3">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="category" Type="Self.category" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -148,7 +174,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_customer_category">
-    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="category" Type="Self.category" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="category">
@@ -160,7 +186,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_customer_interestRate">
-    <End Role="interestRate" Type="Self.interestRate" Multiplicity="0..1" />
+    <End Role="interestRate" Type="Self.interestRate" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="interestRate">
@@ -172,7 +198,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_customer_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -184,7 +210,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_customer_user1">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="customer" Type="Self.customer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -196,7 +222,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_friend_customer">
-    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
     <End Role="friend" Type="Self.friend" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="customer">
@@ -208,7 +234,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_friend_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="friend" Type="Self.friend" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -220,7 +246,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_friend_user1">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="friend" Type="Self.friend" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -232,7 +258,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_historyInterestRate_interestRate">
-    <End Role="interestRate" Type="Self.interestRate" Multiplicity="0..1" />
+    <End Role="interestRate" Type="Self.interestRate" Multiplicity="1" />
     <End Role="historyInterestRate" Type="Self.historyInterestRate" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="interestRate">
@@ -244,7 +270,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_historyInterestRate_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="historyInterestRate" Type="Self.historyInterestRate" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -256,7 +282,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_historyInterestRate_user1">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="historyInterestRate" Type="Self.historyInterestRate" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -268,7 +294,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_historyPaid_customer">
-    <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+    <End Role="customer" Type="Self.customer" Multiplicity="1" />
     <End Role="historyPaid" Type="Self.historyPaid" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="customer">
@@ -280,7 +306,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_historyPaid_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="historyPaid" Type="Self.historyPaid" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -292,7 +318,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_historyPaid_user1">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="historyPaid" Type="Self.historyPaid" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -304,7 +330,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_interestRate_user">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="interestRate" Type="Self.interestRate" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -316,7 +342,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_interestRate_user1">
-    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="interestRate" Type="Self.interestRate" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="user">
@@ -372,6 +398,14 @@
       <End Role="category" EntitySet="category" />
     </AssociationSet>
     <AssociationSet Name="FK_category_user1" Association="Self.FK_category_user1">
+      <End Role="user" EntitySet="user" />
+      <End Role="category" EntitySet="category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_category_user2" Association="Self.FK_category_user2">
+      <End Role="user" EntitySet="user" />
+      <End Role="category" EntitySet="category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_category_user3" Association="Self.FK_category_user3">
       <End Role="user" EntitySet="user" />
       <End Role="category" EntitySet="category" />
     </AssociationSet>

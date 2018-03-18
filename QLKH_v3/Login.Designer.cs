@@ -48,6 +48,7 @@
             // 
             // txt_login_password
             // 
+            this.txt_login_password.EditValue = "123456";
             this.txt_login_password.Location = new System.Drawing.Point(251, 108);
             this.txt_login_password.Name = "txt_login_password";
             this.txt_login_password.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,6 +68,7 @@
             // 
             // txt_login_username
             // 
+            this.txt_login_username.EditValue = "haipn";
             this.txt_login_username.Location = new System.Drawing.Point(251, 71);
             this.txt_login_username.Name = "txt_login_username";
             this.txt_login_username.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,8 +97,12 @@
             this.Controls.Add(this.txt_login_password);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txt_login_username);
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Login_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.txt_login_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login_username.Properties)).EndInit();
             this.ResumeLayout(false);

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
+            this.radio_type_user = new DevExpress.XtraEditors.RadioGroup();
+            this.radio_sex_user = new DevExpress.XtraEditors.RadioGroup();
+            this.date_birthday = new DevExpress.XtraEditors.DateEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_add_type_user = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_add_sex_user = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txt_add_address_user = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_add_birthday_user = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txt_add_phone_user = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -64,10 +64,11 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_add_type_user.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_add_sex_user.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radio_type_user.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radio_sex_user.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_address_user.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_add_birthday_user.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_phone_user.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_cmnd_user.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_fullname_user.Properties)).BeginInit();
@@ -82,14 +83,16 @@
             // 
             // panelheader
             // 
+            this.panelheader.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.panelheader.Appearance.Options.UseBackColor = true;
+            this.panelheader.Controls.Add(this.radio_type_user);
+            this.panelheader.Controls.Add(this.radio_sex_user);
+            this.panelheader.Controls.Add(this.date_birthday);
             this.panelheader.Controls.Add(this.labelControl10);
-            this.panelheader.Controls.Add(this.txt_add_type_user);
             this.panelheader.Controls.Add(this.labelControl8);
-            this.panelheader.Controls.Add(this.txt_add_sex_user);
             this.panelheader.Controls.Add(this.labelControl9);
             this.panelheader.Controls.Add(this.txt_add_address_user);
             this.panelheader.Controls.Add(this.labelControl5);
-            this.panelheader.Controls.Add(this.txt_add_birthday_user);
             this.panelheader.Controls.Add(this.labelControl6);
             this.panelheader.Controls.Add(this.txt_add_phone_user);
             this.panelheader.Controls.Add(this.labelControl7);
@@ -108,49 +111,71 @@
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(971, 266);
+            this.panelheader.Size = new System.Drawing.Size(971, 260);
             this.panelheader.TabIndex = 0;
+            // 
+            // radio_type_user
+            // 
+            this.radio_type_user.Location = new System.Drawing.Point(750, 86);
+            this.radio_type_user.Name = "radio_type_user";
+            this.radio_type_user.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.radio_type_user.Properties.Appearance.Options.UseBackColor = true;
+            this.radio_type_user.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radio_type_user.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("0", "Quản trị"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Nhân viên")});
+            this.radio_type_user.Size = new System.Drawing.Size(190, 25);
+            this.radio_type_user.TabIndex = 66;
+            // 
+            // radio_sex_user
+            // 
+            this.radio_sex_user.Location = new System.Drawing.Point(750, 45);
+            this.radio_sex_user.Name = "radio_sex_user";
+            this.radio_sex_user.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.radio_sex_user.Properties.Appearance.Options.UseBackColor = true;
+            this.radio_sex_user.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radio_sex_user.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Nam"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Nữ")});
+            this.radio_sex_user.Size = new System.Drawing.Size(190, 25);
+            this.radio_sex_user.TabIndex = 65;
+            // 
+            // date_birthday
+            // 
+            this.date_birthday.EditValue = null;
+            this.date_birthday.Location = new System.Drawing.Point(432, 85);
+            this.date_birthday.Name = "date_birthday";
+            this.date_birthday.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_birthday.Properties.Appearance.Options.UseFont = true;
+            this.date_birthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_birthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_birthday.Size = new System.Drawing.Size(193, 22);
+            this.date_birthday.TabIndex = 63;
             // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Location = new System.Drawing.Point(664, 88);
+            this.labelControl10.Location = new System.Drawing.Point(648, 88);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(60, 16);
+            this.labelControl10.Size = new System.Drawing.Size(91, 16);
             this.labelControl10.TabIndex = 29;
-            this.labelControl10.Text = "Kiểu user";
-            // 
-            // txt_add_type_user
-            // 
-            this.txt_add_type_user.Location = new System.Drawing.Point(745, 85);
-            this.txt_add_type_user.Name = "txt_add_type_user";
-            this.txt_add_type_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_add_type_user.Properties.Appearance.Options.UseFont = true;
-            this.txt_add_type_user.Size = new System.Drawing.Size(190, 22);
-            this.txt_add_type_user.TabIndex = 28;
+            this.labelControl10.Text = "Kiểu tài khoản";
             // 
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Location = new System.Drawing.Point(673, 51);
+            this.labelControl8.Location = new System.Drawing.Point(648, 51);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(51, 16);
             this.labelControl8.TabIndex = 27;
             this.labelControl8.Text = "Giới tính";
             // 
-            // txt_add_sex_user
-            // 
-            this.txt_add_sex_user.Location = new System.Drawing.Point(745, 45);
-            this.txt_add_sex_user.Name = "txt_add_sex_user";
-            this.txt_add_sex_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_add_sex_user.Properties.Appearance.Options.UseFont = true;
-            this.txt_add_sex_user.Size = new System.Drawing.Size(190, 22);
-            this.txt_add_sex_user.TabIndex = 26;
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Location = new System.Drawing.Point(681, 7);
+            this.labelControl9.Location = new System.Drawing.Point(648, 10);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(43, 16);
             this.labelControl9.TabIndex = 25;
@@ -158,7 +183,7 @@
             // 
             // txt_add_address_user
             // 
-            this.txt_add_address_user.Location = new System.Drawing.Point(745, 4);
+            this.txt_add_address_user.Location = new System.Drawing.Point(750, 5);
             this.txt_add_address_user.Name = "txt_add_address_user";
             this.txt_add_address_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_address_user.Properties.Appearance.Options.UseFont = true;
@@ -168,25 +193,16 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(361, 89);
+            this.labelControl5.Location = new System.Drawing.Point(327, 88);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(62, 16);
             this.labelControl5.TabIndex = 23;
             this.labelControl5.Text = "Ngày sinh";
             // 
-            // txt_add_birthday_user
-            // 
-            this.txt_add_birthday_user.Location = new System.Drawing.Point(444, 86);
-            this.txt_add_birthday_user.Name = "txt_add_birthday_user";
-            this.txt_add_birthday_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_add_birthday_user.Properties.Appearance.Options.UseFont = true;
-            this.txt_add_birthday_user.Size = new System.Drawing.Size(193, 22);
-            this.txt_add_birthday_user.TabIndex = 22;
-            // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Location = new System.Drawing.Point(339, 48);
+            this.labelControl6.Location = new System.Drawing.Point(327, 48);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(84, 16);
             this.labelControl6.TabIndex = 21;
@@ -194,7 +210,7 @@
             // 
             // txt_add_phone_user
             // 
-            this.txt_add_phone_user.Location = new System.Drawing.Point(444, 45);
+            this.txt_add_phone_user.Location = new System.Drawing.Point(432, 45);
             this.txt_add_phone_user.Name = "txt_add_phone_user";
             this.txt_add_phone_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_phone_user.Properties.Appearance.Options.UseFont = true;
@@ -204,7 +220,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Location = new System.Drawing.Point(387, 14);
+            this.labelControl7.Location = new System.Drawing.Point(327, 11);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(36, 16);
             this.labelControl7.TabIndex = 19;
@@ -212,7 +228,7 @@
             // 
             // txt_add_cmnd_user
             // 
-            this.txt_add_cmnd_user.Location = new System.Drawing.Point(444, 8);
+            this.txt_add_cmnd_user.Location = new System.Drawing.Point(432, 8);
             this.txt_add_cmnd_user.Name = "txt_add_cmnd_user";
             this.txt_add_cmnd_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_cmnd_user.Properties.Appearance.Options.UseFont = true;
@@ -222,7 +238,7 @@
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(53, 89);
+            this.labelControl4.Location = new System.Drawing.Point(9, 88);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(43, 16);
             this.labelControl4.TabIndex = 17;
@@ -240,7 +256,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(36, 48);
+            this.labelControl3.Location = new System.Drawing.Point(9, 48);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(60, 16);
             this.labelControl3.TabIndex = 15;
@@ -259,7 +275,7 @@
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(871, 232);
+            this.simpleButton2.Location = new System.Drawing.Point(871, 226);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(81, 30);
             this.simpleButton2.TabIndex = 13;
@@ -269,7 +285,7 @@
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(768, 232);
+            this.simpleButton1.Location = new System.Drawing.Point(767, 226);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(82, 30);
             this.simpleButton1.TabIndex = 12;
@@ -279,11 +295,12 @@
             // 
             this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Appearance.Options.UseFont = true;
-            this.btn_them.Location = new System.Drawing.Point(444, 232);
+            this.btn_them.Location = new System.Drawing.Point(445, 224);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(118, 30);
             this.btn_them.TabIndex = 11;
             this.btn_them.Text = "Thêm tài khoản";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // txt_add_ghi_chu_user
             // 
@@ -291,13 +308,13 @@
             this.txt_add_ghi_chu_user.Name = "txt_add_ghi_chu_user";
             this.txt_add_ghi_chu_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_ghi_chu_user.Properties.Appearance.Options.UseFont = true;
-            this.txt_add_ghi_chu_user.Size = new System.Drawing.Size(190, 71);
+            this.txt_add_ghi_chu_user.Size = new System.Drawing.Size(511, 77);
             this.txt_add_ghi_chu_user.TabIndex = 10;
             // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(50, 126);
+            this.labelControl2.Location = new System.Drawing.Point(9, 126);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 16);
             this.labelControl2.TabIndex = 9;
@@ -325,9 +342,9 @@
             // 
             this.panelBody.Controls.Add(this.grcUser);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBody.Location = new System.Drawing.Point(0, 266);
+            this.panelBody.Location = new System.Drawing.Point(0, 260);
             this.panelBody.Name = "panelBody";
-            this.panelBody.Size = new System.Drawing.Size(971, 157);
+            this.panelBody.Size = new System.Drawing.Size(971, 163);
             this.panelBody.TabIndex = 1;
             // 
             // grcUser
@@ -336,7 +353,7 @@
             this.grcUser.Location = new System.Drawing.Point(2, 2);
             this.grcUser.MainView = this.grvUser;
             this.grcUser.Name = "grcUser";
-            this.grcUser.Size = new System.Drawing.Size(967, 153);
+            this.grcUser.Size = new System.Drawing.Size(967, 159);
             this.grcUser.TabIndex = 0;
             this.grcUser.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvUser});
@@ -439,10 +456,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_add_type_user.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_add_sex_user.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radio_type_user.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radio_sex_user.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_address_user.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_add_birthday_user.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_phone_user.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_cmnd_user.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_add_fullname_user.Properties)).EndInit();
@@ -471,13 +489,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit txt_add_type_user;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txt_add_sex_user;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txt_add_address_user;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_add_birthday_user;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txt_add_phone_user;
         private DevExpress.XtraEditors.LabelControl labelControl7;
@@ -493,5 +508,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_add_username;
+        private DevExpress.XtraEditors.DateEdit date_birthday;
+        private DevExpress.XtraEditors.RadioGroup radio_type_user;
+        private DevExpress.XtraEditors.RadioGroup radio_sex_user;
     }
 }

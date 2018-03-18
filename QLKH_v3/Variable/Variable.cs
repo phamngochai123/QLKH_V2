@@ -9,6 +9,7 @@ namespace QLKH_v3.Variable
     class Variable
     {
         public string format_date_time = "yyyy-MM-dd HH:mm:ss";
+        public string format_date = "dd-MM-yyyy";
         public Action_Status action_status = new Action_Status();
         public Detail_Infor detail_infor = new Detail_Infor();
     }

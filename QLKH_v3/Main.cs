@@ -107,5 +107,14 @@ namespace QLKH_v3
             //uc_Category._userId = _userId;
         }
 
+        private void btnQLKhachHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UI.ucQLKhachHang uc_Customer = new UI.ucQLKhachHang();
+            uc_Customer.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc_Customer);
+            uc_Customer._user = _user;
+        }
+
     }
 }
