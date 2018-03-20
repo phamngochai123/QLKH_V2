@@ -45,8 +45,8 @@
             this.txt_add_fullname_user = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txt_add_password = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_cancel_user = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_confirm_user = new DevExpress.XtraEditors.SimpleButton();
             this.btn_them = new DevExpress.XtraEditors.SimpleButton();
             this.txt_add_ghi_chu_user = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -101,8 +101,8 @@
             this.panelheader.Controls.Add(this.txt_add_fullname_user);
             this.panelheader.Controls.Add(this.labelControl3);
             this.panelheader.Controls.Add(this.txt_add_password);
-            this.panelheader.Controls.Add(this.simpleButton2);
-            this.panelheader.Controls.Add(this.simpleButton1);
+            this.panelheader.Controls.Add(this.btn_cancel_user);
+            this.panelheader.Controls.Add(this.btn_confirm_user);
             this.panelheader.Controls.Add(this.btn_them);
             this.panelheader.Controls.Add(this.txt_add_ghi_chu_user);
             this.panelheader.Controls.Add(this.labelControl2);
@@ -124,6 +124,7 @@
             this.radio_type_user.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("0", "Quản trị"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Nhân viên")});
+            this.radio_type_user.Properties.ReadOnly = true;
             this.radio_type_user.Size = new System.Drawing.Size(190, 25);
             this.radio_type_user.TabIndex = 66;
             // 
@@ -137,12 +138,14 @@
             this.radio_sex_user.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Nữ")});
+            this.radio_sex_user.Properties.ReadOnly = true;
             this.radio_sex_user.Size = new System.Drawing.Size(190, 25);
             this.radio_sex_user.TabIndex = 65;
             // 
             // date_birthday
             // 
             this.date_birthday.EditValue = null;
+            this.date_birthday.Enabled = false;
             this.date_birthday.Location = new System.Drawing.Point(432, 85);
             this.date_birthday.Name = "date_birthday";
             this.date_birthday.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,6 +190,7 @@
             this.txt_add_address_user.Name = "txt_add_address_user";
             this.txt_add_address_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_address_user.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_address_user.Properties.ReadOnly = true;
             this.txt_add_address_user.Size = new System.Drawing.Size(190, 22);
             this.txt_add_address_user.TabIndex = 24;
             // 
@@ -214,6 +218,7 @@
             this.txt_add_phone_user.Name = "txt_add_phone_user";
             this.txt_add_phone_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_phone_user.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_phone_user.Properties.ReadOnly = true;
             this.txt_add_phone_user.Size = new System.Drawing.Size(193, 22);
             this.txt_add_phone_user.TabIndex = 20;
             // 
@@ -232,6 +237,7 @@
             this.txt_add_cmnd_user.Name = "txt_add_cmnd_user";
             this.txt_add_cmnd_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_cmnd_user.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_cmnd_user.Properties.ReadOnly = true;
             this.txt_add_cmnd_user.Size = new System.Drawing.Size(193, 22);
             this.txt_add_cmnd_user.TabIndex = 18;
             // 
@@ -250,6 +256,7 @@
             this.txt_add_fullname_user.Name = "txt_add_fullname_user";
             this.txt_add_fullname_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_fullname_user.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_fullname_user.Properties.ReadOnly = true;
             this.txt_add_fullname_user.Size = new System.Drawing.Size(197, 22);
             this.txt_add_fullname_user.TabIndex = 16;
             // 
@@ -268,28 +275,33 @@
             this.txt_add_password.Name = "txt_add_password";
             this.txt_add_password.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_password.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_password.Properties.ReadOnly = true;
             this.txt_add_password.Size = new System.Drawing.Size(197, 22);
             this.txt_add_password.TabIndex = 14;
             // 
-            // simpleButton2
+            // btn_cancel_user
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(871, 226);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(81, 30);
-            this.simpleButton2.TabIndex = 13;
-            this.simpleButton2.Text = "Hủy";
+            this.btn_cancel_user.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel_user.Appearance.Options.UseFont = true;
+            this.btn_cancel_user.Enabled = false;
+            this.btn_cancel_user.Location = new System.Drawing.Point(871, 226);
+            this.btn_cancel_user.Name = "btn_cancel_user";
+            this.btn_cancel_user.Size = new System.Drawing.Size(81, 30);
+            this.btn_cancel_user.TabIndex = 13;
+            this.btn_cancel_user.Text = "Hủy";
+            this.btn_cancel_user.Click += new System.EventHandler(this.btn_cancel_user_Click);
             // 
-            // simpleButton1
+            // btn_confirm_user
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(767, 226);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(82, 30);
-            this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "xác nhận";
+            this.btn_confirm_user.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirm_user.Appearance.Options.UseFont = true;
+            this.btn_confirm_user.Enabled = false;
+            this.btn_confirm_user.Location = new System.Drawing.Point(767, 226);
+            this.btn_confirm_user.Name = "btn_confirm_user";
+            this.btn_confirm_user.Size = new System.Drawing.Size(82, 30);
+            this.btn_confirm_user.TabIndex = 12;
+            this.btn_confirm_user.Text = "xác nhận";
+            this.btn_confirm_user.Click += new System.EventHandler(this.btn_confirm_user_Click);
             // 
             // btn_them
             // 
@@ -308,6 +320,7 @@
             this.txt_add_ghi_chu_user.Name = "txt_add_ghi_chu_user";
             this.txt_add_ghi_chu_user.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_ghi_chu_user.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_ghi_chu_user.Properties.ReadOnly = true;
             this.txt_add_ghi_chu_user.Size = new System.Drawing.Size(511, 77);
             this.txt_add_ghi_chu_user.TabIndex = 10;
             // 
@@ -335,6 +348,7 @@
             this.txt_add_username.Name = "txt_add_username";
             this.txt_add_username.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_add_username.Properties.Appearance.Options.UseFont = true;
+            this.txt_add_username.Properties.ReadOnly = true;
             this.txt_add_username.Size = new System.Drawing.Size(197, 22);
             this.txt_add_username.TabIndex = 7;
             // 
@@ -501,8 +515,8 @@
         private DevExpress.XtraEditors.TextEdit txt_add_fullname_user;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txt_add_password;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_cancel_user;
+        private DevExpress.XtraEditors.SimpleButton btn_confirm_user;
         private DevExpress.XtraEditors.SimpleButton btn_them;
         private DevExpress.XtraEditors.MemoEdit txt_add_ghi_chu_user;
         private DevExpress.XtraEditors.LabelControl labelControl2;

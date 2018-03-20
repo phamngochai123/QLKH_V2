@@ -38,12 +38,12 @@ namespace QLKH_v3
         public string FullName { get; set; }
         public string IdCard { get; set; }
         public string PhoneNumber { get; set; }
-        public Nullable<System.DateTime> BirthDay { get; set; }
-        public Nullable<System.DateTime> CreatedAt { get; set; }
-        public Nullable<System.DateTime> UpdatedAt { get; set; }
+        public System.DateTime BirthDay { get; set; }
+        public System.DateTime CreatedAt { get; set; }
+        public System.DateTime UpdatedAt { get; set; }
         public string Note { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public Nullable<bool> Sex { get; set; }
+        public bool Status { get; set; }
+        public bool Sex { get; set; }
         public string Type { get; set; }
         public string Address { get; set; }
     

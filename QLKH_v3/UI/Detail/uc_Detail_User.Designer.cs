@@ -72,6 +72,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(118, 30);
             this.btn_xoa.TabIndex = 31;
             this.btn_xoa.Text = "Xóa tài khoản";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 

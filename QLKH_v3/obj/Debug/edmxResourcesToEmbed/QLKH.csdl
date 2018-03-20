@@ -37,7 +37,6 @@
     <EntitySet Name="historyInterestRates" EntityType="QLKHModel.historyInterestRate" />
     <EntitySet Name="historyPaids" EntityType="QLKHModel.historyPaid" />
     <EntitySet Name="interestRates" EntityType="QLKHModel.interestRate" />
-    <EntitySet Name="sysdiagrams" EntityType="QLKHModel.sysdiagram" />
     <EntitySet Name="users" EntityType="QLKHModel.user" />
     <AssociationSet Name="FK_category_user" Association="QLKHModel.FK_category_user">
       <End Role="user" EntitySet="users" />
@@ -152,9 +151,9 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="IdCard" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
-    <Property Name="FamilyPhoneNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="IdCard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamilyPhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Money" Type="Int32" Nullable="false" />
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
@@ -179,7 +178,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Relationship" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
@@ -198,7 +197,6 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Percents" Type="Double" Nullable="false" />
     <Property Name="InterestRateId" Type="Int32" Nullable="false" />
     <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -218,7 +216,7 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PaidDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Money" Type="Int32" Nullable="false" />
-    <Property Name="TypePaid" Type="Boolean" Nullable="false" />
+    <Property Name="TypePaid" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
     <Property Name="CustomerId" Type="Int32" Nullable="false" />
     <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
@@ -235,7 +233,7 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
@@ -247,34 +245,24 @@
     <NavigationProperty Name="user" Relationship="QLKHModel.FK_interestRate_user" FromRole="interestRate" ToRole="user" />
     <NavigationProperty Name="user1" Relationship="QLKHModel.FK_interestRate_user1" FromRole="interestRate" ToRole="user" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="PassWord" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="IdCard" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
-    <Property Name="BirthDay" Type="DateTime" Precision="0" />
-    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
-    <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PassWord" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IdCard" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="Status" Type="Boolean" />
-    <Property Name="Sex" Type="Boolean" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Sex" Type="Boolean" Nullable="false" />
     <Property Name="Type" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="categories" Relationship="QLKHModel.FK_category_user" FromRole="user" ToRole="category" />
     <NavigationProperty Name="categories1" Relationship="QLKHModel.FK_category_user1" FromRole="user" ToRole="category" />
     <NavigationProperty Name="categories2" Relationship="QLKHModel.FK_category_user2" FromRole="user" ToRole="category" />

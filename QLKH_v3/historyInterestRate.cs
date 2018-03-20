@@ -16,7 +16,6 @@ namespace QLKH_v3
     {
         public int id { get; set; }
         public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
         public double Percents { get; set; }
         public int InterestRateId { get; set; }
         public string Note { get; set; }

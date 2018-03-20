@@ -17,7 +17,7 @@ namespace QLKH_v3
         public int id { get; set; }
         public System.DateTime PaidDate { get; set; }
         public int Money { get; set; }
-        public bool TypePaid { get; set; }
+        public string TypePaid { get; set; }
         public int CustomerId { get; set; }
         public string Note { get; set; }
         public bool Status { get; set; }

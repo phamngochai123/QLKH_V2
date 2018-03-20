@@ -25,5 +25,7 @@ namespace QLKH_v3.Model
         public DateTime? CreateAtHisgory { set; get; }
         public DateTime? UpdatedAtHistory { set; get; }
 
+        public string CreatedBy { set; get; }
+
     }
 }

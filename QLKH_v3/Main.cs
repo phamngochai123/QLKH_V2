@@ -65,6 +65,7 @@ namespace QLKH_v3
             ucQLLaiSuat.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucQLLaiSuat);
+            ucQLLaiSuat._user = _user;
         }
 
         private void btnQLUser_ItemClick(object sender, ItemClickEventArgs e)
@@ -88,6 +89,7 @@ namespace QLKH_v3
                 UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
                 ucQLLaiSuat.Dock = DockStyle.Fill;
                 panelMain.Controls.Clear();
+                ucQLLaiSuat._user = _user;
                 panelMain.Controls.Add(ucQLLaiSuat);
             }
             else

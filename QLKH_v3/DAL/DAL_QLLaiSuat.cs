@@ -18,11 +18,13 @@ namespace QLKH_v3.DAL
             List<InterestRate> lst_InterestRate = new List<InterestRate>();
             try
             {
-                lst_InterestRate = (from data in _db.interestRates 
+                lst_InterestRate = (from data in _db.interestRates
                                     join data_history in _db.historyInterestRates
                                     on data.id equals data_history.InterestRateId
-                                    where (data.Status == true && data_history.Status ==true) 
-                                    select new InterestRate {
+                                    join data_user in _db.users
+                                    on data.CreatedBy equals data_user.id
+                                    select new InterestRate
+                                    {
                                         IdInterestRate = data.id,
                                         NameInterestRate = data.Name,
                                         CreatedAtInterestRate = data.CreatedAt,
@@ -32,13 +34,13 @@ namespace QLKH_v3.DAL
 
                                         IdHistory = data_history.id,
                                         StartDateHistory = data_history.StartDate,
-                                        EndDateHistory = data_history.EndDate,
                                         Percents = data_history.Percents,
                                         NoteHistory = data_history.Note,
                                         StatusHistory = data_history.Status,
                                         CreateAtHisgory = data_history.CreatedAt,
                                         UpdatedAtHistory = data.UpdatedAt,
-                                    } ).AsEnumerable().ToList();
+                                        CreatedBy = data_user.FullName
+                                    }).AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -52,27 +54,26 @@ namespace QLKH_v3.DAL
             InterestRate InterestRate = new InterestRate();
             try
             {
-                InterestRate = (from data in _db.interestRates 
-                                    join data_history in _db.historyInterestRates
-                                    on data.id equals data_history.InterestRateId
-                                where (data.Status == true && data_history.Status == true) 
-                                    select new InterestRate {
-                                        IdInterestRate = data.id,
-                                        NameInterestRate = data.Name,
-                                        CreatedAtInterestRate = data.CreatedAt,
-                                        UpdatedAtInterestRate = data.UpdatedAt,
-                                        NoteInterestRate = data.Note,
-                                        StatusInterestRate = data.Status,
+                InterestRate = (from data in _db.interestRates
+                                join data_history in _db.historyInterestRates
+                                on data.id equals data_history.InterestRateId
+                                select new InterestRate
+                                {
+                                    IdInterestRate = data.id,
+                                    NameInterestRate = data.Name,
+                                    CreatedAtInterestRate = data.CreatedAt,
+                                    UpdatedAtInterestRate = data.UpdatedAt,
+                                    NoteInterestRate = data.Note,
+                                    StatusInterestRate = data.Status,
 
-                                        IdHistory = data_history.id,
-                                        StartDateHistory = data_history.StartDate,
-                                        EndDateHistory = data_history.EndDate,
-                                        Percents = data_history.Percents,
-                                        NoteHistory = data_history.Note,
-                                        StatusHistory = data_history.Status,
-                                        CreateAtHisgory = data_history.CreatedAt,
-                                        UpdatedAtHistory = data.UpdatedAt,
-                                    } ).FirstOrDefault();
+                                    IdHistory = data_history.id,
+                                    StartDateHistory = data_history.StartDate,
+                                    Percents = data_history.Percents,
+                                    NoteHistory = data_history.Note,
+                                    StatusHistory = data_history.Status,
+                                    CreateAtHisgory = data_history.CreatedAt,
+                                    UpdatedAtHistory = data.UpdatedAt,
+                                }).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -80,6 +81,35 @@ namespace QLKH_v3.DAL
                 throw;
             }
             return InterestRate;
+        }
+
+        public void changeStatusHistoryInterest()
+        {
+            (from p in _db.historyInterestRates
+             select p).ToList().ForEach(x => x.Status = false);
+        }
+
+        public bool Add_and_Edit_HistoryInterest(historyInterestRate historyInterest, int action_status, user user)
+        {
+            bool check = false;
+            try
+            {
+                historyInterest.CreatedBy = user.id;
+                historyInterest.UpdatedBy = user.id;
+                historyInterest.InterestRateId = 1;
+                historyInterest.Status = true;
+                historyInterest.CreatedAt = DateTime.Now;
+                historyInterest.UpdatedAt = DateTime.Now;
+                changeStatusHistoryInterest();
+                _db.historyInterestRates.Add(historyInterest);
+                _db.SaveChanges();
+                check = true;
+            }
+            catch (Exception)
+            {
+                return check;
+            }
+            return check;
         }
     }
 }

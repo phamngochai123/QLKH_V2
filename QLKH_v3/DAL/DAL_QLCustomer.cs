@@ -68,7 +68,7 @@ namespace QLKH_v3.DAL
             try
             {
                 lst_history_of_customer = (from data in _db.historyPaids
-                                           where (data.Status == true && data.CustomerId == id_Customer && data.TypePaid == true)
+                                           where (data.Status == true && data.CustomerId == id_Customer)
                                            select data).AsEnumerable().ToList();
             }
             catch (Exception ex)
@@ -85,7 +85,7 @@ namespace QLKH_v3.DAL
             try
             {
                 lst_history_of_customer = (from data in _db.historyPaids
-                                           where (data.Status == true && data.CustomerId == id_Customer && data.TypePaid == false)
+                                           where (data.Status == true && data.CustomerId == id_Customer)
                                            select data).AsEnumerable().ToList();
             }
             catch (Exception ex)

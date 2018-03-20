@@ -158,9 +158,6 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLKH.tt</DependentUpon>
-    </Compile>
     <Compile Include="UI\Detail\uc_Detail_Category.cs">
       <SubType>UserControl</SubType>
     </Compile>
