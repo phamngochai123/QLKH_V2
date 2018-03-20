@@ -545,6 +545,7 @@
             this.btnLichSuThanhToan.Caption = "Lịch sử thanh toán";
             this.btnLichSuThanhToan.Id = 392;
             this.btnLichSuThanhToan.Name = "btnLichSuThanhToan";
+            this.btnLichSuThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuThanhToan_ItemClick);
             // 
             // btnQLBanBe
             // 

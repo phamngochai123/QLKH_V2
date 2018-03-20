@@ -97,6 +97,7 @@
     <Compile Include="customer.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DAL_LichSuTraTien.cs" />
     <Compile Include="DAL\DAL_QLCategory.cs" />
     <Compile Include="DAL\DAL_QLCustomer.cs" />
     <Compile Include="DAL\DAL_QLFriend.cs" />
@@ -134,6 +135,7 @@
     </Compile>
     <Compile Include="Message\Message.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\HistoryPaid.cs" />
     <Compile Include="Model\InterestRate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,6 +203,12 @@
     <Compile Include="UI\uc_Category.Designer.cs">
       <DependentUpon>uc_Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\uc_LichSuTraTien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\uc_LichSuTraTien.Designer.cs">
+      <DependentUpon>uc_LichSuTraTien.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
@@ -246,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\uc_Category.resx">
       <DependentUpon>uc_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\uc_LichSuTraTien.resx">
+      <DependentUpon>uc_LichSuTraTien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>

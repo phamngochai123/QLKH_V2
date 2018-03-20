@@ -23,7 +23,8 @@ namespace QLKH_v3.DAL
                                 join user_update in _db.users
                                 on data.UpdatedBy equals user_update.id
                                 where (data.Status == true)
-                                select new Model.Category { 
+                                select new Model.Category
+                                {
                                     id = data.id,
                                     Name = data.Name,
                                     CreatedAt = data.CreatedAt,
@@ -65,17 +66,18 @@ namespace QLKH_v3.DAL
         /// <param name="ctgr"></param>         model category
         /// <param name="action_status"></param>        status: (add; edit; insert)
         /// <returns></returns>
-        public bool Add_and_Edit_Category(category ctgr,int action_status,user user)
+        public bool Add_and_Edit_Category(category ctgr, int action_status, user user)
         {
             bool check = false;
             try
             {
-                if ( Util.Cnv_Int(ctgr.id.ToString()) > 0)
+                if (Util.Cnv_Int(ctgr.id.ToString()) > 0)
                 {
                     category data_edit = new category();
                     data_edit = Get_Category(ctgr.id);
 
-                    if (action_status == Variable.action_status.is_update) {            // update data
+                    if (action_status == Variable.action_status.is_update)
+                    {            // update data
                         data_edit.Name = ctgr.Name;
                         data_edit.Note = ctgr.Note;
                         data_edit.UpdatedBy = user.id;

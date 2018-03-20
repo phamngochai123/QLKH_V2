@@ -118,5 +118,14 @@ namespace QLKH_v3
             uc_Customer._user = _user;
         }
 
+        private void btnLichSuThanhToan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UI.uc_LichSuTraTien uc_HistoryPaid = new UI.uc_LichSuTraTien();
+            uc_HistoryPaid.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc_HistoryPaid);
+            uc_HistoryPaid._user = _user;
+        }
+
     }
 }
