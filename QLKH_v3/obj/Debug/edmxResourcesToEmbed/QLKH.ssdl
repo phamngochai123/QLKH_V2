@@ -33,6 +33,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="CreatedBy" Type="int" Nullable="false" />
     <Property Name="UpdatedBy" Type="int" Nullable="false" />
+    <Property Name="PaidMoney" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="friend">
     <Key>

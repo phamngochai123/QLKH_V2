@@ -18,6 +18,7 @@
     <EntitySetMapping Name="customers">
       <EntityTypeMapping TypeName="QLKHModel.customer">
         <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="PaidMoney" ColumnName="PaidMoney" />
           <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Address" ColumnName="Address" />

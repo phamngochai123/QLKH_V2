@@ -69,6 +69,7 @@ namespace QLKH_v3.DAL
         public historyPaid Get_Tien_Lai(int IdCustomer)
         {
             historyPaid history = new historyPaid();
+            customer customer = new customer();
             int lai = 0;
             try
             {
@@ -76,6 +77,14 @@ namespace QLKH_v3.DAL
                             where data.CustomerId == IdCustomer
                             orderby data.PaidDate descending
                             select data).FirstOrDefault();
+                customer = (from data in _db.customers
+                                where data.id == IdCustomer
+                                select data).FirstOrDefault();
+                int tien_no = customer.Money - customer.PaidMoney;
+                int dateRange = Util.DateRange(history.PaidDate, DateTime.Now);
+                int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(history.PaidDate)).Days;
+                Util.Show_Message_Notification(Message.msg_notification, dateRange.ToString());
+
             }
             catch (Exception ex)
             {

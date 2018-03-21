@@ -66,5 +66,12 @@ namespace QLKH_v3.Util
             return table;
 
         }
+        public int DateRange(DateTime fromDate, DateTime toDate)
+        {
+            int count = 0;
+            Enumerable.Range(0, toDate.Subtract(fromDate).Days + 1)
+                             .Select(d => count++);
+            return count;
+        }
     }
 }

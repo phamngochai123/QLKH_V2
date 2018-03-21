@@ -38,6 +38,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="CreatedBy" Type="int" Nullable="false" />
           <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="PaidMoney" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="friend">
           <Key>
@@ -600,6 +601,7 @@
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="Int32" Nullable="false" />
           <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="PaidMoney" Type="Int32" Nullable="false" />
           <NavigationProperty Name="category" Relationship="QLKHModel.FK_customer_category" FromRole="customer" ToRole="category" />
           <NavigationProperty Name="interestRate" Relationship="QLKHModel.FK_customer_interestRate" FromRole="customer" ToRole="interestRate" />
           <NavigationProperty Name="user" Relationship="QLKHModel.FK_customer_user" FromRole="customer" ToRole="user" />
@@ -965,6 +967,7 @@
           <EntitySetMapping Name="customers">
             <EntityTypeMapping TypeName="QLKHModel.customer">
               <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="PaidMoney" ColumnName="PaidMoney" />
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
