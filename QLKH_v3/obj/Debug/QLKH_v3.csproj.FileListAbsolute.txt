@@ -214,7 +214,6 @@ E:\HocTap\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.dll
 E:\HocTap\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.SqlServer.dll
 E:\HocTap\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.xml
 E:\HocTap\QLKH_V2\QLKH_v3\bin\Debug\EntityFramework.SqlServer.xml
-E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.csprojResolveAssemblyReference.cache
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Detail_Infor.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Login.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.Main.resources
@@ -231,3 +230,4 @@ F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_IntetesRate.resour
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_User.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_User.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_LichSuTraTien.resources
+E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_LichSuTraTien.resources

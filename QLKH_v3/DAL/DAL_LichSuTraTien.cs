@@ -73,17 +73,56 @@ namespace QLKH_v3.DAL
             int lai = 0;
             try
             {
-                history = (from data in _db.historyPaids
+                history = (from data in _db.historyPaids                // lấy bản ghi trả nợ gần nhất
                             where data.CustomerId == IdCustomer
                             orderby data.PaidDate descending
                             select data).FirstOrDefault();
+
+
                 customer = (from data in _db.customers
                                 where data.id == IdCustomer
                                 select data).FirstOrDefault();
-                int tien_no = customer.Money - customer.PaidMoney;
-                int dateRange = Util.DateRange(history.PaidDate, DateTime.Now);
+
+              // List<int?> TongTienNoDaTra = _db.prd_TongTienNoDaTra(IdCustomer);
+
+                int TongTienNoDaTra = 0;
+               List<historyPaid> lstPair = new List<historyPaid>();
+               lstPair = (from data in _db.historyPaids
+                          where data.CustomerId == IdCustomer && data.TypePaid == "0"
+                          select data).ToList();
+                foreach (var item in lstPair)
+	            {
+		            TongTienNoDaTra += item.Money;
+	            }
+
+                // tiền nợ gốc = số tiền vay - số tiền trả
+               int tien_no = customer.Money - TongTienNoDaTra;
+
+               var lai_suat = (from data in _db.historyInterestRates
+                                 where data.StartDate <= history.PaidDate
+                                 orderby data.StartDate descending
+                                 select data.Percents).FirstOrDefault();
+
+               List<historyInterestRate> lst_lai_suat = new List<historyInterestRate>();
+               lst_lai_suat = (from data in _db.historyInterestRates
+                               select data).ToList();
+
+                double tien_lai=0;
                 int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(history.PaidDate)).Days;
-                Util.Show_Message_Notification(Message.msg_notification, dateRange.ToString());
+
+                for (int i = 0; i < demngay; i++)
+                {
+                    DateTime start_date = history.PaidDate.AddDays(i);
+                    for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
+                    {
+                        if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j +1].StartDate) {
+                            tien_lai += tien_no * lst_lai_suat[j].Percents *0.01;
+                        }
+                    }
+                }
+
+
+               // Util.Show_Message_Notification(Message.msg_notification, dateRange.ToString());
 
             }
             catch (Exception ex)

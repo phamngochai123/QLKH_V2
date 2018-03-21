@@ -154,7 +154,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKH.edmx</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition1_Result.cs">
+      <DependentUpon>QLKH.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLKH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams1_Result.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
