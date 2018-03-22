@@ -74,67 +74,72 @@ namespace QLKH_v3.DAL
             try
             {
                 history = (from data in _db.historyPaids                // lấy bản ghi trả nợ gần nhất
-                            where data.CustomerId == IdCustomer
-                            orderby data.PaidDate descending
-                            select data).FirstOrDefault();
+                           where data.CustomerId == IdCustomer && data.TypePaid == "1"
+                           orderby data.PaidDate descending
+                           select data).FirstOrDefault();
 
 
                 customer = (from data in _db.customers
-                                where data.id == IdCustomer
-                                select data).FirstOrDefault();
+                            where data.id == IdCustomer
+                            select data).FirstOrDefault();
 
-              // List<int?> TongTienNoDaTra = _db.prd_TongTienNoDaTra(IdCustomer);
+                // List<int?> TongTienNoDaTra = _db.prd_TongTienNoDaTra(IdCustomer);
 
                 int TongTienNoDaTra = 0;
-               List<historyPaid> lstPair = new List<historyPaid>();
-               lstPair = (from data in _db.historyPaids
-                          where data.CustomerId == IdCustomer && data.TypePaid == "0"
-                          select data).ToList();
+                List<historyPaid> lstPair = new List<historyPaid>();
+                lstPair = (from data in _db.historyPaids
+                           where data.CustomerId == IdCustomer && data.TypePaid == "0"
+                           select data).ToList();
                 foreach (var item in lstPair)
-	            {
-		            TongTienNoDaTra += item.Money;
-	            }
+                {
+                    TongTienNoDaTra += item.Money;
+                }
 
                 // tiền nợ gốc = số tiền vay - số tiền trả
-               int tien_no = customer.Money - TongTienNoDaTra;
+                int tien_no = customer.Money - TongTienNoDaTra;
 
-               var lai_suat = (from data in _db.historyInterestRates
-                                 where data.StartDate <= history.PaidDate
-                                 orderby data.StartDate descending
-                                 select data.Percents).FirstOrDefault();
-
-               List<historyInterestRate> lst_lai_suat = new List<historyInterestRate>();
-               lst_lai_suat = (from data in _db.historyInterestRates
-                               select data).ToList();
-
-                double tien_lai=0;
-                int so_tien_vay = customer.Money;
-                for (int i = 0; i < lstPair.Count; i++)
+                DateTime start_date = customer.CreatedAt;
+                if (history != null)
                 {
-                    DateTime start_date = lstPair[i].PaidDate.AddDays(i);
-                    for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
-                    {
-                        if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j + 1].StartDate)
-                        {
-                            tien_lai += tien_no * lst_lai_suat[j].Percents * 0.01;
-                        }
-                    }
+                    start_date = history.PaidDate;
                 }
-                int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(history.PaidDate)).Days;
+
+                List<historyInterestRate> lst_lai_suat = new List<historyInterestRate>();
+                lst_lai_suat = (from data in _db.historyInterestRates
+                                orderby data.StartDate ascending
+                                select data).ToList();
+
+                double tien_lai = 0;
+                int so_tien_vay = customer.Money;
+                //for (int i = 0; i < lstPair.Count; i++)
+                //{
+                //    DateTime start_date = lstPair[i].PaidDate.AddDays(i);
+                //    for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
+                //    {
+                //        if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j + 1].StartDate)
+                //        {
+                //            tien_lai += tien_no * lst_lai_suat[j].Percents * 0.01;
+                //        }
+                //    }
+                //}
+
+                int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(start_date)).Days;
 
                 for (int i = 0; i < demngay; i++)
                 {
-                    DateTime start_date = history.PaidDate.AddDays(i);
+                    DateTime date_start = start_date.AddDays(i);//ngày để tính số tiền gốc đang nợ
+                    double tien_goc = get_tien_goc_by_day(date_start, IdCustomer);
                     for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
                     {
-                        if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j +1].StartDate) {
-                            tien_lai += tien_no * lst_lai_suat[j].Percents * 0.01;
+                        if (date_start >= lst_lai_suat[j].StartDate && date_start < lst_lai_suat[j + 1].StartDate)
+                        {
+                            tien_lai += tien_goc * lst_lai_suat[j].Percents * 0.01;
                         }
                     }
                 }
 
 
-               // Util.Show_Message_Notification(Message.msg_notification, dateRange.ToString());
+                // Util.Show_Message_Notification(Message.msg_notification, dateRange.ToString());
 
             }
             catch (Exception ex)
@@ -142,6 +147,57 @@ namespace QLKH_v3.DAL
                 throw ex;
             }
             return history;
+        }
+
+        public double get_tien_goc_by_day(DateTime date, int idCustomer)
+        {
+            try
+            {
+                List<historyPaid> list_paid = new List<historyPaid>();
+                list_paid = (from data in _db.historyPaids
+                             where data.TypePaid == "0" && data.CustomerId == idCustomer
+                             orderby data.PaidDate ascending
+                             select data).ToList();
+                customer Customer = new customer();
+                Customer = (from data in _db.customers
+                            where data.id == idCustomer
+                            select data).FirstOrDefault();
+                int tien_goc_da_tra = 0;
+                if (list_paid.Count == 0)
+                {
+                    return Customer.Money;
+                }
+                int tien_goc_no = 0;
+                int index = 1;
+                for (int i = 0; i < list_paid.Count; i++)
+                {
+                    if (date >= Customer.CreatedAt && date < list_paid[0].PaidDate)
+                    {
+                        tien_goc_no = Customer.Money;
+                    }
+                    else
+                    {
+                        tien_goc_da_tra += list_paid[i].Money;
+                        DateTime end_date = DateTime.Now;
+                        if (index < list_paid.Count)
+                        {
+                            end_date = list_paid[index].PaidDate;
+                        }
+                        if (date >= list_paid[index - 1].PaidDate && date < end_date)
+                        {
+                            tien_goc_no = Customer.Money - tien_goc_da_tra;
+                            index++;
+                        }
+
+                    }
+                }
+                return tien_goc_no;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public bool Add_Paid_Money(historyPaid hisPaid, int action_status, user user)
