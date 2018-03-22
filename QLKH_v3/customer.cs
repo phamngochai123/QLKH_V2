@@ -36,7 +36,6 @@ namespace QLKH_v3
         public string Address { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
-        public int PaidMoney { get; set; }
     
         public virtual category category { get; set; }
         public virtual interestRate interestRate { get; set; }

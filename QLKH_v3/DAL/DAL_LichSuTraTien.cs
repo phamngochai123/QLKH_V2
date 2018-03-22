@@ -108,6 +108,18 @@ namespace QLKH_v3.DAL
                                select data).ToList();
 
                 double tien_lai=0;
+                int so_tien_vay = customer.Money;
+                for (int i = 0; i < lstPair.Count; i++)
+                {
+                    DateTime start_date = lstPair[i].PaidDate.AddDays(i);
+                    for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
+                    {
+                        if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j + 1].StartDate)
+                        {
+                            tien_lai += tien_no * lst_lai_suat[j].Percents * 0.01;
+                        }
+                    }
+                }
                 int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(history.PaidDate)).Days;
 
                 for (int i = 0; i < demngay; i++)
@@ -116,7 +128,7 @@ namespace QLKH_v3.DAL
                     for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
                     {
                         if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j +1].StartDate) {
-                            tien_lai += tien_no * lst_lai_suat[j].Percents *0.01;
+                            tien_lai += tien_no * lst_lai_suat[j].Percents * 0.01;
                         }
                     }
                 }

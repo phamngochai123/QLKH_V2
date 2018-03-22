@@ -49,8 +49,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txt_percent = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_name_category = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcLaiSuat)).BeginInit();
@@ -63,7 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_percent.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name_category.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBody
@@ -162,8 +159,6 @@
             this.panelheader.Controls.Add(this.labelControl3);
             this.panelheader.Controls.Add(this.labelControl2);
             this.panelheader.Controls.Add(this.txt_percent);
-            this.panelheader.Controls.Add(this.labelControl1);
-            this.panelheader.Controls.Add(this.txt_name_category);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Name = "panelheader";
@@ -223,7 +218,7 @@
             // 
             this.date_start.EditValue = null;
             this.date_start.Enabled = false;
-            this.date_start.Location = new System.Drawing.Point(134, 40);
+            this.date_start.Location = new System.Drawing.Point(129, 10);
             this.date_start.Name = "date_start";
             this.date_start.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_start.Properties.Appearance.Options.UseFont = true;
@@ -237,7 +232,7 @@
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(10, 43);
+            this.labelControl5.Location = new System.Drawing.Point(5, 13);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(86, 16);
             this.labelControl5.TabIndex = 9;
@@ -265,7 +260,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(263, 73);
+            this.labelControl3.Location = new System.Drawing.Point(258, 43);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(26, 16);
             this.labelControl3.TabIndex = 6;
@@ -274,7 +269,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(10, 73);
+            this.labelControl2.Location = new System.Drawing.Point(5, 43);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(118, 16);
             this.labelControl2.TabIndex = 5;
@@ -283,7 +278,7 @@
             // txt_percent
             // 
             this.txt_percent.EditValue = "";
-            this.txt_percent.Location = new System.Drawing.Point(134, 70);
+            this.txt_percent.Location = new System.Drawing.Point(129, 40);
             this.txt_percent.Name = "txt_percent";
             this.txt_percent.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_percent.Properties.Appearance.Options.UseFont = true;
@@ -291,24 +286,6 @@
             this.txt_percent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_percent.Size = new System.Drawing.Size(123, 22);
             this.txt_percent.TabIndex = 4;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(10, 13);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(74, 16);
-            this.labelControl1.TabIndex = 3;
-            this.labelControl1.Text = "Tên lãi suất";
-            // 
-            // txt_name_category
-            // 
-            this.txt_name_category.Location = new System.Drawing.Point(134, 10);
-            this.txt_name_category.Name = "txt_name_category";
-            this.txt_name_category.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name_category.Properties.Appearance.Options.UseFont = true;
-            this.txt_name_category.Size = new System.Drawing.Size(217, 22);
-            this.txt_name_category.TabIndex = 2;
             // 
             // ucQLLaiSuat
             // 
@@ -332,7 +309,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_percent.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name_category.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,8 +322,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txt_percent;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txt_name_category;
         private DevExpress.XtraEditors.DateEdit date_start;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.MemoEdit txt_ghi_chu;
