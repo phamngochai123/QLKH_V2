@@ -24,6 +24,19 @@ namespace QLKH_v3.UI
             InitializeComponent();
         }
 
+        private void Load_Data()
+        {
+            try
+            {
+                grcKhachHang.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer());
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+
         private void btn_them_Click(object sender, EventArgs e)
         {
             txt_fullname.ReadOnly = false;
@@ -67,6 +80,7 @@ namespace QLKH_v3.UI
         private void ucQLKhachHang_Load(object sender, EventArgs e)
         {
             InitData();
+            Load_Data();
         }
     }
 }

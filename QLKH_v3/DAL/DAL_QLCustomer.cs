@@ -12,14 +12,28 @@ namespace QLKH_v3.DAL
         QLKHEntities _db = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
-        public List<customer> Get_List_Customer()
+        DAL_LichSuTraTien DAL_Lichsutratien = new DAL_LichSuTraTien();
+        public List<Model.Customer> Get_List_Customer()
         {
-            List<customer> lst_Customer = new List<customer>();
+            List<Model.Customer> lst_Customer = new List<Model.Customer>();
             try
             {
                 lst_Customer = (from data in _db.customers
                                 where (data.Status == true)
-                                select data).AsEnumerable().ToList();
+                                select new Model.Customer {
+                                    id = data.id,
+                                    FullName = data.FullName,
+                                    Money = data.Money,
+                                    IdCard = data.IdCard,
+                                    Phone = data.PhoneNumber,
+                                    CreatedAt = data.CreatedAt,
+                                }).AsEnumerable().ToList();
+                for (int i = 0; i < lst_Customer.Count; i++)
+                {
+                    lst_Customer[i].AfterMoney = Get_After_Money(lst_Customer[i].id);
+                    lst_Customer[i].InterestMoney = DAL_Lichsutratien.Get_Tien_Lai(lst_Customer[i].id);
+                    lst_Customer[i].AfterDate = Get_After_Date(lst_Customer[i].id);
+                }
             }
             catch (Exception ex)
             {
@@ -28,6 +42,37 @@ namespace QLKH_v3.DAL
             }
             return lst_Customer;
         }
+
+        public int Get_After_Date(int IdCustomer) //lấy số ngày chậm lãi
+        {
+            customer Customer = new customer();
+            Customer = (from data in _db.customers
+                        where data.id == IdCustomer && data.Status == true
+                        select data).FirstOrDefault();
+            historyPaid Last_Paid = new historyPaid();
+            Last_Paid = (from data in _db.historyPaids
+                         where data.CustomerId == IdCustomer
+                         orderby data.PaidDate descending
+                         select data).FirstOrDefault();
+            if (Last_Paid != null)
+            {
+                return (DateTime.Now - Last_Paid.PaidDate).Days > 10 ? (DateTime.Now - Last_Paid.PaidDate).Days - 10 : 0;
+            }
+            return (DateTime.Now - Customer.CreatedAt).Days > 10 ? (DateTime.Now - Customer.CreatedAt).Days - 10 : 0;
+        }
+
+        public int Get_After_Money(int IdCustomer) //lấy số nợ còn phải trả
+        {
+            int tien_goc = (from data in _db.customers
+                            where data.Status == true && data.id == IdCustomer
+                            select data.Money).FirstOrDefault();
+            var lich_su_tra_tien_goc = (from data in _db.historyPaids
+                                        where data.CustomerId == IdCustomer && data.TypePaid == "0"
+                                        select data).ToList();
+            var tien_goc_da_tra = lich_su_tra_tien_goc.Select(m => m.Money).Sum();
+            return tien_goc - tien_goc_da_tra;
+        }
+
         public customer Get_Customer(int id_Customer)
         {
             customer Customer = new customer();

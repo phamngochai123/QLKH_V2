@@ -66,7 +66,7 @@ namespace QLKH_v3.DAL
             }
             return Customer;
         }
-        public historyPaid Get_Tien_Lai(int IdCustomer)
+        public double Get_Tien_Lai(int IdCustomer)
         {
             historyPaid history = new historyPaid();
             customer customer = new customer();
@@ -82,8 +82,6 @@ namespace QLKH_v3.DAL
                 customer = (from data in _db.customers
                             where data.id == IdCustomer
                             select data).FirstOrDefault();
-
-                // List<int?> TongTienNoDaTra = _db.prd_TongTienNoDaTra(IdCustomer);
 
                 int TongTienNoDaTra = 0;
                 List<historyPaid> lstPair = new List<historyPaid>();
@@ -111,17 +109,6 @@ namespace QLKH_v3.DAL
 
                 double tien_lai = 0;
                 int so_tien_vay = customer.Money;
-                //for (int i = 0; i < lstPair.Count; i++)
-                //{
-                //    DateTime start_date = lstPair[i].PaidDate.AddDays(i);
-                //    for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
-                //    {
-                //        if (start_date >= lst_lai_suat[j].StartDate && start_date < lst_lai_suat[j + 1].StartDate)
-                //        {
-                //            tien_lai += tien_no * lst_lai_suat[j].Percents * 0.01;
-                //        }
-                //    }
-                //}
 
                 int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(start_date)).Days;
 
@@ -140,13 +127,13 @@ namespace QLKH_v3.DAL
 
 
                 // Util.Show_Message_Notification(Message.msg_notification, dateRange.ToString());
-
+                return tien_lai;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return history;
+
         }
 
         public double get_tien_goc_by_day(DateTime date, int idCustomer)
@@ -178,9 +165,9 @@ namespace QLKH_v3.DAL
                     {
                         tien_goc_da_tra += list_paid[i].Money;
                         DateTime end_date = DateTime.Now;
-                        if (i+1 < list_paid.Count)
+                        if (i + 1 < list_paid.Count)
                         {
-                            end_date = list_paid[i+1].PaidDate;
+                            end_date = list_paid[i + 1].PaidDate;
                         }
                         if (date >= list_paid[i].PaidDate && date < end_date)
                         {
