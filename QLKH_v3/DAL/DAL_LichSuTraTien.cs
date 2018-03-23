@@ -168,7 +168,6 @@ namespace QLKH_v3.DAL
                     return Customer.Money;
                 }
                 int tien_goc_no = 0;
-                int index = 1;
                 for (int i = 0; i < list_paid.Count; i++)
                 {
                     if (date >= Customer.CreatedAt && date < list_paid[0].PaidDate)
@@ -179,14 +178,13 @@ namespace QLKH_v3.DAL
                     {
                         tien_goc_da_tra += list_paid[i].Money;
                         DateTime end_date = DateTime.Now;
-                        if (index < list_paid.Count)
+                        if (i+1 < list_paid.Count)
                         {
-                            end_date = list_paid[index].PaidDate;
+                            end_date = list_paid[i+1].PaidDate;
                         }
-                        if (date >= list_paid[index - 1].PaidDate && date < end_date)
+                        if (date >= list_paid[i].PaidDate && date < end_date)
                         {
                             tien_goc_no = Customer.Money - tien_goc_da_tra;
-                            index++;
                         }
 
                     }
