@@ -33,18 +33,12 @@
             this.grvKhachHang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelBody = new DevExpress.XtraEditors.PanelControl();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_rela_friend3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_name_friend3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_phone_friend3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_rela_friend2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_name_friend2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_phone_friend2 = new DevExpress.XtraEditors.TextEdit();
+            this.grcFriend = new DevExpress.XtraGrid.GridControl();
+            this.grvFriend = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rela = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbb_category = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.radio_sex_customer = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txt_rela_friend1 = new DevExpress.XtraEditors.TextEdit();
@@ -52,8 +46,6 @@
             this.txt_name_friend1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txt_phone_friend1 = new DevExpress.XtraEditors.TextEdit();
-            this.cbx_category_customer = new System.Windows.Forms.ComboBox();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.date_birthday = new DevExpress.XtraEditors.DateEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -75,23 +67,20 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_fullname = new DevExpress.XtraEditors.TextEdit();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_rela_friend3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name_friend3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone_friend3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_rela_friend2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name_friend2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone_friend2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcFriend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvFriend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_category.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radio_sex_customer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_rela_friend1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name_friend1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone_friend1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone_family.Properties)).BeginInit();
@@ -101,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_idCard_customer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grcKhachHang
@@ -130,18 +120,8 @@
             // 
             // panelheader
             // 
-            this.panelheader.Controls.Add(this.labelControl17);
-            this.panelheader.Controls.Add(this.txt_rela_friend3);
-            this.panelheader.Controls.Add(this.labelControl18);
-            this.panelheader.Controls.Add(this.txt_name_friend3);
-            this.panelheader.Controls.Add(this.labelControl19);
-            this.panelheader.Controls.Add(this.txt_phone_friend3);
-            this.panelheader.Controls.Add(this.labelControl7);
-            this.panelheader.Controls.Add(this.txt_rela_friend2);
-            this.panelheader.Controls.Add(this.labelControl13);
-            this.panelheader.Controls.Add(this.txt_name_friend2);
-            this.panelheader.Controls.Add(this.labelControl16);
-            this.panelheader.Controls.Add(this.txt_phone_friend2);
+            this.panelheader.Controls.Add(this.grcFriend);
+            this.panelheader.Controls.Add(this.cbb_category);
             this.panelheader.Controls.Add(this.radio_sex_customer);
             this.panelheader.Controls.Add(this.labelControl8);
             this.panelheader.Controls.Add(this.txt_rela_friend1);
@@ -149,7 +129,6 @@
             this.panelheader.Controls.Add(this.txt_name_friend1);
             this.panelheader.Controls.Add(this.labelControl15);
             this.panelheader.Controls.Add(this.txt_phone_friend1);
-            this.panelheader.Controls.Add(this.cbx_category_customer);
             this.panelheader.Controls.Add(this.date_birthday);
             this.panelheader.Controls.Add(this.labelControl9);
             this.panelheader.Controls.Add(this.labelControl11);
@@ -177,119 +156,63 @@
             this.panelheader.Size = new System.Drawing.Size(1271, 328);
             this.panelheader.TabIndex = 4;
             // 
-            // labelControl17
+            // grcFriend
             // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl17.Location = new System.Drawing.Point(962, 251);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(78, 16);
-            this.labelControl17.TabIndex = 83;
-            this.labelControl17.Text = "Mối quan hệ";
+            this.grcFriend.Location = new System.Drawing.Point(640, 170);
+            this.grcFriend.MainView = this.grvFriend;
+            this.grcFriend.Name = "grcFriend";
+            this.grcFriend.Size = new System.Drawing.Size(559, 134);
+            this.grcFriend.TabIndex = 85;
+            this.grcFriend.UseEmbeddedNavigator = true;
+            this.grcFriend.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvFriend});
             // 
-            // txt_rela_friend3
+            // grvFriend
             // 
-            this.txt_rela_friend3.Location = new System.Drawing.Point(1058, 248);
-            this.txt_rela_friend3.Name = "txt_rela_friend3";
-            this.txt_rela_friend3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rela_friend3.Properties.Appearance.Options.UseFont = true;
-            this.txt_rela_friend3.Properties.ReadOnly = true;
-            this.txt_rela_friend3.Size = new System.Drawing.Size(141, 22);
-            this.txt_rela_friend3.TabIndex = 82;
+            this.grvFriend.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.phone,
+            this.name,
+            this.rela});
+            this.grvFriend.GridControl = this.grcFriend;
+            this.grvFriend.Name = "grvFriend";
+            this.grvFriend.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.grvFriend.OptionsView.ShowChildrenInGroupPanel = true;
+            this.grvFriend.OptionsView.ShowGroupPanel = false;
+            this.grvFriend.OptionsView.ShowPreviewRowLines = DevExpress.Utils.DefaultBoolean.True;
             // 
-            // labelControl18
+            // phone
             // 
-            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl18.Location = new System.Drawing.Point(703, 248);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(71, 16);
-            this.labelControl18.TabIndex = 81;
-            this.labelControl18.Text = "Họ tên bạn";
+            this.phone.Caption = "Số điện thoại bạn bè";
+            this.phone.FieldName = "phone";
+            this.phone.Name = "phone";
+            this.phone.Visible = true;
+            this.phone.VisibleIndex = 0;
             // 
-            // txt_name_friend3
+            // name
             // 
-            this.txt_name_friend3.Location = new System.Drawing.Point(790, 245);
-            this.txt_name_friend3.Name = "txt_name_friend3";
-            this.txt_name_friend3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name_friend3.Properties.Appearance.Options.UseFont = true;
-            this.txt_name_friend3.Properties.ReadOnly = true;
-            this.txt_name_friend3.Size = new System.Drawing.Size(137, 22);
-            this.txt_name_friend3.TabIndex = 80;
+            this.name.Caption = "Họ tên bạn";
+            this.name.Name = "name";
+            this.name.Visible = true;
+            this.name.VisibleIndex = 1;
             // 
-            // labelControl19
+            // rela
             // 
-            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl19.Location = new System.Drawing.Point(409, 248);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(112, 16);
-            this.labelControl19.TabIndex = 79;
-            this.labelControl19.Text = "Số điện thoại bạn";
+            this.rela.Caption = "Mối quan hệ";
+            this.rela.FieldName = "rela";
+            this.rela.Name = "rela";
+            this.rela.Visible = true;
+            this.rela.VisibleIndex = 2;
             // 
-            // txt_phone_friend3
+            // cbb_category
             // 
-            this.txt_phone_friend3.Location = new System.Drawing.Point(553, 245);
-            this.txt_phone_friend3.Name = "txt_phone_friend3";
-            this.txt_phone_friend3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone_friend3.Properties.Appearance.Options.UseFont = true;
-            this.txt_phone_friend3.Properties.ReadOnly = true;
-            this.txt_phone_friend3.Size = new System.Drawing.Size(134, 22);
-            this.txt_phone_friend3.TabIndex = 78;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Location = new System.Drawing.Point(959, 216);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(78, 16);
-            this.labelControl7.TabIndex = 77;
-            this.labelControl7.Text = "Mối quan hệ";
-            // 
-            // txt_rela_friend2
-            // 
-            this.txt_rela_friend2.Location = new System.Drawing.Point(1058, 213);
-            this.txt_rela_friend2.Name = "txt_rela_friend2";
-            this.txt_rela_friend2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rela_friend2.Properties.Appearance.Options.UseFont = true;
-            this.txt_rela_friend2.Properties.ReadOnly = true;
-            this.txt_rela_friend2.Size = new System.Drawing.Size(138, 22);
-            this.txt_rela_friend2.TabIndex = 76;
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Location = new System.Drawing.Point(700, 213);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(71, 16);
-            this.labelControl13.TabIndex = 75;
-            this.labelControl13.Text = "Họ tên bạn";
-            // 
-            // txt_name_friend2
-            // 
-            this.txt_name_friend2.Location = new System.Drawing.Point(790, 210);
-            this.txt_name_friend2.Name = "txt_name_friend2";
-            this.txt_name_friend2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name_friend2.Properties.Appearance.Options.UseFont = true;
-            this.txt_name_friend2.Properties.ReadOnly = true;
-            this.txt_name_friend2.Size = new System.Drawing.Size(137, 22);
-            this.txt_name_friend2.TabIndex = 74;
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Location = new System.Drawing.Point(409, 213);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(112, 16);
-            this.labelControl16.TabIndex = 73;
-            this.labelControl16.Text = "Số điện thoại bạn";
-            // 
-            // txt_phone_friend2
-            // 
-            this.txt_phone_friend2.Location = new System.Drawing.Point(553, 210);
-            this.txt_phone_friend2.Name = "txt_phone_friend2";
-            this.txt_phone_friend2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone_friend2.Properties.Appearance.Options.UseFont = true;
-            this.txt_phone_friend2.Properties.ReadOnly = true;
-            this.txt_phone_friend2.Size = new System.Drawing.Size(134, 22);
-            this.txt_phone_friend2.TabIndex = 72;
+            this.cbb_category.Location = new System.Drawing.Point(551, 107);
+            this.cbb_category.Name = "cbb_category";
+            this.cbb_category.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_category.Properties.Appearance.Options.UseFont = true;
+            this.cbb_category.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_category.Size = new System.Drawing.Size(273, 22);
+            this.cbb_category.TabIndex = 84;
             // 
             // radio_sex_customer
             // 
@@ -309,7 +232,7 @@
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Location = new System.Drawing.Point(962, 181);
+            this.labelControl8.Location = new System.Drawing.Point(980, 85);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(78, 16);
             this.labelControl8.TabIndex = 70;
@@ -317,7 +240,7 @@
             // 
             // txt_rela_friend1
             // 
-            this.txt_rela_friend1.Location = new System.Drawing.Point(1058, 178);
+            this.txt_rela_friend1.Location = new System.Drawing.Point(1074, 82);
             this.txt_rela_friend1.Name = "txt_rela_friend1";
             this.txt_rela_friend1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_rela_friend1.Properties.Appearance.Options.UseFont = true;
@@ -328,7 +251,7 @@
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Location = new System.Drawing.Point(703, 178);
+            this.labelControl14.Location = new System.Drawing.Point(987, 52);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(71, 16);
             this.labelControl14.TabIndex = 68;
@@ -336,7 +259,7 @@
             // 
             // txt_name_friend1
             // 
-            this.txt_name_friend1.Location = new System.Drawing.Point(790, 175);
+            this.txt_name_friend1.Location = new System.Drawing.Point(1074, 49);
             this.txt_name_friend1.Name = "txt_name_friend1";
             this.txt_name_friend1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name_friend1.Properties.Appearance.Options.UseFont = true;
@@ -347,7 +270,7 @@
             // labelControl15
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Location = new System.Drawing.Point(409, 178);
+            this.labelControl15.Location = new System.Drawing.Point(946, 14);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(112, 16);
             this.labelControl15.TabIndex = 66;
@@ -355,27 +278,13 @@
             // 
             // txt_phone_friend1
             // 
-            this.txt_phone_friend1.Location = new System.Drawing.Point(553, 175);
+            this.txt_phone_friend1.Location = new System.Drawing.Point(1074, 11);
             this.txt_phone_friend1.Name = "txt_phone_friend1";
             this.txt_phone_friend1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_phone_friend1.Properties.Appearance.Options.UseFont = true;
             this.txt_phone_friend1.Properties.ReadOnly = true;
             this.txt_phone_friend1.Size = new System.Drawing.Size(134, 22);
             this.txt_phone_friend1.TabIndex = 65;
-            // 
-            // cbx_category_customer
-            // 
-            this.cbx_category_customer.DataSource = this.categoryBindingSource;
-            this.cbx_category_customer.Enabled = false;
-            this.cbx_category_customer.FormattingEnabled = true;
-            this.cbx_category_customer.Location = new System.Drawing.Point(553, 108);
-            this.cbx_category_customer.Name = "cbx_category_customer";
-            this.cbx_category_customer.Size = new System.Drawing.Size(273, 21);
-            this.cbx_category_customer.TabIndex = 62;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(QLKH_v3.category);
             // 
             // date_birthday
             // 
@@ -585,6 +494,10 @@
             this.txt_fullname.Size = new System.Drawing.Size(273, 22);
             this.txt_fullname.TabIndex = 7;
             // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(QLKH_v3.category);
+            // 
             // ucQLKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +506,7 @@
             this.Controls.Add(this.panelheader);
             this.Name = "ucQLKhachHang";
             this.Size = new System.Drawing.Size(1271, 450);
+            this.Load += new System.EventHandler(this.ucQLKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
@@ -600,17 +514,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_rela_friend3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name_friend3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone_friend3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_rela_friend2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_name_friend2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone_friend2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcFriend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvFriend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_category.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radio_sex_customer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_rela_friend1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name_friend1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone_friend1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_birthday.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone_family.Properties)).EndInit();
@@ -620,6 +530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_idCard_customer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -651,7 +562,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.TextEdit txt_money;
         private DevExpress.XtraEditors.DateEdit date_birthday;
-        private System.Windows.Forms.ComboBox cbx_category_customer;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit txt_rela_friend1;
@@ -659,18 +569,12 @@
         private DevExpress.XtraEditors.TextEdit txt_name_friend1;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.TextEdit txt_phone_friend1;
-        private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.TextEdit txt_rela_friend3;
-        private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.TextEdit txt_name_friend3;
-        private DevExpress.XtraEditors.LabelControl labelControl19;
-        private DevExpress.XtraEditors.TextEdit txt_phone_friend3;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit txt_rela_friend2;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.TextEdit txt_name_friend2;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.TextEdit txt_phone_friend2;
         private DevExpress.XtraEditors.RadioGroup radio_sex_customer;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cbb_category;
+        private DevExpress.XtraGrid.GridControl grcFriend;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvFriend;
+        private DevExpress.XtraGrid.Columns.GridColumn phone;
+        private DevExpress.XtraGrid.Columns.GridColumn name;
+        private DevExpress.XtraGrid.Columns.GridColumn rela;
     }
 }

@@ -231,3 +231,4 @@ F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_User.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_User.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_LichSuTraTien.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_LichSuTraTien.resources
+E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.csprojResolveAssemblyReference.cache

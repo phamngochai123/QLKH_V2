@@ -104,5 +104,21 @@ namespace QLKH_v3.DAL
             }
             return check;
         }
+        public List<category> Get_List_Category(string table_name)
+        {
+            List<category> lst_category = new List<category>();
+            try
+            {
+                lst_category = (from data in _db.categories
+                                where data.Status == true
+                                select data).ToList();
+                return lst_category;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lst_category;
+        }
     }
 }
