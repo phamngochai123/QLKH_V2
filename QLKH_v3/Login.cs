@@ -25,12 +25,12 @@ namespace QLKH_v3
 
         private bool checkValidate()
         {
-            if (txt_login_username.Text.ToString().Trim() == "")
+            if (txt_login_username.Text.ToString().Trim() == "" || txt_login_username.Text == "Tên đăng nhập")
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập tên tài khoản");
                 return false;
             }
-            if (txt_login_password.Text.ToString().Trim() == "")
+            if (txt_login_password.Text.ToString().Trim() == "" || txt_login_password.Text == "Mật khẩu")
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập mật khẩu");
                 return false;
@@ -61,9 +61,9 @@ namespace QLKH_v3
             }
             catch (Exception ex)
             {
-                Util.Show_Message_Error(Message.msg_error, ex.Message);
+                Util.Show_Message_Error(Message.msg_error, "không thể kết nối đến cơ sở dữ liệu");
             }
-           
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -77,6 +77,52 @@ namespace QLKH_v3
             {
                 HandleLogin();
             }
+        }
+
+        public void RemoveTextUser(object sender, EventArgs e)
+        {
+            txt_login_username.Text = "";
+        }
+        public void RemoveTextPassWord(object sender, EventArgs e)
+        {
+            txt_login_password.Text = "";
+            txt_login_password.Properties.PasswordChar = '*';
+        }
+        public void AddTextUser(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txt_login_username.Text))
+                txt_login_username.Text = "Tên đăng nhập";
+            txt_login_username.ForeColor = Color.Gray;
+        }
+
+        public void AddTextPassWord(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txt_login_password.Text))
+            {
+                txt_login_password.Text = "Mật khẩu";
+                txt_login_password.Properties.PasswordChar = '\0';
+                txt_login_password.ForeColor = Color.Gray;
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txt_login_username.Text = "Tên đăng nhập";
+            txt_login_password.Text = "Mật khẩu";
+
+            txt_login_username.ForeColor = Color.Gray;
+            txt_login_password.ForeColor = Color.Gray;
+
+            txt_login_username.GotFocus += new EventHandler(RemoveTextUser);
+            txt_login_username.LostFocus += new EventHandler(AddTextUser);
+
+            txt_login_password.GotFocus += new EventHandler(RemoveTextPassWord);
+            txt_login_password.LostFocus += new EventHandler(AddTextPassWord);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

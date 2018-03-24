@@ -338,6 +338,8 @@
       <DependentUpon>QLKH.edmx</DependentUpon>
       <LastGenOutput>QLKH.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\loginBackgroundIPadLandscape%402x.jpg" />
+    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
