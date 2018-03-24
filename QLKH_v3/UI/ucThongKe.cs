@@ -42,6 +42,21 @@ namespace QLKH_v3.UI
                                     }
                      ).OrderBy(g => g.month).ToList();
             chart_customer_by_month.DataSource = lst_customer;
+            DataTable table = new DataTable("Table1");
+
+            // Add three columns to the table.
+            table.Columns.Add("Month", typeof(String));
+            table.Columns.Add("Section", typeof(String));
+            table.Columns.Add("Value", typeof(Int32));
+
+            // Add data rows to the table.
+            table.Rows.Add(new object[] { "", "2", 1 });
+            table.Rows.Add(new object[] { "", "3", 9 });
+            chart_customer_by_month.DataSource = table;
+            chart_customer_by_month.SeriesDataMember = "Month";
+            chart_customer_by_month.SeriesTemplate.ArgumentDataMember = "Section";
+            chart_customer_by_month.SeriesTemplate.ValueDataMembers.AddRange(new String[] { "Value" });
+            chart_customer_by_month.SeriesNameTemplate.BeginText = "Month: ";
         }
 
         private void uc_Category_Load(object sender, EventArgs e)
