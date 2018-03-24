@@ -19,7 +19,7 @@ namespace QLKH_v3.DAL
             try
             {
                 lst_Customer = (from data in _db.customers
-                                where (data.Status == true)
+                                where (data.Status == false)
                                 select new Model.Customer {
                                     id = data.id,
                                     FullName = data.FullName,

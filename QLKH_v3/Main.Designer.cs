@@ -281,6 +281,9 @@
             this.btnQLBanBe = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLUser = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.btn_tkkh = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_tkdt = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.tabQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.GroupQLLaiSuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.GroupQLDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -291,6 +294,10 @@
             this.GroupQLBanBe = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupQLUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.tab_thong_ke = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btn_thong_ke_khach_hang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_thong_ke_doanh_thu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemFontEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemFontEdit();
             this.repositoryItemSpreadsheetFontSizeEdit1 = new DevExpress.XtraSpreadsheet.Design.RepositoryItemSpreadsheetFontSizeEdit();
@@ -442,13 +449,17 @@
             this.btnLichSuThanhToan,
             this.btnQLBanBe,
             this.btnQLUser,
-            this.skinRibbonGalleryBarItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.btn_tkkh,
+            this.btn_tkdt,
+            this.skinRibbonGalleryBarItem2});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 396;
+            this.ribbonControl.MaxItemId = 399;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.tabQuanTri,
-            this.tabQuanLy});
+            this.tabQuanLy,
+            this.tab_thong_ke});
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemFontEdit1,
@@ -571,6 +582,26 @@
             this.skinRibbonGalleryBarItem1.Id = 395;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // btn_tkkh
+            // 
+            this.btn_tkkh.Caption = "Thống kê khách hàng";
+            this.btn_tkkh.Id = 396;
+            this.btn_tkkh.Name = "btn_tkkh";
+            this.btn_tkkh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tkkh_ItemClick);
+            // 
+            // btn_tkdt
+            // 
+            this.btn_tkdt.Caption = "Thống kê doanh thu";
+            this.btn_tkdt.Id = 397;
+            this.btn_tkdt.Name = "btn_tkdt";
+            this.btn_tkdt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tkdt_ItemClick);
+            // 
+            // skinRibbonGalleryBarItem2
+            // 
+            this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
+            this.skinRibbonGalleryBarItem2.Id = 398;
+            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
             // tabQuanTri
             // 
             this.tabQuanTri.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -633,6 +664,30 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Skin";
+            // 
+            // tab_thong_ke
+            // 
+            this.tab_thong_ke.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.btn_thong_ke_khach_hang,
+            this.btn_thong_ke_doanh_thu,
+            this.ribbonPageGroup1});
+            this.tab_thong_ke.Name = "tab_thong_ke";
+            this.tab_thong_ke.Text = "Thống kê";
+            // 
+            // btn_thong_ke_khach_hang
+            // 
+            this.btn_thong_ke_khach_hang.ItemLinks.Add(this.btn_tkkh);
+            this.btn_thong_ke_khach_hang.Name = "btn_thong_ke_khach_hang";
+            // 
+            // btn_thong_ke_doanh_thu
+            // 
+            this.btn_thong_ke_doanh_thu.ItemLinks.Add(this.btn_tkdt);
+            this.btn_thong_ke_doanh_thu.Name = "btn_thong_ke_doanh_thu";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.skinRibbonGalleryBarItem2);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // repositoryItemTextEdit1
             // 
@@ -2466,6 +2521,13 @@
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem4;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu appMenu;
+        private DevExpress.XtraBars.BarButtonItem btn_tkkh;
+        private DevExpress.XtraBars.BarButtonItem btn_tkdt;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPage tab_thong_ke;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup btn_thong_ke_khach_hang;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup btn_thong_ke_doanh_thu;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
 
     }
 }

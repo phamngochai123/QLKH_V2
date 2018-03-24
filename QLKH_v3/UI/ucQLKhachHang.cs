@@ -62,6 +62,8 @@ namespace QLKH_v3.UI
             btn_cancel_customer.Enabled = true;
         }
         private void InitData(){
+            List<Model.Friend> lst_friend = new List<Model.Friend>();
+            grcFriend.DataSource = Util.ConvertToDataTable(lst_friend);
             SetDataCbbCategory();
         }
         private void SetDataCbbCategory() {
@@ -81,6 +83,11 @@ namespace QLKH_v3.UI
         {
             InitData();
             Load_Data();
+        }
+
+        private void btn_cancel_customer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

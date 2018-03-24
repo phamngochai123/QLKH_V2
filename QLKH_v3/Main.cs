@@ -135,6 +135,21 @@ namespace QLKH_v3
             panelMain.Controls.Add(uc_ThongKe);
             //uc_ThongKe._user = _user;
         }
+        private void btn_tkkh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UI.ucThongKe uc_ThongKe = new UI.ucThongKe();
+            uc_ThongKe.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc_ThongKe);
+        }
+
+        private void btn_tkdt_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UI.uc_thongkedoanhthu uc_ThongKeDoanhThu = new UI.uc_thongkedoanhthu();
+            uc_ThongKeDoanhThu.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc_ThongKeDoanhThu);
+        }
 
     }
 }

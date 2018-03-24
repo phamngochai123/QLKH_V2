@@ -386,6 +386,7 @@
             this.grvUser.GridControl = this.grcUser;
             this.grvUser.Name = "grvUser";
             this.grvUser.OptionsFind.AlwaysVisible = true;
+            this.grvUser.OptionsView.ShowGroupPanel = false;
             this.grvUser.DoubleClick += new System.EventHandler(this.grvUser_DoubleClick);
             // 
             // gridColumn1

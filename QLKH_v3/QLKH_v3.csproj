@@ -139,6 +139,7 @@
     <Compile Include="Message\Message.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Friend.cs" />
     <Compile Include="Model\HistoryPaid.cs" />
     <Compile Include="Model\InterestRate.cs" />
     <Compile Include="Program.cs" />
@@ -225,6 +226,12 @@
     <Compile Include="UI\ucThongKe.Designer.cs">
       <DependentUpon>ucThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\uc_thongkedoanhthu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\uc_thongkedoanhthu.Designer.cs">
+      <DependentUpon>uc_thongkedoanhthu.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
@@ -276,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\uc_LichSuTraTien.resx">
       <DependentUpon>uc_LichSuTraTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\uc_thongkedoanhthu.resx">
+      <DependentUpon>uc_thongkedoanhthu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.Config">
       <SubType>Designer</SubType>

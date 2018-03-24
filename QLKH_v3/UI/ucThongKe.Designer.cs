@@ -108,7 +108,7 @@
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chart_customer_by_month.Diagram = xyDiagram1;
             this.chart_customer_by_month.Legend.Name = "Default Legend";
-            this.chart_customer_by_month.Location = new System.Drawing.Point(504, 67);
+            this.chart_customer_by_month.Location = new System.Drawing.Point(430, 49);
             this.chart_customer_by_month.Name = "chart_customer_by_month";
             series1.Name = "Series 1";
             this.chart_customer_by_month.SeriesSerializable = new DevExpress.XtraCharts.Series[] {

@@ -94,6 +94,7 @@
             this.gridColumn5});
             this.grvLaiSuat.GridControl = this.grcLaiSuat;
             this.grvLaiSuat.Name = "grvLaiSuat";
+            this.grvLaiSuat.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
