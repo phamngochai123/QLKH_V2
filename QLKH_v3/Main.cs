@@ -127,5 +127,14 @@ namespace QLKH_v3
             uc_HistoryPaid._user = _user;
         }
 
+        private void btnQLBanBe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            UI.ucThongKe uc_ThongKe = new UI.ucThongKe();
+            uc_ThongKe.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc_ThongKe);
+            //uc_ThongKe._user = _user;
+        }
+
     }
 }

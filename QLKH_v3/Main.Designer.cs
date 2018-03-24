@@ -549,9 +549,10 @@
             // 
             // btnQLBanBe
             // 
-            this.btnQLBanBe.Caption = "Quản lý bạn bè";
+            this.btnQLBanBe.Caption = "Thống kê";
             this.btnQLBanBe.Id = 393;
             this.btnQLBanBe.Name = "btnQLBanBe";
+            this.btnQLBanBe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLBanBe_ItemClick);
             // 
             // btnQLUser
             // 
@@ -563,6 +564,10 @@
             // skinRibbonGalleryBarItem1
             // 
             this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            // 
+            // 
+            // 
+            this.skinRibbonGalleryBarItem1.Gallery.ImageSize = new System.Drawing.Size(100, 0);
             this.skinRibbonGalleryBarItem1.Id = 395;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 

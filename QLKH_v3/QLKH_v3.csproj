@@ -62,6 +62,8 @@
     <Reference Include="DevExpress.Utils.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -103,6 +105,7 @@
     <Compile Include="DAL\DAL_QLFriend.cs" />
     <Compile Include="DAL\DAL_QLLaiSuat.cs" />
     <Compile Include="DAL\DAL_QLUser.cs" />
+    <Compile Include="DAL\DAL_Thongke.cs" />
     <Compile Include="Detail_Infor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +219,12 @@
     <Compile Include="UI\uc_LichSuTraTien.Designer.cs">
       <DependentUpon>uc_LichSuTraTien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ucThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucThongKe.Designer.cs">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="user.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
@@ -258,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ucQLUser.resx">
       <DependentUpon>ucQLUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ucThongKe.resx">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\uc_Category.resx">
       <DependentUpon>uc_Category.cs</DependentUpon>
