@@ -43,11 +43,15 @@ namespace QLKH_v3.UI.Detail
             bool check = true;
             try
             {
-
+                if (txt_name_category.Text == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập tên danh mục");
+                    return false;
+                }
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return check;
         }

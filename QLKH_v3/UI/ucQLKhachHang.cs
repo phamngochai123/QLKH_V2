@@ -220,7 +220,6 @@ namespace QLKH_v3.UI
                     Detail_Infor Detail_Infor = new Detail_Infor();
                     Detail_Infor.Str_Flag = Variable.detail_infor.Customer;
                     Detail_Infor.Data = row;
-                    //Detail_Infor._userId = _userId;
                     Detail_Infor._user = _user;
                     //Detail_Infor.ShowDialog();
                     DialogResult dialog_result = Detail_Infor.ShowDialog();
@@ -283,6 +282,46 @@ namespace QLKH_v3.UI
             {
                 throw ex;
             }
+        }
+
+        private void repositoryItemButtonEdit1_Click(object sender, EventArgs e)
+        {
+            int idCustomer = int.Parse(grvKhachHang.GetFocusedRowCellValue("id").ToString());
+            //int idCustomer = int.Parse(row["id"].ToString().Trim());
+            Detail_Infor Detail_Infor = new Detail_Infor();
+            Detail_Infor.Str_Flag = Variable.detail_infor.Friend_Customer;
+            Detail_Infor.idCustomer = idCustomer;
+            //Detail_Infor.Data_Friend = lst_friend;
+            //Detail_Infor.Data = row;
+            //Detail_Infor._user = _user;
+            Detail_Infor.ShowDialog();
+        }
+
+        private void btn_thanh_toan_Click(object sender, EventArgs e)
+        {
+            int idCustomer = int.Parse(grvKhachHang.GetFocusedRowCellValue("id").ToString());
+            //int idCustomer = int.Parse(row["id"].ToString().Trim());
+            Detail_Infor Detail_Infor = new Detail_Infor();
+            Detail_Infor.Str_Flag = Variable.detail_infor.Paid_Money;
+            Detail_Infor.idCustomer = idCustomer;
+            Detail_Infor._user = _user;
+            DialogResult dialog_result = Detail_Infor.ShowDialog();
+            if (dialog_result == DialogResult.Cancel)
+            {
+                InitData();
+                Load_Data();
+            }
+        }
+
+        private void btn_lich_su_thanh_toan_Click(object sender, EventArgs e)
+        {
+            int idCustomer = int.Parse(grvKhachHang.GetFocusedRowCellValue("id").ToString());
+            //int idCustomer = int.Parse(row["id"].ToString().Trim());
+            Detail_Infor Detail_Infor = new Detail_Infor();
+            Detail_Infor.Str_Flag = Variable.detail_infor.History_Paid;
+            Detail_Infor.idCustomer = idCustomer;
+            Detail_Infor._user = _user;
+            Detail_Infor.ShowDialog();
         }
     }
 }

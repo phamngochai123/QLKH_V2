@@ -18,6 +18,8 @@ namespace QLKH_v3
         Variable.Variable variable = new Variable.Variable();
         public String Str_Flag { set; get; }
         public DataRow Data { set; get; }
+        public int idCustomer { set; get; }
+        //public List<Model.Friend> Data_Friend { set; get; }
         public Detail_Infor()
         {
 
@@ -51,6 +53,35 @@ namespace QLKH_v3
                 uc_Detail_Customer.Dock = DockStyle.Fill;
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(uc_Detail_Customer);
+                uc_Detail_Customer._user = _user;
+            }
+            if (Str_Flag == variable.detail_infor.Friend_Customer)
+            {
+                UI.Detail.uc_List_Friend uc_List_Friend = new UI.Detail.uc_List_Friend();
+                //uc_List_Friend.List_Friend = Data_Friend;
+                uc_List_Friend.idCustomer = idCustomer;
+                uc_List_Friend.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_List_Friend);
+            }
+            if (Str_Flag == variable.detail_infor.Paid_Money)
+            {
+                UI.Detail.uc_Thanh_Toan uc_Thanh_Toan = new UI.Detail.uc_Thanh_Toan();
+                //uc_List_Friend.List_Friend = Data_Friend;
+                uc_Thanh_Toan.idCustomer = idCustomer;
+                uc_Thanh_Toan._user = _user;
+                uc_Thanh_Toan.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_Thanh_Toan);
+            }
+            if (Str_Flag == variable.detail_infor.History_Paid)
+            {
+                UI.Detail.uc_Lichsuthanhtoan uc_Lichsuthanhtoan = new UI.Detail.uc_Lichsuthanhtoan();
+                //uc_List_Friend.List_Friend = Data_Friend;
+                uc_Lichsuthanhtoan.idCustomer = idCustomer;
+                uc_Lichsuthanhtoan.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_Lichsuthanhtoan);
             }
         }
         public void close_form()

@@ -195,6 +195,24 @@
     <Compile Include="UI\Detail\uc_Detail_User.Designer.cs">
       <DependentUpon>uc_Detail_User.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Detail\uc_Lichsuthanhtoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Detail\uc_Lichsuthanhtoan.Designer.cs">
+      <DependentUpon>uc_Lichsuthanhtoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Detail\uc_List_Friend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Detail\uc_List_Friend.Designer.cs">
+      <DependentUpon>uc_List_Friend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Detail\uc_Thanh_Toan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Detail\uc_Thanh_Toan.Designer.cs">
+      <DependentUpon>uc_Thanh_Toan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dictionary.cs" />
     <Compile Include="UI\ucQLKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -274,6 +292,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Detail\uc_Detail_User.resx">
       <DependentUpon>uc_Detail_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Detail\uc_Lichsuthanhtoan.resx">
+      <DependentUpon>uc_Lichsuthanhtoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Detail\uc_List_Friend.resx">
+      <DependentUpon>uc_List_Friend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Detail\uc_Thanh_Toan.resx">
+      <DependentUpon>uc_Thanh_Toan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ucQLKhachHang.resx">
       <DependentUpon>ucQLKhachHang.cs</DependentUpon>

@@ -20,7 +20,8 @@ namespace QLKH_v3.DAL
             {
                 lst_Customer = (from data in _db.customers
                                 where (data.Status == true)
-                                select new Model.Customer {
+                                select new Model.Customer
+                                {
                                     id = data.id,
                                     FullName = data.FullName,
                                     Money = data.Money,
@@ -155,21 +156,29 @@ namespace QLKH_v3.DAL
             bool check = false;
             try
             {
-                if (Util.Cnv_Int(customer.id.ToString()) > 0)
+                if (Util.Cnv_Int(customer.id.ToString()) > -1)
                 {
                     customer data_edit = new customer();
                     data_edit = Get_Customer(customer.id);
 
                     if (action_status == Variable.action_status.is_update)
                     {            // update data
+                        data_edit.Address = customer.Address;
+                        data_edit.BirthDay = customer.BirthDay;
                         data_edit.FullName = customer.FullName;
                         data_edit.IdCard = customer.IdCard;
+                        data_edit.PhoneNumber = customer.PhoneNumber;
+                        data_edit.Sex = customer.Sex;
+                        data_edit.FamilyPhoneNumber = customer.FamilyPhoneNumber;
+                        data_edit.CategoryId = customer.CategoryId;
+                        data_edit.Money = customer.Money;
                         data_edit.Note = customer.Note;
                         data_edit.UpdatedAt = DateTime.Now;
+                        data_edit.UpdatedBy = user.id;
                     }
                     else if (action_status == Variable.action_status.is_delete)         // delete data
                     {
-                        data_edit.Status = customer.Status;
+                        data_edit.Status = false;
                     }
                 }
                 else
@@ -178,7 +187,7 @@ namespace QLKH_v3.DAL
                 }
                 _db.SaveChanges();
                 int IdCustomer = customer.id;
-                if (!add_friend(list_friend, user, IdCustomer))
+                if (action_status == Variable.action_status.is_add && !add_friend(list_friend, user, IdCustomer))
                 {
                     check = false;
                 }
@@ -218,6 +227,36 @@ namespace QLKH_v3.DAL
             }
 
         }
-       
+
+        public List<Model.Friend> get_list_friend(int idCustomer)
+        {
+            List<Model.Friend> lst_friend = new List<Model.Friend>();
+            try
+            {
+
+                lst_friend = (from data in _db.friends
+                              where data.CustomerId == idCustomer && data.Status == true
+                              select new Model.Friend
+                              {
+                                  FullName = data.FullName,
+                                  PhoneNumber = data.PhoneNumber,
+                                  Relationship = data.Relationship,
+                                  Note = data.Note,
+                                  Status = data.Status,
+                                  CustomerId = data.CustomerId,
+                                  UpdatedAt = data.UpdatedAt,
+                                  CreatedAt = data.CreatedAt,
+                                  UpdatedBy = data.UpdatedBy,
+                                  CreatedBy = data.CreatedBy
+                              }).ToList();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return lst_friend;
+        }
+
     }
 }

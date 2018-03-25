@@ -153,6 +153,7 @@
             this.btn_xoa.Size = new System.Drawing.Size(118, 30);
             this.btn_xoa.TabIndex = 83;
             this.btn_xoa.Text = "Xóa khách hàng";
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_sua
             // 
@@ -163,6 +164,7 @@
             this.btn_sua.Size = new System.Drawing.Size(118, 30);
             this.btn_sua.TabIndex = 82;
             this.btn_sua.Text = "Sửa khách hàng";
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // labelControl5
             // 
@@ -242,7 +244,6 @@
             this.txt_edit_fullname.Name = "txt_edit_fullname";
             this.txt_edit_fullname.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_edit_fullname.Properties.Appearance.Options.UseFont = true;
-            this.txt_edit_fullname.Properties.ReadOnly = true;
             this.txt_edit_fullname.Size = new System.Drawing.Size(337, 22);
             this.txt_edit_fullname.TabIndex = 71;
             // 

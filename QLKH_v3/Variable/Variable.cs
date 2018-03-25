@@ -23,6 +23,9 @@ namespace QLKH_v3.Variable
         public string Category = "Detail_Category";
         public string User = "Detail_User";
         public string Customer = "Detail_Customer";
+        public string Friend_Customer = "Friend_Customer";
+        public string Paid_Money = "Paid_Money";
+        public string History_Paid = "History_Paid";
     }
 
     

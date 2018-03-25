@@ -44,6 +44,41 @@ namespace QLKH_v3.DAL
             }
             return lst_History_Paid;
         }
+
+        public List<Model.HistoryPaid> Get_List_History_Paid(int idCustomer)
+        {
+            List<Model.HistoryPaid> lst_History_Paid = new List<Model.HistoryPaid>();
+            try
+            {
+                _db = new QLKHEntities();
+                lst_History_Paid = (from data in _db.historyPaids
+                                    join data_user in _db.users
+                                    on data.CreatedBy equals data_user.id
+                                    join data_customer in _db.customers
+                                    on data.CustomerId equals data_customer.id
+                                    where data.CustomerId == idCustomer
+                                    orderby data.PaidDate descending
+                                    select new Model.HistoryPaid
+                                    {
+                                        IdHistory = data.id,
+                                        NameCustomer = data_customer.FullName,
+                                        IdCard = data_customer.IdCard,
+                                        PhoneNumber = data_customer.PhoneNumber,
+                                        PaidDate = data.PaidDate,
+                                        PaidMoney = data.Money,
+                                        NoteHistory = data.Note,
+                                        TypePaid = data.TypePaid == "0" ? "Tiền gốc" : "Tiền lãi",
+                                        CreatedByUser = data_user.FullName,
+                                        CreatedAtHistory = data.CreatedAt
+                                    }).AsEnumerable().ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return lst_History_Paid;
+        }
         /// <summary>
         ///  function insert and update and delete category
         /// </summary>
