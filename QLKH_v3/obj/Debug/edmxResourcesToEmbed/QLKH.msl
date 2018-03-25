@@ -18,6 +18,7 @@
     <EntitySetMapping Name="customers">
       <EntityTypeMapping TypeName="QLKHModel.customer">
         <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
           <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="Address" ColumnName="Address" />
@@ -49,7 +50,6 @@
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
           <ScalarProperty Name="Relationship" ColumnName="Relationship" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

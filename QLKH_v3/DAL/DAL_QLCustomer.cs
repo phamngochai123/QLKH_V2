@@ -19,14 +19,19 @@ namespace QLKH_v3.DAL
             try
             {
                 lst_Customer = (from data in _db.customers
-                                where (data.Status == false)
+                                where (data.Status == true)
                                 select new Model.Customer {
                                     id = data.id,
                                     FullName = data.FullName,
                                     Money = data.Money,
                                     IdCard = data.IdCard,
-                                    Phone = data.PhoneNumber,
+                                    PhoneNumber = data.PhoneNumber,
                                     CreatedAt = data.CreatedAt,
+                                    Address = data.Address,
+                                    FamilyPhone = data.FamilyPhoneNumber,
+                                    Sex = data.Sex,
+                                    BirthDay = data.BirthDay,
+                                    IdCateGory = data.CategoryId,
                                 }).AsEnumerable().ToList();
                 for (int i = 0; i < lst_Customer.Count; i++)
                 {
@@ -38,7 +43,7 @@ namespace QLKH_v3.DAL
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             return lst_Customer;
         }
@@ -118,8 +123,7 @@ namespace QLKH_v3.DAL
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
             return lst_history_of_customer;
         }
@@ -136,7 +140,7 @@ namespace QLKH_v3.DAL
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             return lst_history_of_customer;
         }
@@ -146,33 +150,38 @@ namespace QLKH_v3.DAL
         /// <param name="ctgr"></param>         model User
         /// <param name="action_status"></param>        status: (add; edit; insert)
         /// <returns></returns>
-        public bool Add_and_Edit_Customer(customer ctgr, int action_status)
+        public bool Add_and_Edit_Customer(customer customer, List<Model.Friend> list_friend, int action_status, user user)
         {
             bool check = false;
             try
             {
-                if (Util.Cnv_Int(ctgr.id.ToString()) > 0)
+                if (Util.Cnv_Int(customer.id.ToString()) > 0)
                 {
                     customer data_edit = new customer();
-                    data_edit = Get_Customer(ctgr.id);
+                    data_edit = Get_Customer(customer.id);
 
                     if (action_status == Variable.action_status.is_update)
                     {            // update data
-                        data_edit.FullName = ctgr.FullName;
-                        data_edit.IdCard = ctgr.IdCard;
-                        data_edit.Note = ctgr.Note;
+                        data_edit.FullName = customer.FullName;
+                        data_edit.IdCard = customer.IdCard;
+                        data_edit.Note = customer.Note;
                         data_edit.UpdatedAt = DateTime.Now;
                     }
                     else if (action_status == Variable.action_status.is_delete)         // delete data
                     {
-                        data_edit.Status = ctgr.Status;
+                        data_edit.Status = customer.Status;
                     }
                 }
                 else
                 {
-                    _db.customers.Add(ctgr);                                           // add data
+                    _db.customers.Add(customer);                                       // add data
                 }
                 _db.SaveChanges();
+                int IdCustomer = customer.id;
+                if (!add_friend(list_friend, user, IdCustomer))
+                {
+                    check = false;
+                }
                 check = true;
             }
             catch (Exception)
@@ -180,6 +189,34 @@ namespace QLKH_v3.DAL
                 return check;
             }
             return check;
+        }
+
+        public bool add_friend(List<Model.Friend> lst_friend, user user, int IdCustomer)
+        {
+            try
+            {
+                friend friend = new friend();
+                foreach (var item in lst_friend)
+                {
+                    friend.Status = true;
+                    friend.UpdatedAt = DateTime.Now;
+                    friend.UpdatedBy = user.id;
+                    friend.CreatedBy = user.id;
+                    friend.CreatedAt = DateTime.Now;
+                    friend.CustomerId = IdCustomer;
+                    friend.FullName = item.FullName;
+                    friend.PhoneNumber = item.PhoneNumber;
+                    friend.Relationship = item.Relationship;
+                    _db.friends.Add(friend);
+                    _db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
        
     }

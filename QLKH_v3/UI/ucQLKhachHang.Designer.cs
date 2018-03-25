@@ -41,6 +41,8 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.panelBody = new DevExpress.XtraEditors.PanelControl();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -49,6 +51,7 @@
             this.fullname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rela = new DevExpress.XtraGrid.Columns.GridColumn();
             this.phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cbb_category = new DevExpress.XtraEditors.ImageComboBoxEdit();
             this.radio_sex_customer = new DevExpress.XtraEditors.RadioGroup();
@@ -77,6 +80,7 @@
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
@@ -109,9 +113,10 @@
             this.grcKhachHang.Location = new System.Drawing.Point(2, 2);
             this.grcKhachHang.MainView = this.grvKhachHang;
             this.grcKhachHang.Name = "grcKhachHang";
+            this.grcKhachHang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemPictureEdit1});
             this.grcKhachHang.Size = new System.Drawing.Size(1267, 136);
             this.grcKhachHang.TabIndex = 0;
-            this.grcKhachHang.UseEmbeddedNavigator = true;
             this.grcKhachHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvKhachHang});
             // 
@@ -126,16 +131,22 @@
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9});
+            this.gridColumn9,
+            this.gridColumn11});
             this.grvKhachHang.GridControl = this.grcKhachHang;
             this.grvKhachHang.Name = "grvKhachHang";
+            this.grvKhachHang.OptionsFind.AlwaysVisible = true;
+            this.grvKhachHang.OptionsFind.FindNullPrompt = "Tìm kiếm";
             this.grvKhachHang.OptionsView.ShowGroupPanel = false;
+            this.grvKhachHang.DoubleClick += new System.EventHandler(this.grvKhachHang_DoubleClick);
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Họ tên";
             this.gridColumn1.FieldName = "FullName";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -144,6 +155,8 @@
             this.gridColumn2.Caption = "CMND";
             this.gridColumn2.FieldName = "IdCard";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -152,6 +165,8 @@
             this.gridColumn3.Caption = "Số điện thoại";
             this.gridColumn3.FieldName = "PhoneNumber";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -160,6 +175,8 @@
             this.gridColumn4.Caption = "Địa chỉ";
             this.gridColumn4.FieldName = "Address";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -168,6 +185,8 @@
             this.gridColumn5.Caption = "Ngày vay";
             this.gridColumn5.FieldName = "CreatedAt";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
@@ -176,6 +195,8 @@
             this.gridColumn6.Caption = "Số tiền vay";
             this.gridColumn6.FieldName = "Money";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 
@@ -184,6 +205,8 @@
             this.gridColumn7.Caption = "Số tiền gốc còn phải trả";
             this.gridColumn7.FieldName = "AfterMoney";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             // 
@@ -192,6 +215,8 @@
             this.gridColumn8.Caption = "Số tiền lãi";
             this.gridColumn8.FieldName = "InterestMoney";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             // 
@@ -200,8 +225,23 @@
             this.gridColumn9.Caption = "Số ngày chậm lãi";
             this.gridColumn9.FieldName = "AfterDate";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 8;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Id";
+            this.gridColumn11.FieldName = "id";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.OptionsColumn.ReadOnly = true;
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            this.repositoryItemPictureEdit1.ZoomAccelerationFactor = 1D;
             // 
             // panelBody
             // 
@@ -238,6 +278,7 @@
             // grcFriend
             // 
             this.grcFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grcFriend.Enabled = false;
             this.grcFriend.Location = new System.Drawing.Point(2, 26);
             this.grcFriend.MainView = this.grvFriend;
             this.grcFriend.Name = "grcFriend";
@@ -252,7 +293,8 @@
             this.grvFriend.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.fullname,
             this.rela,
-            this.phone});
+            this.phone,
+            this.gridColumn10});
             this.grvFriend.GridControl = this.grcFriend;
             this.grvFriend.Name = "grvFriend";
             this.grvFriend.OptionsView.ShowGroupPanel = false;
@@ -280,6 +322,14 @@
             this.phone.Name = "phone";
             this.phone.Visible = true;
             this.phone.VisibleIndex = 2;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Ghi chú";
+            this.gridColumn10.FieldName = "Note";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
             // 
             // groupControl1
             // 
@@ -336,7 +386,6 @@
             this.radio_sex_customer.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Nữ")});
-            this.radio_sex_customer.Properties.ReadOnly = true;
             this.radio_sex_customer.Size = new System.Drawing.Size(190, 25);
             this.radio_sex_customer.TabIndex = 103;
             // 
@@ -549,6 +598,7 @@
             this.btn_add_customer.Size = new System.Drawing.Size(117, 40);
             this.btn_add_customer.TabIndex = 12;
             this.btn_add_customer.Text = "xác nhận";
+            this.btn_add_customer.Click += new System.EventHandler(this.btn_add_customer_Click);
             // 
             // btn_cancel_customer
             // 
@@ -578,6 +628,7 @@
             this.Load += new System.EventHandler(this.ucQLKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
@@ -654,5 +705,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_fullname;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
     }
 }

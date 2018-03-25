@@ -38,6 +38,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="CreatedBy" Type="int" Nullable="false" />
           <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Sex" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="friend">
           <Key>
@@ -45,7 +46,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Relationship" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="CreatedAt" Type="datetime" Nullable="false" />
@@ -647,6 +647,7 @@
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="Int32" Nullable="false" />
           <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="category" Relationship="QLKHModel.FK_customer_category" FromRole="customer" ToRole="category" />
           <NavigationProperty Name="interestRate" Relationship="QLKHModel.FK_customer_interestRate" FromRole="customer" ToRole="interestRate" />
           <NavigationProperty Name="user" Relationship="QLKHModel.FK_customer_user" FromRole="customer" ToRole="user" />
@@ -660,7 +661,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Relationship" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
@@ -1012,6 +1012,7 @@
           <EntitySetMapping Name="customers">
             <EntityTypeMapping TypeName="QLKHModel.customer">
               <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
@@ -1043,7 +1044,6 @@
                 <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
                 <ScalarProperty Name="Relationship" ColumnName="Relationship" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

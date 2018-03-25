@@ -236,3 +236,4 @@ F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.ucThongKe.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_thongkedoanhthu.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.ucThongKe.resources
 E:\HocTap\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_thongkedoanhthu.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Detail_Customer.resources

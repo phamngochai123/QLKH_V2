@@ -211,6 +211,7 @@
     <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CreatedBy" Type="Int32" Nullable="false" />
     <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+    <Property Name="Sex" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="category" Relationship="QLKHModel.FK_customer_category" FromRole="customer" ToRole="category" />
     <NavigationProperty Name="interestRate" Relationship="QLKHModel.FK_customer_interestRate" FromRole="customer" ToRole="interestRate" />
     <NavigationProperty Name="user" Relationship="QLKHModel.FK_customer_user" FromRole="customer" ToRole="user" />
@@ -224,7 +225,6 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Relationship" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />

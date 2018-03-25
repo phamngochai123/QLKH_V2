@@ -44,6 +44,14 @@ namespace QLKH_v3
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(uc_Detail_User);
             }
+            if (Str_Flag == variable.detail_infor.Customer)
+            {
+                UI.Detail.uc_Detail_Customer uc_Detail_Customer = new UI.Detail.uc_Detail_Customer();
+                uc_Detail_Customer.Data_Customer = Data;
+                uc_Detail_Customer.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_Detail_Customer);
+            }
         }
         public void close_form()
         {

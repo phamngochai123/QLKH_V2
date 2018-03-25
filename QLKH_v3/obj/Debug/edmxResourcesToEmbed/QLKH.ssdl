@@ -33,6 +33,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="CreatedBy" Type="int" Nullable="false" />
     <Property Name="UpdatedBy" Type="int" Nullable="false" />
+    <Property Name="Sex" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="friend">
     <Key>
@@ -40,7 +41,6 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="PhoneNumber" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Relationship" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="CreatedAt" Type="datetime" Nullable="false" />

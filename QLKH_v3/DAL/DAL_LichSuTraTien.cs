@@ -73,8 +73,10 @@ namespace QLKH_v3.DAL
             int lai = 0;
             try
             {
-                history = (from data in _db.historyPaids                // lấy bản ghi trả nợ gần nhất
-                           where data.CustomerId == IdCustomer && data.TypePaid == "1"
+                history = (from data in _db.historyPaids              // lấy bản ghi trả nợ gần nhất
+                           join data_customer in _db.customers
+                           on data.CustomerId equals data_customer.id
+                           where data.CustomerId == IdCustomer && data.TypePaid == "1" && data_customer.Status == true
                            orderby data.PaidDate descending
                            select data).FirstOrDefault();
 

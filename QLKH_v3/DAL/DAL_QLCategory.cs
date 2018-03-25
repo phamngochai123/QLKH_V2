@@ -10,6 +10,7 @@ namespace QLKH_v3.DAL
     {
         QLKHEntities _db = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
+        Message.Message Message = new Message.Message();
         Util.Util Util = new Util.Util();
         public List<Model.Category> Get_List_Category()
         {
@@ -116,7 +117,7 @@ namespace QLKH_v3.DAL
             }
             catch (Exception ex)
             {
-                throw ex;
+                Util.Show_Message_Notification(Message.msg_notification, "Không thể kết nối đến cơ sở dữ liệu");
             }
             return lst_category;
         }

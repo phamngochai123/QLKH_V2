@@ -16,7 +16,6 @@ namespace QLKH_v3
     {
         public int id { get; set; }
         public string FullName { get; set; }
-        public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string Relationship { get; set; }
         public System.DateTime CreatedAt { get; set; }

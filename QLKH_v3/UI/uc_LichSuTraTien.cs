@@ -117,5 +117,13 @@ namespace QLKH_v3.UI
                 throw ex;
             }
         }
+
+        private void radio_type_paid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (radio_type_paid.EditValue == "1")
+            {
+
+            }
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace QLKH_v3
                 UI.ucQLKhachHang ucQLKhachHang = new UI.ucQLKhachHang();
                 ucQLKhachHang.Dock = DockStyle.Fill;
                 panelMain.Controls.Clear();
+                ucQLKhachHang._user = _user;
                 panelMain.Controls.Add(ucQLKhachHang);
 
                 //GroupQLTang.Enabled = true;

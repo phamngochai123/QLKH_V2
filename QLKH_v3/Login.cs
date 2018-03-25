@@ -48,9 +48,7 @@ namespace QLKH_v3
                     user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
                     if (user != null)
                     {
-                        //Util.Show_Message_Notification(Message.msg_notification, "Đăng nhập thành công");
                         _user = user;
-                        //_userId = user.id;
                         this.Hide();
                     }
                     else
@@ -68,6 +66,8 @@ namespace QLKH_v3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            btnLogin.UseWaitCursor = true;
+            btnExit.UseWaitCursor = true;
             HandleLogin();
         }
 

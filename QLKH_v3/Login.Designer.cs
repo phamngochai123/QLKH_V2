@@ -33,6 +33,7 @@
             this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
             this.txt_login_password = new DevExpress.XtraEditors.TextEdit();
             this.txt_login_username = new DevExpress.XtraEditors.TextEdit();
+            this.label_error = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login_password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login_username.Properties)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,6 @@
             this.btnExit.Size = new System.Drawing.Size(118, 30);
             this.btnExit.TabIndex = 25;
             this.btnExit.Text = "Thoát";
-            this.btnExit.UseWaitCursor = true;
             // 
             // btnLogin
             // 
@@ -70,7 +70,7 @@
             this.btnLogin.Size = new System.Drawing.Size(118, 30);
             this.btnLogin.TabIndex = 22;
             this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseWaitCursor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txt_login_password
             // 
@@ -92,6 +92,13 @@
             this.txt_login_username.Size = new System.Drawing.Size(254, 26);
             this.txt_login_username.TabIndex = 23;
             // 
+            // label_error
+            // 
+            this.label_error.Location = new System.Drawing.Point(134, 5);
+            this.label_error.Name = "label_error";
+            this.label_error.Size = new System.Drawing.Size(0, 13);
+            this.label_error.TabIndex = 27;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +106,7 @@
             this.BackgroundImage = global::QLKH_v3.Properties.Resources.loginBackgroundIPadLandscape_2x;
             this.ClientSize = new System.Drawing.Size(339, 186);
             this.ControlBox = false;
+            this.Controls.Add(this.label_error);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
@@ -126,6 +134,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLogin;
         private DevExpress.XtraEditors.TextEdit txt_login_password;
         private DevExpress.XtraEditors.TextEdit txt_login_username;
+        private DevExpress.XtraEditors.LabelControl label_error;
 
 
 

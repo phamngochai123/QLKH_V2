@@ -22,6 +22,7 @@ namespace QLKH_v3.Variable
     class Detail_Infor {
         public string Category = "Detail_Category";
         public string User = "Detail_User";
+        public string Customer = "Detail_Customer";
     }
 
     

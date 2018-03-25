@@ -80,7 +80,6 @@
             this.btn_chitiet});
             this.grcCategory.Size = new System.Drawing.Size(889, 300);
             this.grcCategory.TabIndex = 0;
-            this.grcCategory.UseEmbeddedNavigator = true;
             this.grcCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvCategory});
             // 
@@ -100,7 +99,6 @@
             this.grvCategory.OptionsFind.FindNullPrompt = "Search...";
             this.grvCategory.OptionsFind.ShowClearButton = false;
             this.grvCategory.OptionsFind.ShowFindButton = false;
-            this.grvCategory.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.grvCategory.OptionsView.ShowGroupPanel = false;
             this.grvCategory.DoubleClick += new System.EventHandler(this.grvCategory_DoubleClick);
             // 

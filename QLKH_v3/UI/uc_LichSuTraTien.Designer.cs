@@ -102,6 +102,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Tiền lãi")});
             this.radio_type_paid.Size = new System.Drawing.Size(190, 25);
             this.radio_type_paid.TabIndex = 66;
+            this.radio_type_paid.SelectedIndexChanged += new System.EventHandler(this.radio_type_paid_SelectedIndexChanged);
             // 
             // labelControl5
             // 
