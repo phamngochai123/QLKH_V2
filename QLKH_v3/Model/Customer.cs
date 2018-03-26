@@ -27,6 +27,7 @@ namespace QLKH_v3.Model
         public int AfterDate { get; set; }
         public string FamilyPhone { get; set; }
         public Boolean Sex { get; set; }
+        public string SexString { get; set; }
         public DateTime BirthDay { get; set; }
         public int IdCateGory { get; set; }
     }

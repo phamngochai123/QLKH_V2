@@ -61,7 +61,7 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Sex = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radio_type_user.Properties)).BeginInit();
@@ -381,7 +381,7 @@
             this.gridColumn7,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.Sex});
             this.grvUser.DetailTabHeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left;
             this.grvUser.GridControl = this.grcUser;
             this.grvUser.Name = "grvUser";
@@ -412,7 +412,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "CMND";
-            this.gridColumn3.FieldName = "IdCard";
+            this.gridColumn3.FieldName = "CMND";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.ReadOnly = true;
@@ -449,15 +449,15 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
-            // gridColumn6
+            // Sex
             // 
-            this.gridColumn6.Caption = "Giới tính";
-            this.gridColumn6.FieldName = "Sex";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.OptionsColumn.ReadOnly = true;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.Sex.Caption = "Giới tính";
+            this.Sex.FieldName = "Sex";
+            this.Sex.Name = "Sex";
+            this.Sex.OptionsColumn.AllowEdit = false;
+            this.Sex.OptionsColumn.ReadOnly = true;
+            this.Sex.Visible = true;
+            this.Sex.VisibleIndex = 5;
             // 
             // ucQLUser
             // 
@@ -502,7 +502,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn Sex;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;

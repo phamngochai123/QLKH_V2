@@ -31,6 +31,7 @@ namespace QLKH_v3.DAL
                                     Address = data.Address,
                                     FamilyPhone = data.FamilyPhoneNumber,
                                     Sex = data.Sex,
+                                    SexString = data.Sex ? "Nam" : "Nữ",
                                     BirthDay = data.BirthDay,
                                     IdCateGory = data.CategoryId,
                                 }).AsEnumerable().ToList();

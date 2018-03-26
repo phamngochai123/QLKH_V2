@@ -13,14 +13,23 @@ namespace QLKH_v3.DAL
         QLKHEntities _DB = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
-        public List<user> Get_Data_User() {
+        public List<Model.User> Get_Data_User() {
             _DB = new QLKHEntities();
-           List<user>  lst_user = new List<user>();
+            List<Model.User> lst_user = new List<Model.User>();
             try
             {
-                lst_user =(from use in _DB.users
+                lst_user = (from use in _DB.users
                             where (use.Status == true)
-                            select use).AsEnumerable().ToList();
+                            select new Model.User { 
+                                UserName = use.UserName,
+                                FullName = use.FullName,
+                                id = use.id,
+                                CMND = use.IdCard,
+                                BirthDay = use.BirthDay,
+                                PhoneNumber = use.PhoneNumber,
+                                Sex = use.Sex ? "Nam" : "Nữ",
+                                Address = use.Address
+                            }).AsEnumerable().ToList();
 
             }
             catch (Exception ex)

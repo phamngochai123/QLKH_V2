@@ -38,7 +38,6 @@ namespace QLKH_v3.UI
         }
         private void ucQLUser_Load(object sender, EventArgs e)
         {
-            Dictionary comboSource = new Dictionary();
             Load_Data();
         }
 

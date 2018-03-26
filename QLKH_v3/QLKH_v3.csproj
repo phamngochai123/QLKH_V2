@@ -146,6 +146,7 @@
     <Compile Include="Model\Statistic_Customer.cs" />
     <Compile Include="Model\Statistic_InterestMoney.cs" />
     <Compile Include="Model\Statistic_Money.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Model\Year.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
