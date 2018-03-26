@@ -50,6 +50,8 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_lich_su_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelBody = new DevExpress.XtraEditors.PanelControl();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -85,12 +87,11 @@
             this.btn_add_customer = new DevExpress.XtraEditors.SimpleButton();
             this.btn_cancel_customer = new DevExpress.XtraEditors.SimpleButton();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_lich_su_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_thanh_toan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_lich_su_thanh_toan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).BeginInit();
             this.panelBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
@@ -115,7 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_lich_su_thanh_toan)).BeginInit();
             this.SuspendLayout();
             // 
             // grcKhachHang
@@ -218,6 +218,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Số tiền vay";
+            this.gridColumn6.DisplayFormat.FormatString = "c0";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn6.FieldName = "Money";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
@@ -228,6 +230,8 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Số tiền gốc còn phải trả";
+            this.gridColumn7.DisplayFormat.FormatString = "c0";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "AfterMoney";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
@@ -238,6 +242,8 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Số tiền lãi";
+            this.gridColumn8.DisplayFormat.FormatString = "c0";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "InterestMoney";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
@@ -296,6 +302,23 @@
             this.btn_thanh_toan.Name = "btn_thanh_toan";
             this.btn_thanh_toan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_thanh_toan.Click += new System.EventHandler(this.btn_thanh_toan_Click);
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Lịch sử thanh toán";
+            this.gridColumn15.ColumnEdit = this.btn_lich_su_thanh_toan;
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 12;
+            // 
+            // btn_lich_su_thanh_toan
+            // 
+            this.btn_lich_su_thanh_toan.AutoHeight = false;
+            this.btn_lich_su_thanh_toan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_lich_su_thanh_toan.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            this.btn_lich_su_thanh_toan.Name = "btn_lich_su_thanh_toan";
+            this.btn_lich_su_thanh_toan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_lich_su_thanh_toan.Click += new System.EventHandler(this.btn_lich_su_thanh_toan_Click);
             // 
             // panelBody
             // 
@@ -671,23 +694,6 @@
             // 
             this.categoryBindingSource.DataSource = typeof(QLKH_v3.category);
             // 
-            // gridColumn15
-            // 
-            this.gridColumn15.Caption = "Lịch sử thanh toán";
-            this.gridColumn15.ColumnEdit = this.btn_lich_su_thanh_toan;
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 12;
-            // 
-            // btn_lich_su_thanh_toan
-            // 
-            this.btn_lich_su_thanh_toan.AutoHeight = false;
-            this.btn_lich_su_thanh_toan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_lich_su_thanh_toan.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
-            this.btn_lich_su_thanh_toan.Name = "btn_lich_su_thanh_toan";
-            this.btn_lich_su_thanh_toan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btn_lich_su_thanh_toan.Click += new System.EventHandler(this.btn_lich_su_thanh_toan_Click);
-            // 
             // ucQLKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -701,6 +707,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_thanh_toan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_lich_su_thanh_toan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelBody)).EndInit();
             this.panelBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
@@ -726,7 +733,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_lich_su_thanh_toan)).EndInit();
             this.ResumeLayout(false);
 
         }

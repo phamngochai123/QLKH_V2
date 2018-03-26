@@ -142,6 +142,11 @@
     <Compile Include="Model\Friend.cs" />
     <Compile Include="Model\HistoryPaid.cs" />
     <Compile Include="Model\InterestRate.cs" />
+    <Compile Include="Model\Statistic.cs" />
+    <Compile Include="Model\Statistic_Customer.cs" />
+    <Compile Include="Model\Statistic_InterestMoney.cs" />
+    <Compile Include="Model\Statistic_Money.cs" />
+    <Compile Include="Model\Year.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLKH.Context.cs">

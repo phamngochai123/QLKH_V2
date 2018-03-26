@@ -28,36 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            this.chart_customer_by_month = new DevExpress.XtraCharts.ChartControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txt_total_money = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_total_paid_money = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txt_interset_money = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_customer_by_month)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            this.grcStatistic = new DevExpress.XtraGrid.GridControl();
+            this.grvStatistic = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.fullname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rela = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.phone = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbb_statistic_year = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_money.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_paid_money.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_interset_money.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcStatistic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvStatistic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_statistic_year.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // chart_customer_by_month
-            // 
-            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            this.chart_customer_by_month.Diagram = xyDiagram1;
-            this.chart_customer_by_month.Legend.Name = "Default Legend";
-            this.chart_customer_by_month.Location = new System.Drawing.Point(415, 27);
-            this.chart_customer_by_month.Name = "chart_customer_by_month";
-            series1.Name = "Series 1";
-            this.chart_customer_by_month.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chart_customer_by_month.Size = new System.Drawing.Size(422, 200);
-            this.chart_customer_by_month.TabIndex = 35;
             // 
             // labelControl2
             // 
@@ -116,11 +108,112 @@
             this.txt_interset_money.Size = new System.Drawing.Size(193, 22);
             this.txt_interset_money.TabIndex = 29;
             // 
+            // grcStatistic
+            // 
+            this.grcStatistic.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grcStatistic.Location = new System.Drawing.Point(0, 184);
+            this.grcStatistic.MainView = this.grvStatistic;
+            this.grcStatistic.Name = "grcStatistic";
+            this.grcStatistic.Size = new System.Drawing.Size(1225, 281);
+            this.grcStatistic.TabIndex = 87;
+            this.grcStatistic.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvStatistic});
+            // 
+            // grvStatistic
+            // 
+            this.grvStatistic.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.fullname,
+            this.rela,
+            this.phone,
+            this.gridColumn10,
+            this.gridColumn1});
+            this.grvStatistic.GridControl = this.grcStatistic;
+            this.grvStatistic.Name = "grvStatistic";
+            this.grvStatistic.OptionsView.ShowGroupPanel = false;
+            // 
+            // fullname
+            // 
+            this.fullname.Caption = "Tháng";
+            this.fullname.FieldName = "Month";
+            this.fullname.Name = "fullname";
+            this.fullname.OptionsColumn.AllowEdit = false;
+            this.fullname.OptionsColumn.ReadOnly = true;
+            this.fullname.Visible = true;
+            this.fullname.VisibleIndex = 0;
+            // 
+            // rela
+            // 
+            this.rela.Caption = "Số khách hàng";
+            this.rela.FieldName = "NumCustomer";
+            this.rela.Name = "rela";
+            this.rela.OptionsColumn.AllowEdit = false;
+            this.rela.OptionsColumn.ReadOnly = true;
+            this.rela.Visible = true;
+            this.rela.VisibleIndex = 1;
+            // 
+            // phone
+            // 
+            this.phone.Caption = "Số tiền cho vay";
+            this.phone.DisplayFormat.FormatString = "c0";
+            this.phone.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.phone.FieldName = "NumMoney";
+            this.phone.Name = "phone";
+            this.phone.OptionsColumn.AllowEdit = false;
+            this.phone.OptionsColumn.ReadOnly = true;
+            this.phone.Visible = true;
+            this.phone.VisibleIndex = 2;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Số vốn thu hồi";
+            this.gridColumn10.DisplayFormat.FormatString = "c0";
+            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn10.FieldName = "NumReturnMoney";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.OptionsColumn.ReadOnly = true;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Số lãi thu được";
+            this.gridColumn1.DisplayFormat.FormatString = "c0";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "NumInterestMoney";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            // 
+            // cbb_statistic_year
+            // 
+            this.cbb_statistic_year.Location = new System.Drawing.Point(179, 3);
+            this.cbb_statistic_year.Name = "cbb_statistic_year";
+            this.cbb_statistic_year.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_statistic_year.Properties.Appearance.Options.UseFont = true;
+            this.cbb_statistic_year.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbb_statistic_year.Size = new System.Drawing.Size(193, 22);
+            this.cbb_statistic_year.TabIndex = 106;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Location = new System.Drawing.Point(3, 6);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(48, 16);
+            this.labelControl9.TabIndex = 105;
+            this.labelControl9.Text = "Đồ cầm";
+            // 
             // uc_thongkedoanhthu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chart_customer_by_month);
+            this.Controls.Add(this.cbb_statistic_year);
+            this.Controls.Add(this.labelControl9);
+            this.Controls.Add(this.grcStatistic);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_total_money);
             this.Controls.Add(this.labelControl1);
@@ -129,12 +222,13 @@
             this.Controls.Add(this.txt_interset_money);
             this.Name = "uc_thongkedoanhthu";
             this.Size = new System.Drawing.Size(1225, 465);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart_customer_by_month)).EndInit();
+            this.Load += new System.EventHandler(this.uc_thongkedoanhthu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_money.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_paid_money.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_interset_money.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcStatistic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvStatistic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_statistic_year.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,12 +236,20 @@
 
         #endregion
 
-        private DevExpress.XtraCharts.ChartControl chart_customer_by_month;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txt_total_money;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_total_paid_money;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txt_interset_money;
+        private DevExpress.XtraGrid.GridControl grcStatistic;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvStatistic;
+        private DevExpress.XtraGrid.Columns.GridColumn fullname;
+        private DevExpress.XtraGrid.Columns.GridColumn rela;
+        private DevExpress.XtraGrid.Columns.GridColumn phone;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.ImageComboBoxEdit cbb_statistic_year;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }
