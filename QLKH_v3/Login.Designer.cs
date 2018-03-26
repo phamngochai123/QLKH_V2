@@ -34,6 +34,7 @@
             this.txt_login_password = new DevExpress.XtraEditors.TextEdit();
             this.txt_login_username = new DevExpress.XtraEditors.TextEdit();
             this.label_error = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_error = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login_password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login_username.Properties)).BeginInit();
             this.SuspendLayout();
@@ -54,18 +55,19 @@
             this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Appearance.Options.UseFont = true;
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(178, 121);
+            this.btnExit.Location = new System.Drawing.Point(178, 149);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(118, 30);
             this.btnExit.TabIndex = 25;
             this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Appearance.Options.UseFont = true;
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnLogin.Location = new System.Drawing.Point(42, 121);
+            this.btnLogin.Location = new System.Drawing.Point(42, 149);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(118, 30);
             this.btnLogin.TabIndex = 22;
@@ -99,13 +101,25 @@
             this.label_error.Size = new System.Drawing.Size(0, 13);
             this.label_error.TabIndex = 27;
             // 
+            // lbl_error
+            // 
+            this.lbl_error.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_error.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lbl_error.Location = new System.Drawing.Point(57, 121);
+            this.lbl_error.Name = "lbl_error";
+            this.lbl_error.Size = new System.Drawing.Size(221, 17);
+            this.lbl_error.TabIndex = 28;
+            this.lbl_error.Text = "Sai tên tài khoản hoặc mật khẩu";
+            this.lbl_error.UseWaitCursor = true;
+            this.lbl_error.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLKH_v3.Properties.Resources.loginBackgroundIPadLandscape_2x;
-            this.ClientSize = new System.Drawing.Size(339, 186);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(339, 218);
+            this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.label_error);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnExit);
@@ -115,6 +129,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -135,6 +150,7 @@
         private DevExpress.XtraEditors.TextEdit txt_login_password;
         private DevExpress.XtraEditors.TextEdit txt_login_username;
         private DevExpress.XtraEditors.LabelControl label_error;
+        private DevExpress.XtraEditors.LabelControl lbl_error;
 
 
 

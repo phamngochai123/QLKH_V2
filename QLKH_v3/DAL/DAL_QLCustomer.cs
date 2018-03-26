@@ -41,6 +41,18 @@ namespace QLKH_v3.DAL
                     lst_Customer[i].InterestMoney = DAL_Lichsutratien.Get_Tien_Lai(lst_Customer[i].id);
                     lst_Customer[i].AfterDate = Get_After_Date(lst_Customer[i].id);
                 }
+                lst_Customer = lst_Customer.OrderByDescending(x => x.AfterDate).ToList();
+
+                //for (int i = 0; i < lst_Customer.Count-1; i++)
+                //{
+                //    if (lst_Customer[i].AfterDate < lst_Customer[i + 1].AfterDate)
+                //    {
+                //        Model.Customer Customer = new Model.Customer();
+                //        Customer = lst_Customer[i];
+                //        lst_Customer[i] = lst_Customer[i + 1];
+                //        lst_Customer[i + 1] = Customer;
+                //    }
+                //}
             }
             catch (Exception ex)
             {

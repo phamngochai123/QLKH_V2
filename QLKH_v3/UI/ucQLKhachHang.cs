@@ -323,5 +323,10 @@ namespace QLKH_v3.UI
             Detail_Infor._user = _user;
             Detail_Infor.ShowDialog();
         }
+
+        private void btn_export_excel_Click(object sender, EventArgs e)
+        {
+            grcKhachHang.ExportToXls("Danh sách khách hàng.xls", true);
+        }
     }
 }

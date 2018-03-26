@@ -54,6 +54,7 @@
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_lich_su_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelBody = new DevExpress.XtraEditors.PanelControl();
+            this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.grcFriend = new DevExpress.XtraGrid.GridControl();
@@ -332,12 +333,25 @@
             // 
             // panelBody
             // 
+            this.panelBody.Controls.Add(this.btn_export_excel);
             this.panelBody.Controls.Add(this.grcKhachHang);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 310);
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1271, 140);
             this.panelBody.TabIndex = 5;
+            // 
+            // btn_export_excel
+            // 
+            this.btn_export_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_export_excel.Appearance.Options.UseFont = true;
+            this.btn_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("btn_export_excel.Image")));
+            this.btn_export_excel.Location = new System.Drawing.Point(1149, 6);
+            this.btn_export_excel.Name = "btn_export_excel";
+            this.btn_export_excel.Size = new System.Drawing.Size(117, 40);
+            this.btn_export_excel.TabIndex = 13;
+            this.btn_export_excel.Text = "Xuất excel";
+            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
             // 
             // panelheader
             // 
@@ -804,5 +818,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_lich_su_thanh_toan;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraEditors.SimpleButton btn_export_excel;
     }
 }

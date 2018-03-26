@@ -331,6 +331,10 @@
             this.panelMain = new DevExpress.XtraEditors.PanelControl();
             this.ribbonGalleryBarItem3 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonGalleryBarItem4 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.ribbonGalleryBarItem5 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_change_password = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
@@ -452,9 +456,13 @@
             this.skinRibbonGalleryBarItem1,
             this.btn_tkkh,
             this.btn_tkdt,
-            this.skinRibbonGalleryBarItem2});
+            this.skinRibbonGalleryBarItem2,
+            this.ribbonGalleryBarItem5,
+            this.barButtonItem1,
+            this.btn_logout,
+            this.btn_change_password});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 399;
+            this.ribbonControl.MaxItemId = 406;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.tabQuanTri,
@@ -471,6 +479,8 @@
             // 
             // appMenu
             // 
+            this.appMenu.ItemLinks.Add(this.btn_change_password);
+            this.appMenu.ItemLinks.Add(this.btn_logout);
             this.appMenu.ItemLinks.Add(this.iExit);
             this.appMenu.Name = "appMenu";
             this.appMenu.Ribbon = this.ribbonControl;
@@ -478,13 +488,15 @@
             // 
             // iExit
             // 
-            this.iExit.Caption = "Exit";
+            this.iExit.Caption = "Thoát";
             this.iExit.Description = "Closes this program after prompting you to save unsaved data.";
             this.iExit.Hint = "Closes this program after prompting you to save unsaved data";
             this.iExit.Id = 20;
             this.iExit.ImageIndex = 6;
+            this.iExit.ImageUri.Uri = "Cancel";
             this.iExit.LargeImageIndex = 6;
             this.iExit.Name = "iExit";
+            this.iExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.iExit_ItemClick);
             // 
             // siStatus
             // 
@@ -643,26 +655,31 @@
             // 
             this.groupQLKhachHang.ItemLinks.Add(this.btnQLKhachHang);
             this.groupQLKhachHang.Name = "groupQLKhachHang";
+            this.groupQLKhachHang.ShowCaptionButton = false;
             // 
             // groupLichSuThanhToan
             // 
             this.groupLichSuThanhToan.ItemLinks.Add(this.btnLichSuThanhToan);
             this.groupLichSuThanhToan.Name = "groupLichSuThanhToan";
+            this.groupLichSuThanhToan.ShowCaptionButton = false;
             // 
             // GroupQLBanBe
             // 
             this.GroupQLBanBe.ItemLinks.Add(this.btnQLBanBe);
             this.GroupQLBanBe.Name = "GroupQLBanBe";
+            this.GroupQLBanBe.ShowCaptionButton = false;
             // 
             // groupQLUser
             // 
             this.groupQLUser.ItemLinks.Add(this.btnQLUser);
             this.groupQLUser.Name = "groupQLUser";
+            this.groupQLUser.ShowCaptionButton = false;
             // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.ShowCaptionButton = false;
             this.ribbonPageGroup4.Text = "Skin";
             // 
             // tab_thong_ke
@@ -2402,6 +2419,36 @@
             this.ribbonGalleryBarItem4.Id = 60;
             this.ribbonGalleryBarItem4.Name = "ribbonGalleryBarItem4";
             // 
+            // ribbonGalleryBarItem5
+            // 
+            this.ribbonGalleryBarItem5.Caption = "ribbonGalleryBarItem5";
+            this.ribbonGalleryBarItem5.Id = 401;
+            this.ribbonGalleryBarItem5.Name = "ribbonGalleryBarItem5";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 402;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.Caption = "Đăng xuất";
+            this.btn_logout.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_logout.Glyph")));
+            this.btn_logout.Id = 404;
+            this.btn_logout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_logout.LargeGlyph")));
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_logout_ItemClick);
+            // 
+            // btn_change_password
+            // 
+            this.btn_change_password.Caption = "Đổi mật khẩu";
+            this.btn_change_password.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_change_password.Glyph")));
+            this.btn_change_password.Id = 405;
+            this.btn_change_password.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_change_password.LargeGlyph")));
+            this.btn_change_password.Name = "btn_change_password";
+            this.btn_change_password.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_change_pass_ItemClick);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -2528,6 +2575,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup btn_thong_ke_khach_hang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup btn_thong_ke_doanh_thu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btn_change_password;
+        private DevExpress.XtraBars.BarButtonItem btn_logout;
 
     }
 }

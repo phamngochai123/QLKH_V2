@@ -83,6 +83,15 @@ namespace QLKH_v3
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(uc_Lichsuthanhtoan);
             }
+            if (Str_Flag == variable.detail_infor.ChangePassword)
+            {
+                UI.Detail.uc_ChangePassword uc_ChangePassword = new UI.Detail.uc_ChangePassword();
+                //uc_List_Friend.List_Friend = Data_Friend;
+                uc_ChangePassword._user = _user;
+                uc_ChangePassword.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_ChangePassword);
+            }
         }
         public void close_form()
         {

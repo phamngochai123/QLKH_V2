@@ -23,16 +23,22 @@ namespace QLKH_v3
             InitializeComponent();
         }
 
+        public void Show_Hide_Label(bool status, string content)
+        {
+            lbl_error.Visible = status;
+            lbl_error.Text = content;
+        }
+
         private bool checkValidate()
         {
             if (txt_login_username.Text.ToString().Trim() == "" || txt_login_username.Text == "Tên đăng nhập")
             {
-                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập tên tài khoản");
+                Show_Hide_Label(true, "Vui lòng nhập tên tài khoản");
                 return false;
             }
             if (txt_login_password.Text.ToString().Trim() == "" || txt_login_password.Text == "Mật khẩu")
             {
-                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập mật khẩu");
+                Show_Hide_Label(true, "Vui lòng nhập mật khẩu");
                 return false;
             }
             return true;
@@ -48,18 +54,19 @@ namespace QLKH_v3
                     user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
                     if (user != null)
                     {
+                        Show_Hide_Label(false, "");
                         _user = user;
                         this.Hide();
                     }
                     else
                     {
-                        Util.Show_Message_Notification(Message.msg_notification, "Tài khoản hoặc mật khẩu không chính xác !!!");
+                        Show_Hide_Label(true, "Tài khoản hoặc mật khẩu không chính xác");
                     }
                 }
             }
             catch (Exception ex)
             {
-                Util.Show_Message_Error(Message.msg_error, "không thể kết nối đến cơ sở dữ liệu");
+                Show_Hide_Label(true, "Không thể kết nối đến cơ sở dữ liệu");
             }
 
         }

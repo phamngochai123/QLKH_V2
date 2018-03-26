@@ -177,6 +177,12 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
+    <Compile Include="UI\Detail\uc_ChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Detail\uc_ChangePassword.Designer.cs">
+      <DependentUpon>uc_ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Detail\uc_Detail_Category.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,7 +225,6 @@
     <Compile Include="UI\Detail\uc_Thanh_Toan.Designer.cs">
       <DependentUpon>uc_Thanh_Toan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dictionary.cs" />
     <Compile Include="UI\ucQLKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -287,6 +292,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Detail\uc_ChangePassword.resx">
+      <DependentUpon>uc_ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Detail\uc_Detail_Category.resx">
       <DependentUpon>uc_Detail_Category.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,14 +13,16 @@ namespace QLKH_v3.DAL
         QLKHEntities _DB = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
-        public List<Model.User> Get_Data_User() {
+        public List<Model.User> Get_Data_User()
+        {
             _DB = new QLKHEntities();
             List<Model.User> lst_user = new List<Model.User>();
             try
             {
                 lst_user = (from use in _DB.users
                             where (use.Status == true)
-                            select new Model.User { 
+                            select new Model.User
+                            {
                                 UserName = use.UserName,
                                 FullName = use.FullName,
                                 id = use.id,
@@ -44,8 +46,8 @@ namespace QLKH_v3.DAL
             try
             {
                 User = (from data in _DB.users
-                            where (data.Status == true && data.id == id_user)
-                            select data).FirstOrDefault();
+                        where (data.Status == true && data.id == id_user)
+                        select data).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -112,6 +114,23 @@ namespace QLKH_v3.DAL
                 return check;
             }
             return check;
+        }
+
+        public bool ChangePassword(user user, string new_password)
+        {
+            try
+            {
+                user users = (from data in _DB.users
+                             where data.id == user.id
+                             select data).FirstOrDefault();
+                users.PassWord = new_password;
+                _DB.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

@@ -19,6 +19,9 @@ namespace QLKH_v3
     public partial class Main : RibbonForm
     {
         public user _user { set; get; }
+        Util.Util Util = new Util.Util();
+        Message.Message Message = new Message.Message();
+        Variable.Variable Variable = new Variable.Variable();
         //public int _userId { set; get; }
         public Main()
         {
@@ -81,9 +84,7 @@ namespace QLKH_v3
         {
             this.Hide();
             Login login = new Login();
-            login.ShowDialog();
-            _user = login._user;
-            //_userId = login._userId;
+            login.ShowDialog(); _user = login._user;
             if (_user != null)
             {
                 this.Show();
@@ -93,11 +94,6 @@ namespace QLKH_v3
                 ucQLLaiSuat._user = _user;
                 panelMain.Controls.Add(ucQLLaiSuat);
             }
-            else
-            {
-                Application.Exit();
-            }
-            
         }
 
         private void btnQLDanhMuc_ItemClick(object sender, ItemClickEventArgs e)
@@ -150,6 +146,73 @@ namespace QLKH_v3
             uc_ThongKeDoanhThu.Dock = DockStyle.Fill;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(uc_ThongKeDoanhThu);
+        }
+
+        private void btn_logout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+
+                Login Login = new Login();
+                this.Hide();
+                DialogResult result = Login.ShowDialog();
+                if (result == DialogResult.Cancel)
+                {
+                    _user = Login._user;
+                    UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
+                    ribbonControl.SelectedPage = tabQuanLy;
+                    ucQLLaiSuat.Dock = DockStyle.Fill;
+                    panelMain.Controls.Clear();
+                    ucQLLaiSuat._user = _user;
+                    panelMain.Controls.Add(ucQLLaiSuat);
+                    this.Show();
+                }
+            }
+            catch (Exception)
+            {
+                Util.Show_Message_Notification(Message.msg_notification, "Có lỗi xảy ra, thử lại sau");
+            }
+        }
+
+        private void iExit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_change_pass_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                Detail_Infor Detail_Infor = new Detail_Infor();
+                Detail_Infor.Str_Flag = Variable.detail_infor.ChangePassword;
+                //Detail_Infor._userId = _userId;
+                Detail_Infor._user = _user;
+                //Detail_Infor.ShowDialog();
+                DialogResult dialog_result = Detail_Infor.ShowDialog();
+                if (dialog_result == DialogResult.Cancel)
+                {
+
+                    Login Login = new Login();
+                    this.Hide();
+                    DialogResult result = Login.ShowDialog();
+                    if (result == DialogResult.Cancel)
+                    {
+                        _user = Login._user;
+                        UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
+                        ribbonControl.SelectedPage = tabQuanLy;
+                        ucQLLaiSuat.Dock = DockStyle.Fill;
+                        panelMain.Controls.Clear();
+                        ucQLLaiSuat._user = _user;
+                        panelMain.Controls.Add(ucQLLaiSuat);
+                        this.Show();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
     }
