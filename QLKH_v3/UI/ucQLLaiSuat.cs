@@ -36,7 +36,9 @@ namespace QLKH_v3.UI
 
         private void ucQLLaiSuat_Load(object sender, EventArgs e)
         {
+            this.UseWaitCursor = true;
             Load_Data();
+            this.UseWaitCursor = false;
         }
 
         private void btn_them_Click(object sender, EventArgs e)

@@ -333,6 +333,7 @@
             this.panelMain = new DevExpress.XtraEditors.PanelControl();
             this.ribbonGalleryBarItem3 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonGalleryBarItem4 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
@@ -549,15 +550,25 @@
             // 
             // btnQLLaiSuat
             // 
-            this.btnQLLaiSuat.Caption = "Quản lý lãi xuất";
+            this.btnQLLaiSuat.Caption = "Quản lý lãi suất";
             this.btnQLLaiSuat.Id = 387;
+            this.btnQLLaiSuat.ImageUri.Uri = "Currency";
+            this.btnQLLaiSuat.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnQLLaiSuat.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnQLLaiSuat.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQLLaiSuat.LargeGlyph")));
+            this.btnQLLaiSuat.LargeWidth = 140;
             this.btnQLLaiSuat.Name = "btnQLLaiSuat";
             this.btnQLLaiSuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLLaiSuat_ItemClick);
             // 
             // btnQLDanhMuc
             // 
             this.btnQLDanhMuc.Caption = "Quản lý danh mục";
+            this.btnQLDanhMuc.GlyphDisabled = ((System.Drawing.Image)(resources.GetObject("btnQLDanhMuc.GlyphDisabled")));
             this.btnQLDanhMuc.Id = 388;
+            this.btnQLDanhMuc.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnQLDanhMuc.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnQLDanhMuc.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQLDanhMuc.LargeGlyph")));
+            this.btnQLDanhMuc.LargeWidth = 140;
             this.btnQLDanhMuc.Name = "btnQLDanhMuc";
             this.btnQLDanhMuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLDanhMuc_ItemClick);
             // 
@@ -576,7 +587,14 @@
             // btnQLKhachHang
             // 
             this.btnQLKhachHang.Caption = "Quản lý khách hàng";
+            this.btnQLKhachHang.Glyph = ((System.Drawing.Image)(resources.GetObject("btnQLKhachHang.Glyph")));
             this.btnQLKhachHang.Id = 391;
+            this.btnQLKhachHang.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnQLKhachHang.ItemAppearance.Disabled.Options.UseBackColor = true;
+            this.btnQLKhachHang.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnQLKhachHang.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnQLKhachHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQLKhachHang.LargeGlyph")));
+            this.btnQLKhachHang.LargeWidth = 140;
             this.btnQLKhachHang.Name = "btnQLKhachHang";
             this.btnQLKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLKhachHang_ItemClick);
             // 
@@ -584,6 +602,10 @@
             // 
             this.btnLichSuThanhToan.Caption = "Lịch sử thanh toán";
             this.btnLichSuThanhToan.Id = 392;
+            this.btnLichSuThanhToan.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLichSuThanhToan.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnLichSuThanhToan.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnLichSuThanhToan.LargeGlyph")));
+            this.btnLichSuThanhToan.LargeWidth = 140;
             this.btnLichSuThanhToan.Name = "btnLichSuThanhToan";
             this.btnLichSuThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuThanhToan_ItemClick);
             // 
@@ -597,7 +619,12 @@
             // btnQLUser
             // 
             this.btnQLUser.Caption = "Quản lý user";
+            this.btnQLUser.Glyph = ((System.Drawing.Image)(resources.GetObject("btnQLUser.Glyph")));
             this.btnQLUser.Id = 394;
+            this.btnQLUser.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnQLUser.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnQLUser.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQLUser.LargeGlyph")));
+            this.btnQLUser.LargeWidth = 140;
             this.btnQLUser.Name = "btnQLUser";
             this.btnQLUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLUser_ItemClick);
             // 
@@ -621,7 +648,12 @@
             // btn_tkdt
             // 
             this.btn_tkdt.Caption = "Thống kê doanh thu";
+            this.btn_tkdt.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_tkdt.Glyph")));
             this.btn_tkdt.Id = 397;
+            this.btn_tkdt.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_tkdt.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_tkdt.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_tkdt.LargeGlyph")));
+            this.btn_tkdt.LargeWidth = 140;
             this.btn_tkdt.Name = "btn_tkdt";
             this.btn_tkdt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_tkdt_ItemClick);
             // 
@@ -654,11 +686,14 @@
             // 
             // GroupQLLaiSuat
             // 
+            this.GroupQLLaiSuat.AllowTextClipping = false;
+            this.GroupQLLaiSuat.Glyph = ((System.Drawing.Image)(resources.GetObject("GroupQLLaiSuat.Glyph")));
             this.GroupQLLaiSuat.ItemLinks.Add(this.btnQLLaiSuat);
             this.GroupQLLaiSuat.Name = "GroupQLLaiSuat";
             // 
             // GroupQLDanhMuc
             // 
+            this.GroupQLDanhMuc.AllowTextClipping = false;
             this.GroupQLDanhMuc.ItemLinks.Add(this.btnQLDanhMuc);
             this.GroupQLDanhMuc.Name = "GroupQLDanhMuc";
             // 
@@ -2435,6 +2470,12 @@
             this.ribbonGalleryBarItem4.Id = 60;
             this.ribbonGalleryBarItem4.Name = "ribbonGalleryBarItem4";
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Nurse-icon.png");
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -2563,6 +2604,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btn_change_password;
         private DevExpress.XtraBars.BarButtonItem btn_logout;
+        private System.Windows.Forms.ImageList imageList1;
 
     }
 }

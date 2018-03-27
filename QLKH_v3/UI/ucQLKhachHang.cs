@@ -331,7 +331,14 @@ namespace QLKH_v3.UI
             {
                 string path = folderBrowserDialog1.SelectedPath;
                 path = path.Replace('/', '\\');
-                grcKhachHang.ExportToXls(@path + "\\Danh sách khách hàng.xls", true);
+                Object tmp_list = grcKhachHang.DataSource;
+                grvKhachHang.Columns.ColumnByName("danh_sach_ban_be").Visible = false;
+                grvKhachHang.Columns.ColumnByName("thanh_toan").Visible = false;
+                grvKhachHang.Columns.ColumnByName("lich_su_thanh_toan").Visible = false;
+                grcKhachHang.ExportToXls(@path + "\\Danh sách khách hàng" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
+                grvKhachHang.Columns.ColumnByName("danh_sach_ban_be").Visible = true;
+                grvKhachHang.Columns.ColumnByName("thanh_toan").Visible = true;
+                grvKhachHang.Columns.ColumnByName("lich_su_thanh_toan").Visible = true;
             }
         }
     }

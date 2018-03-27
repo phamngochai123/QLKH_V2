@@ -54,10 +54,17 @@ namespace QLKH_v3
                     user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
                     if (user != null)
                     {
+
+                        btnLogin.UseWaitCursor = true;
+                        btnExit.UseWaitCursor = true;
+                        btnLogin.Enabled = false;
+                        btnExit.Enabled = false;
+                        this.UseWaitCursor = true;
                         this.DialogResult = DialogResult.OK;
                         Show_Hide_Label(false, "");
                         _user = user;
                         this.Hide();
+                        this.UseWaitCursor = false;
                     }
                     else
                     {
@@ -79,8 +86,6 @@ namespace QLKH_v3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            btnLogin.UseWaitCursor = true;
-            btnExit.UseWaitCursor = true;
             HandleLogin();
         }
 

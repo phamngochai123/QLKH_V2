@@ -31,7 +31,7 @@ namespace QLKH_v3.UI.Detail
                 txt_username.Text = Data_User["UserName"].ToString().Trim();
                 txt_Note.Text = Data_User["Note"].ToString().Trim();
                 txt_fullname.Text = Data_User["FullName"].ToString().Trim();
-                txt_idCard_user.Text = Data_User["IdCard"].ToString().Trim();
+                txt_idCard_user.Text = Data_User["CMND"].ToString().Trim();
                 txt_phone_user.Text = Data_User["PhoneNumber"].ToString().Trim();
                 txt_address_user.Text = Data_User["Address"].ToString().Trim();
                 radio_sex_user.EditValue = Data_User["Sex"];

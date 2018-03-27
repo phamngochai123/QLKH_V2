@@ -125,5 +125,16 @@ namespace QLKH_v3.UI
 
             }
         }
+
+        private void btn_export_excel_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = folderBrowserDialog1.SelectedPath;
+                path = path.Replace('/', '\\');
+                grvHistoryPaid.ExportToXls(@path + "\\Lịch sử thanh toán" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
+            }
+        }
     }
 }

@@ -16,5 +16,7 @@ namespace QLKH_v3.Model
         public DateTime BirthDay { get; set; }
         public string Sex { get; set; }
         public string Address { get; set; }
+        public string Note { get; set; }
+        public string Type { get; set; }
     }
 }

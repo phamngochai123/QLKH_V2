@@ -30,7 +30,9 @@ namespace QLKH_v3.DAL
                                 BirthDay = use.BirthDay,
                                 PhoneNumber = use.PhoneNumber,
                                 Sex = use.Sex ? "Nam" : "Nữ",
-                                Address = use.Address
+                                Address = use.Address,
+                                Note = use.Note,
+                                Type = use.Type
                             }).AsEnumerable().ToList();
 
             }
