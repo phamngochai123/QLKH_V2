@@ -54,14 +54,20 @@ namespace QLKH_v3
                     user = DAL_QLUser.Check_Login(txt_login_username.Text.ToString().Trim(), txt_login_password.Text.ToString().Trim());
                     if (user != null)
                     {
+                        this.DialogResult = DialogResult.OK;
                         Show_Hide_Label(false, "");
                         _user = user;
                         this.Hide();
                     }
                     else
                     {
-                        Show_Hide_Label(true, "Tài khoản hoặc mật khẩu không chính xác");
+                        Show_Hide_Label(true, "Sai tên tài khoản hoặc mật khẩu");
+                        this.DialogResult = DialogResult.None;
                     }
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.None;
                 }
             }
             catch (Exception ex)
@@ -88,11 +94,11 @@ namespace QLKH_v3
 
         public void RemoveTextUser(object sender, EventArgs e)
         {
-            txt_login_username.Text = "";
+            txt_login_username.Text = txt_login_username.Text == "Tên đăng nhập" ? "" : txt_login_username.Text;
         }
         public void RemoveTextPassWord(object sender, EventArgs e)
         {
-            txt_login_password.Text = "";
+            txt_login_password.Text = txt_login_password.Text == "Mật Khẩu" ? "" : txt_login_password.Text;
             txt_login_password.Properties.PasswordChar = '*';
         }
         public void AddTextUser(object sender, EventArgs e)

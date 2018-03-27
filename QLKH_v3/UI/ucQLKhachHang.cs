@@ -326,7 +326,13 @@ namespace QLKH_v3.UI
 
         private void btn_export_excel_Click(object sender, EventArgs e)
         {
-            grcKhachHang.ExportToXls("Danh sách khách hàng.xls", true);
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = folderBrowserDialog1.SelectedPath;
+                path = path.Replace('/', '\\');
+                grcKhachHang.ExportToXls(@path + "\\Danh sách khách hàng.xls", true);
+            }
         }
     }
 }

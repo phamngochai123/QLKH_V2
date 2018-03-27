@@ -84,15 +84,19 @@ namespace QLKH_v3
         {
             this.Hide();
             Login login = new Login();
-            login.ShowDialog(); _user = login._user;
-            if (_user != null)
+            DialogResult result = login.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                this.Show();
-                UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
-                ucQLLaiSuat.Dock = DockStyle.Fill;
-                panelMain.Controls.Clear();
-                ucQLLaiSuat._user = _user;
-                panelMain.Controls.Add(ucQLLaiSuat);
+                _user = login._user;
+                if (_user != null)
+                {
+                    this.Show();
+                    UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
+                    ucQLLaiSuat.Dock = DockStyle.Fill;
+                    panelMain.Controls.Clear();
+                    ucQLLaiSuat._user = _user;
+                    panelMain.Controls.Add(ucQLLaiSuat);
+                }
             }
         }
 
