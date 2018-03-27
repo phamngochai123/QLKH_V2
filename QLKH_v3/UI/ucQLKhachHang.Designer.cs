@@ -319,6 +319,8 @@
             this.gridColumn15.Caption = "Lịch sử thanh toán";
             this.gridColumn15.ColumnEdit = this.btn_lich_su_thanh_toan;
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.ReadOnly = true;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 13;
             // 
@@ -333,7 +335,6 @@
             // 
             // panelBody
             // 
-            this.panelBody.Controls.Add(this.btn_export_excel);
             this.panelBody.Controls.Add(this.grcKhachHang);
             this.panelBody.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBody.Location = new System.Drawing.Point(0, 310);
@@ -346,9 +347,9 @@
             this.btn_export_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_export_excel.Appearance.Options.UseFont = true;
             this.btn_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("btn_export_excel.Image")));
-            this.btn_export_excel.Location = new System.Drawing.Point(1149, 6);
+            this.btn_export_excel.Location = new System.Drawing.Point(1113, 15);
             this.btn_export_excel.Name = "btn_export_excel";
-            this.btn_export_excel.Size = new System.Drawing.Size(117, 40);
+            this.btn_export_excel.Size = new System.Drawing.Size(149, 40);
             this.btn_export_excel.TabIndex = 13;
             this.btn_export_excel.Text = "Xuất excel";
             this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
@@ -667,6 +668,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btn_export_excel);
             this.panelControl1.Controls.Add(this.btn_them);
             this.panelControl1.Controls.Add(this.btn_add_customer);
             this.panelControl1.Controls.Add(this.btn_cancel_customer);

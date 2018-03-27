@@ -22,9 +22,20 @@ namespace QLKH_v3.UI
 
         private void uc_thongkedoanhthu_Load(object sender, EventArgs e)
         {
+            Load_Data();
             SetDataCbbYear();
             List<Model.Statistic> statistic = DAL_Thongke.Get_List_Customer_By_Month();
             grcStatistic.DataSource = Util.ConvertToDataTable(statistic);
+        }
+
+        private void Load_Data()
+        {
+            txt_total_money.Text = DAL_Thongke.Get_Total_Money().ToString();
+            txt_total_paid_money.Text = DAL_Thongke.Get_Total_Money_Paid("0").ToString();
+            txt_interset_money.Text = DAL_Thongke.Get_Total_Money_Paid("1").ToString();
+            txt_total_money.Text = string.Format("{0:#,##0}", double.Parse(txt_total_money.Text));
+            txt_total_paid_money.Text = string.Format("{0:#,##0}", double.Parse(txt_total_paid_money.Text));
+            txt_interset_money.Text = string.Format("{0:#,##0}", double.Parse(txt_interset_money.Text));
         }
 
         private void SetDataCbbYear()

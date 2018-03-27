@@ -295,11 +295,9 @@
             this.tabQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupQLKhachHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupLichSuThanhToan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.GroupQLBanBe = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupQLUser = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tab_thong_ke = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btn_thong_ke_khach_hang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btn_thong_ke_doanh_thu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -676,7 +674,6 @@
             this.tabQuanLy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.groupQLKhachHang,
             this.groupLichSuThanhToan,
-            this.GroupQLBanBe,
             this.groupQLUser,
             this.ribbonPageGroup4});
             this.tabQuanLy.Name = "tabQuanLy";
@@ -694,12 +691,6 @@
             this.groupLichSuThanhToan.Name = "groupLichSuThanhToan";
             this.groupLichSuThanhToan.ShowCaptionButton = false;
             // 
-            // GroupQLBanBe
-            // 
-            this.GroupQLBanBe.ItemLinks.Add(this.btnQLBanBe);
-            this.GroupQLBanBe.Name = "GroupQLBanBe";
-            this.GroupQLBanBe.ShowCaptionButton = false;
-            // 
             // groupQLUser
             // 
             this.groupQLUser.ItemLinks.Add(this.btnQLUser);
@@ -716,16 +707,10 @@
             // tab_thong_ke
             // 
             this.tab_thong_ke.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.btn_thong_ke_khach_hang,
             this.btn_thong_ke_doanh_thu,
             this.ribbonPageGroup1});
             this.tab_thong_ke.Name = "tab_thong_ke";
             this.tab_thong_ke.Text = "Thống kê";
-            // 
-            // btn_thong_ke_khach_hang
-            // 
-            this.btn_thong_ke_khach_hang.ItemLinks.Add(this.btn_tkkh);
-            this.btn_thong_ke_khach_hang.Name = "btn_thong_ke_khach_hang";
             // 
             // btn_thong_ke_doanh_thu
             // 
@@ -2558,7 +2543,6 @@
         private DevExpress.XtraBars.BarButtonItem btnQLBanBe;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupQLKhachHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupLichSuThanhToan;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup GroupQLBanBe;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
@@ -2573,7 +2557,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_tkdt;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPage tab_thong_ke;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup btn_thong_ke_khach_hang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup btn_thong_ke_doanh_thu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem5;

@@ -203,9 +203,9 @@
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Location = new System.Drawing.Point(3, 6);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(48, 16);
+            this.labelControl9.Size = new System.Drawing.Size(63, 16);
             this.labelControl9.TabIndex = 105;
-            this.labelControl9.Text = "Đồ cầm";
+            this.labelControl9.Text = "Chọn năm";
             // 
             // uc_thongkedoanhthu
             // 

@@ -98,7 +98,7 @@ namespace QLKH_v3
         }
         public void RemoveTextPassWord(object sender, EventArgs e)
         {
-            txt_login_password.Text = txt_login_password.Text == "Mật Khẩu" ? "" : txt_login_password.Text;
+            txt_login_password.Text = txt_login_password.Text == "Mật khẩu" ? "" : txt_login_password.Text;
             txt_login_password.Properties.PasswordChar = '*';
         }
         public void AddTextUser(object sender, EventArgs e)

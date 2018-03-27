@@ -61,6 +61,18 @@ namespace QLKH_v3
                 //GroupQLTaiKhoan.Enabled = true;
                 //groupQLToaNha.Enabled = false;
             }
+            if (ribbonControl.SelectedPage == tab_thong_ke)
+            {
+                UI.uc_thongkedoanhthu uc_thongkedoanhthu = new UI.uc_thongkedoanhthu();
+                uc_thongkedoanhthu.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_thongkedoanhthu);
+
+                //GroupQLTang.Enabled = true;
+                //GroupQLPhong.Enabled = true;
+                //GroupQLTaiKhoan.Enabled = true;
+                //groupQLToaNha.Enabled = false;
+            }
         }
 
         private void btnQLLaiSuat_ItemClick(object sender, ItemClickEventArgs e)
@@ -156,20 +168,23 @@ namespace QLKH_v3
         {
             try
             {
-
-                Login Login = new Login();
-                this.Hide();
-                DialogResult result = Login.ShowDialog();
-                if (result == DialogResult.Cancel)
+                bool confirm_logout = Util.Show_Message_YesNo(Message.msg_notification, "Bạn muốn đăng xuất ?");
+                if (confirm_logout)
                 {
-                    _user = Login._user;
-                    UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
-                    ribbonControl.SelectedPage = tabQuanLy;
-                    ucQLLaiSuat.Dock = DockStyle.Fill;
-                    panelMain.Controls.Clear();
-                    ucQLLaiSuat._user = _user;
-                    panelMain.Controls.Add(ucQLLaiSuat);
-                    this.Show();
+                    Login Login = new Login();
+                    this.Hide();
+                    DialogResult result = Login.ShowDialog();
+                    if (result == DialogResult.Cancel)
+                    {
+                        _user = Login._user;
+                        UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();
+                        ribbonControl.SelectedPage = tabQuanLy;
+                        ucQLLaiSuat.Dock = DockStyle.Fill;
+                        panelMain.Controls.Clear();
+                        ucQLLaiSuat._user = _user;
+                        panelMain.Controls.Add(ucQLLaiSuat);
+                        this.Show();
+                    }
                 }
             }
             catch (Exception)
@@ -193,13 +208,13 @@ namespace QLKH_v3
                 Detail_Infor._user = _user;
                 //Detail_Infor.ShowDialog();
                 DialogResult dialog_result = Detail_Infor.ShowDialog();
-                if (dialog_result == DialogResult.Cancel)
+                if (dialog_result == DialogResult.OK)
                 {
 
                     Login Login = new Login();
                     this.Hide();
                     DialogResult result = Login.ShowDialog();
-                    if (result == DialogResult.Cancel)
+                    if (result == DialogResult.OK)
                     {
                         _user = Login._user;
                         UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();

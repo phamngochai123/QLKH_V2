@@ -44,7 +44,7 @@
             // labelControl8
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Location = new System.Drawing.Point(55, 101);
+            this.labelControl8.Location = new System.Drawing.Point(102, 180);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(79, 16);
             this.labelControl8.TabIndex = 76;
@@ -52,7 +52,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(189, 98);
+            this.txt_password.Location = new System.Drawing.Point(236, 177);
             this.txt_password.Name = "txt_password";
             this.txt_password.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_password.Properties.Appearance.Options.UseFont = true;
@@ -62,7 +62,7 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Location = new System.Drawing.Point(55, 133);
+            this.labelControl7.Location = new System.Drawing.Point(102, 212);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(86, 16);
             this.labelControl7.TabIndex = 74;
@@ -70,7 +70,7 @@
             // 
             // txt_new_password
             // 
-            this.txt_new_password.Location = new System.Drawing.Point(189, 130);
+            this.txt_new_password.Location = new System.Drawing.Point(236, 209);
             this.txt_new_password.Name = "txt_new_password";
             this.txt_new_password.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_new_password.Properties.Appearance.Options.UseFont = true;
@@ -80,7 +80,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(55, 169);
+            this.labelControl3.Location = new System.Drawing.Point(102, 248);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(124, 16);
             this.labelControl3.TabIndex = 72;
@@ -88,7 +88,7 @@
             // 
             // txt_confirm_password
             // 
-            this.txt_confirm_password.Location = new System.Drawing.Point(189, 163);
+            this.txt_confirm_password.Location = new System.Drawing.Point(236, 242);
             this.txt_confirm_password.Name = "txt_confirm_password";
             this.txt_confirm_password.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_confirm_password.Properties.Appearance.Options.UseFont = true;
@@ -99,7 +99,7 @@
             // 
             this.btn_cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.Appearance.Options.UseFont = true;
-            this.btn_cancel.Location = new System.Drawing.Point(215, 245);
+            this.btn_cancel.Location = new System.Drawing.Point(262, 324);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(118, 30);
             this.btn_cancel.TabIndex = 78;
@@ -110,7 +110,7 @@
             // 
             this.btn_change_password.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_change_password.Appearance.Options.UseFont = true;
-            this.btn_change_password.Location = new System.Drawing.Point(61, 245);
+            this.btn_change_password.Location = new System.Drawing.Point(108, 324);
             this.btn_change_password.Name = "btn_change_password";
             this.btn_change_password.Size = new System.Drawing.Size(118, 30);
             this.btn_change_password.TabIndex = 77;
@@ -130,7 +130,7 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txt_confirm_password);
             this.Name = "uc_ChangePassword";
-            this.Size = new System.Drawing.Size(422, 381);
+            this.Size = new System.Drawing.Size(520, 548);
             ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_new_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_confirm_password.Properties)).EndInit();

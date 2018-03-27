@@ -60,6 +60,7 @@ namespace QLKH_v3.UI.Detail
                     bool check_change = DAL_QLUser.ChangePassword(_user, txt_new_password.Text);
                     if (check_change)
                     {
+                        this.DialogResult = DialogResult.OK;
                         Util.Show_Message_Notification(Message.msg_notification, "Đổi mật khẩu thành công");
                         ((Form)this.TopLevelControl).Close();
                     }
@@ -73,7 +74,10 @@ namespace QLKH_v3.UI.Detail
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             ((Form)this.TopLevelControl).Close();
         }
+
+        public DialogResult DialogResult { get; set; }
     }
 }
