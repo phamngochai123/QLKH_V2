@@ -268,6 +268,8 @@
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.btn_change_password = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
             this.siInfo = new DevExpress.XtraBars.BarStaticItem();
@@ -284,6 +286,8 @@
             this.btn_tkkh = new DevExpress.XtraBars.BarButtonItem();
             this.btn_tkdt = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.ribbonGalleryBarItem5 = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.tabQuanTri = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.GroupQLLaiSuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.GroupQLDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -331,10 +335,6 @@
             this.panelMain = new DevExpress.XtraEditors.PanelControl();
             this.ribbonGalleryBarItem3 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonGalleryBarItem4 = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.ribbonGalleryBarItem5 = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_change_password = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
@@ -438,6 +438,7 @@
             // 
             this.ribbonControl.ApplicationButtonDropDownControl = this.appMenu;
             this.ribbonControl.ApplicationButtonText = null;
+            this.ribbonControl.ApplicationIcon = ((System.Drawing.Bitmap)(resources.GetObject("ribbonControl.ApplicationIcon")));
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl.ExpandCollapseItem,
@@ -485,6 +486,24 @@
             this.appMenu.Name = "appMenu";
             this.appMenu.Ribbon = this.ribbonControl;
             this.appMenu.ShowRightPane = true;
+            // 
+            // btn_change_password
+            // 
+            this.btn_change_password.Caption = "Đổi mật khẩu";
+            this.btn_change_password.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_change_password.Glyph")));
+            this.btn_change_password.Id = 405;
+            this.btn_change_password.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_change_password.LargeGlyph")));
+            this.btn_change_password.Name = "btn_change_password";
+            this.btn_change_password.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_change_pass_ItemClick);
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.Caption = "Đăng xuất";
+            this.btn_logout.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_logout.Glyph")));
+            this.btn_logout.Id = 404;
+            this.btn_logout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_logout.LargeGlyph")));
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_logout_ItemClick);
             // 
             // iExit
             // 
@@ -613,6 +632,18 @@
             this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
             this.skinRibbonGalleryBarItem2.Id = 398;
             this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // ribbonGalleryBarItem5
+            // 
+            this.ribbonGalleryBarItem5.Caption = "ribbonGalleryBarItem5";
+            this.ribbonGalleryBarItem5.Id = 401;
+            this.ribbonGalleryBarItem5.Name = "ribbonGalleryBarItem5";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 402;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // tabQuanTri
             // 
@@ -2418,36 +2449,6 @@
             this.ribbonGalleryBarItem4.Gallery.RowCount = 4;
             this.ribbonGalleryBarItem4.Id = 60;
             this.ribbonGalleryBarItem4.Name = "ribbonGalleryBarItem4";
-            // 
-            // ribbonGalleryBarItem5
-            // 
-            this.ribbonGalleryBarItem5.Caption = "ribbonGalleryBarItem5";
-            this.ribbonGalleryBarItem5.Id = 401;
-            this.ribbonGalleryBarItem5.Name = "ribbonGalleryBarItem5";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 402;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.Caption = "Đăng xuất";
-            this.btn_logout.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_logout.Glyph")));
-            this.btn_logout.Id = 404;
-            this.btn_logout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_logout.LargeGlyph")));
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_logout_ItemClick);
-            // 
-            // btn_change_password
-            // 
-            this.btn_change_password.Caption = "Đổi mật khẩu";
-            this.btn_change_password.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_change_password.Glyph")));
-            this.btn_change_password.Id = 405;
-            this.btn_change_password.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_change_password.LargeGlyph")));
-            this.btn_change_password.Name = "btn_change_password";
-            this.btn_change_password.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_change_pass_ItemClick);
             // 
             // Main
             // 
