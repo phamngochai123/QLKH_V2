@@ -31,9 +31,9 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rela = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fullname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grvFriend = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grvAddFriend = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.phone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grcFriend = new DevExpress.XtraGrid.GridControl();
+            this.grcAddFriend = new DevExpress.XtraGrid.GridControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.date_paid = new DevExpress.XtraEditors.DateEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -59,8 +59,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_fullname = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvFriend)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grcFriend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvAddFriend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcAddFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties.CalendarTimeProperties)).BeginInit();
@@ -102,16 +102,16 @@
             this.fullname.Visible = true;
             this.fullname.VisibleIndex = 0;
             // 
-            // grvFriend
+            // grvAddFriend
             // 
-            this.grvFriend.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grvAddFriend.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.fullname,
             this.rela,
             this.phone,
             this.gridColumn10});
-            this.grvFriend.GridControl = this.grcFriend;
-            this.grvFriend.Name = "grvFriend";
-            this.grvFriend.OptionsView.ShowGroupPanel = false;
+            this.grvAddFriend.GridControl = this.grcAddFriend;
+            this.grvAddFriend.Name = "grvAddFriend";
+            this.grvAddFriend.OptionsView.ShowGroupPanel = false;
             // 
             // phone
             // 
@@ -121,23 +121,23 @@
             this.phone.Visible = true;
             this.phone.VisibleIndex = 2;
             // 
-            // grcFriend
+            // grcAddFriend
             // 
-            this.grcFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcFriend.Location = new System.Drawing.Point(2, 26);
-            this.grcFriend.MainView = this.grvFriend;
-            this.grcFriend.Name = "grcFriend";
-            this.grcFriend.Size = new System.Drawing.Size(420, 210);
-            this.grcFriend.TabIndex = 86;
-            this.grcFriend.UseEmbeddedNavigator = true;
-            this.grcFriend.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grvFriend});
+            this.grcAddFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grcAddFriend.Location = new System.Drawing.Point(2, 26);
+            this.grcAddFriend.MainView = this.grvAddFriend;
+            this.grcAddFriend.Name = "grcAddFriend";
+            this.grcAddFriend.Size = new System.Drawing.Size(420, 210);
+            this.grcAddFriend.TabIndex = 86;
+            this.grcAddFriend.UseEmbeddedNavigator = true;
+            this.grcAddFriend.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvAddFriend});
             // 
             // groupControl2
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.grcFriend);
+            this.groupControl2.Controls.Add(this.grcAddFriend);
             this.groupControl2.Location = new System.Drawing.Point(605, 25);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(424, 238);
@@ -411,8 +411,8 @@
             this.Name = "uc_Add_Customer";
             this.Size = new System.Drawing.Size(1083, 562);
             this.Load += new System.EventHandler(this.uc_Add_Customer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grvFriend)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grcFriend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvAddFriend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grcAddFriend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties.CalendarTimeProperties)).EndInit();
@@ -438,9 +438,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn rela;
         private DevExpress.XtraGrid.Columns.GridColumn fullname;
-        private DevExpress.XtraGrid.Views.Grid.GridView grvFriend;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvAddFriend;
         private DevExpress.XtraGrid.Columns.GridColumn phone;
-        private DevExpress.XtraGrid.GridControl grcFriend;
+        private DevExpress.XtraGrid.GridControl grcAddFriend;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.DateEdit date_paid;
         private DevExpress.XtraEditors.LabelControl labelControl4;

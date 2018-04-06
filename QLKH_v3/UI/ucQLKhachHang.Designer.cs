@@ -59,8 +59,6 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_them = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_add_customer = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_cancel_customer = new DevExpress.XtraEditors.SimpleButton();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).BeginInit();
@@ -154,7 +152,7 @@
             this.gridColumn12.FieldName = "BirthDay";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 9;
+            this.gridColumn12.VisibleIndex = 3;
             // 
             // gridColumn16
             // 
@@ -162,7 +160,7 @@
             this.gridColumn16.FieldName = "SexString";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 4;
+            this.gridColumn16.VisibleIndex = 5;
             // 
             // gridColumn4
             // 
@@ -172,7 +170,7 @@
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -182,7 +180,7 @@
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gridColumn6
             // 
@@ -194,7 +192,7 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.VisibleIndex = 7;
             // 
             // gridColumn7
             // 
@@ -206,7 +204,7 @@
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 7;
+            this.gridColumn7.VisibleIndex = 8;
             // 
             // gridColumn8
             // 
@@ -218,7 +216,7 @@
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
+            this.gridColumn8.VisibleIndex = 9;
             // 
             // gridColumn9
             // 
@@ -323,8 +321,6 @@
             // 
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Controls.Add(this.btn_them);
-            this.panelControl1.Controls.Add(this.btn_add_customer);
-            this.panelControl1.Controls.Add(this.btn_cancel_customer);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 2);
             this.panelControl1.Name = "panelControl1";
@@ -346,36 +342,12 @@
             this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Appearance.Options.UseFont = true;
             this.btn_them.Image = ((System.Drawing.Image)(resources.GetObject("btn_them.Image")));
-            this.btn_them.Location = new System.Drawing.Point(97, 15);
+            this.btn_them.Location = new System.Drawing.Point(487, 15);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(184, 39);
             this.btn_them.TabIndex = 11;
             this.btn_them.Text = "Thêm khách hàng";
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
-            // btn_add_customer
-            // 
-            this.btn_add_customer.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_customer.Appearance.Options.UseFont = true;
-            this.btn_add_customer.Enabled = false;
-            this.btn_add_customer.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_customer.Image")));
-            this.btn_add_customer.Location = new System.Drawing.Point(408, 15);
-            this.btn_add_customer.Name = "btn_add_customer";
-            this.btn_add_customer.Size = new System.Drawing.Size(117, 40);
-            this.btn_add_customer.TabIndex = 12;
-            this.btn_add_customer.Text = "xác nhận";
-            // 
-            // btn_cancel_customer
-            // 
-            this.btn_cancel_customer.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel_customer.Appearance.Options.UseFont = true;
-            this.btn_cancel_customer.Enabled = false;
-            this.btn_cancel_customer.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel_customer.Image")));
-            this.btn_cancel_customer.Location = new System.Drawing.Point(553, 15);
-            this.btn_cancel_customer.Name = "btn_cancel_customer";
-            this.btn_cancel_customer.Size = new System.Drawing.Size(117, 40);
-            this.btn_cancel_customer.TabIndex = 13;
-            this.btn_cancel_customer.Text = "Hủy";
             // 
             // categoryBindingSource
             // 
@@ -414,8 +386,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grvKhachHang;
         private DevExpress.XtraEditors.PanelControl panelBody;
         private DevExpress.XtraEditors.PanelControl panelheader;
-        private DevExpress.XtraEditors.SimpleButton btn_cancel_customer;
-        private DevExpress.XtraEditors.SimpleButton btn_add_customer;
         private DevExpress.XtraEditors.SimpleButton btn_them;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

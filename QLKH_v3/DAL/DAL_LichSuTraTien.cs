@@ -105,7 +105,6 @@ namespace QLKH_v3.DAL
         {
             historyPaid history = new historyPaid();
             customer customer = new customer();
-            int lai = 0;
             try
             {
                 history = (from data in _db.historyPaids              // lấy bản ghi trả nợ gần nhất
@@ -119,19 +118,6 @@ namespace QLKH_v3.DAL
                 customer = (from data in _db.customers
                             where data.id == IdCustomer
                             select data).FirstOrDefault();
-
-                int TongTienNoDaTra = 0;
-                List<historyPaid> lstPair = new List<historyPaid>();
-                lstPair = (from data in _db.historyPaids
-                           where data.CustomerId == IdCustomer && data.TypePaid == "0"
-                           select data).ToList();
-                foreach (var item in lstPair)
-                {
-                    TongTienNoDaTra += item.Money;
-                }
-
-                // tiền nợ gốc = số tiền vay - số tiền trả
-                int tien_no = customer.Money - TongTienNoDaTra;
 
                 DateTime start_date = customer.CreatedAt;
                 if (history != null)
@@ -153,11 +139,19 @@ namespace QLKH_v3.DAL
                 {
                     DateTime date_start = start_date.AddDays(i);//ngày để tính số tiền gốc đang nợ
                     double tien_goc = get_tien_goc_by_day(date_start, IdCustomer);
-                    for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
+
+                    if (date_start >= lst_lai_suat[lst_lai_suat.Count - 1].StartDate)
                     {
-                        if (date_start >= lst_lai_suat[j].StartDate && date_start < lst_lai_suat[j + 1].StartDate)
+                        tien_lai += tien_goc * lst_lai_suat[lst_lai_suat.Count - 1].Percents * 0.01;
+                    }
+                    else
+                    {
+                        for (int j = 0; j < (lst_lai_suat.Count - 1); j++)
                         {
-                            tien_lai += tien_goc * lst_lai_suat[j].Percents * 0.01;
+                            if (date_start >= lst_lai_suat[j].StartDate && date_start < lst_lai_suat[j + 1].StartDate)
+                            {
+                                tien_lai += tien_goc * lst_lai_suat[j].Percents * 0.01;
+                            }
                         }
                     }
                 }

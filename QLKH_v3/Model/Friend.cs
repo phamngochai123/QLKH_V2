@@ -18,5 +18,6 @@ namespace QLKH_v3.Model
         public Boolean Status { get; set; }
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
+        public int Id { get; set; }
     }
 }

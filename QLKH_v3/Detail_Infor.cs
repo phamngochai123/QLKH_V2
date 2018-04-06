@@ -60,7 +60,7 @@ namespace QLKH_v3
                 UI.Detail.uc_List_Friend uc_List_Friend = new UI.Detail.uc_List_Friend();
                 //uc_List_Friend.List_Friend = Data_Friend;
                 uc_List_Friend.idCustomer = idCustomer;
-                uc_List_Friend.Dock = DockStyle.Fill;
+                uc_List_Friend._user = _user;
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(uc_List_Friend);
             }

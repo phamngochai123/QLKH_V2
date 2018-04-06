@@ -34,6 +34,7 @@
             // 
             // panelMain
             // 
+            this.panelMain.AutoSize = true;
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
@@ -54,6 +55,7 @@
             this.Load += new System.EventHandler(this.Detail_Infor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelMain)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -62,10 +62,12 @@ namespace QLKH_v3.DAL
 
                     if (action_status == Variable.action_status.is_update)
                     {            // update data
-                        //data_edit.UserName = ctgr.UserName;
-                        //data_edit.PassWord = ctgr.PassWord;
+                        data_edit.FullName = ctgr.FullName;
+                        data_edit.PhoneNumber = ctgr.PhoneNumber;
                         data_edit.Note = ctgr.Note;
                         data_edit.UpdatedAt = DateTime.Now;
+                        data_edit.UpdatedBy = ctgr.UpdatedBy;
+                        data_edit.Relationship = ctgr.Relationship;
                     }
                     else if (action_status == Variable.action_status.is_delete)         // delete data
                     {

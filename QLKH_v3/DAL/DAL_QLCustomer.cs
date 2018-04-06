@@ -70,7 +70,7 @@ namespace QLKH_v3.DAL
                         select data).FirstOrDefault();
             historyPaid Last_Paid = new historyPaid();
             Last_Paid = (from data in _db.historyPaids
-                         where data.CustomerId == IdCustomer
+                         where data.CustomerId == IdCustomer && data.TypePaid == "1"
                          orderby data.PaidDate descending
                          select data).FirstOrDefault();
             if (Last_Paid != null)
@@ -169,7 +169,7 @@ namespace QLKH_v3.DAL
             bool check = false;
             try
             {
-                if (Util.Cnv_Int(customer.id.ToString()) > -1)
+                if (Util.Cnv_Int(customer.id.ToString()) > -1 && action_status != Variable.action_status.is_add)
                 {
                     customer data_edit = new customer();
                     data_edit = Get_Customer(customer.id);
@@ -260,7 +260,8 @@ namespace QLKH_v3.DAL
                                   UpdatedAt = data.UpdatedAt,
                                   CreatedAt = data.CreatedAt,
                                   UpdatedBy = data.UpdatedBy,
-                                  CreatedBy = data.CreatedBy
+                                  CreatedBy = data.CreatedBy,
+                                  Id = data.id
                               }).ToList();
 
             }

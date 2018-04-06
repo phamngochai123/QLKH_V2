@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_update = new DevExpress.XtraEditors.SimpleButton();
             this.grcFriend = new DevExpress.XtraGrid.GridControl();
             this.grvFriend = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.fullname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,21 +46,33 @@
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.btn_update);
             this.groupControl2.Controls.Add(this.grcFriend);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(441, 413);
+            this.groupControl2.Size = new System.Drawing.Size(441, 451);
             this.groupControl2.TabIndex = 89;
             this.groupControl2.Text = "Danh sách bạn bè";
             // 
+            // btn_update
+            // 
+            this.btn_update.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.Appearance.Options.UseFont = true;
+            this.btn_update.Location = new System.Drawing.Point(158, 401);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(118, 30);
+            this.btn_update.TabIndex = 87;
+            this.btn_update.Text = "Cập nhật";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // grcFriend
             // 
-            this.grcFriend.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grcFriend.Dock = System.Windows.Forms.DockStyle.Top;
             this.grcFriend.Location = new System.Drawing.Point(2, 26);
             this.grcFriend.MainView = this.grvFriend;
             this.grcFriend.Name = "grcFriend";
-            this.grcFriend.Size = new System.Drawing.Size(437, 385);
+            this.grcFriend.Size = new System.Drawing.Size(437, 369);
             this.grcFriend.TabIndex = 86;
             this.grcFriend.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvFriend});
@@ -80,8 +93,6 @@
             this.fullname.Caption = "Họ tên";
             this.fullname.FieldName = "FullName";
             this.fullname.Name = "fullname";
-            this.fullname.OptionsColumn.AllowEdit = false;
-            this.fullname.OptionsColumn.ReadOnly = true;
             this.fullname.Visible = true;
             this.fullname.VisibleIndex = 0;
             // 
@@ -90,8 +101,6 @@
             this.rela.Caption = "Mối quan hệ";
             this.rela.FieldName = "Relationship";
             this.rela.Name = "rela";
-            this.rela.OptionsColumn.AllowEdit = false;
-            this.rela.OptionsColumn.ReadOnly = true;
             this.rela.Visible = true;
             this.rela.VisibleIndex = 1;
             // 
@@ -100,8 +109,6 @@
             this.phone.Caption = "Số điện thoại";
             this.phone.FieldName = "PhoneNumber";
             this.phone.Name = "phone";
-            this.phone.OptionsColumn.AllowEdit = false;
-            this.phone.OptionsColumn.ReadOnly = true;
             this.phone.Visible = true;
             this.phone.VisibleIndex = 2;
             // 
@@ -110,8 +117,6 @@
             this.gridColumn10.Caption = "Ghi chú";
             this.gridColumn10.FieldName = "Note";
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.OptionsColumn.ReadOnly = true;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 3;
             // 
@@ -121,7 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl2);
             this.Name = "uc_List_Friend";
-            this.Size = new System.Drawing.Size(441, 413);
+            this.Size = new System.Drawing.Size(441, 451);
             this.Load += new System.EventHandler(this.uc_List_Friend_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -140,5 +145,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn rela;
         private DevExpress.XtraGrid.Columns.GridColumn phone;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.SimpleButton btn_update;
     }
 }

@@ -71,7 +71,7 @@ namespace QLKH_v3.UI.Detail
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng chọn đồ cần cầm");
                 return false;
             }
-            DataTable datasource = (DataTable)grcFriend.DataSource;
+            DataTable datasource = (DataTable)grcAddFriend.DataSource;
             if (datasource == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập danh sách bạn bè");
@@ -130,13 +130,14 @@ namespace QLKH_v3.UI.Detail
                     customer.IdCard = txt_idcard.Text.ToString().Trim();
                     customer.Money = int.Parse(txt_money.Text.ToString().Trim());
                     customer.FamilyPhoneNumber = txt_familyphone.Text.ToString().Trim();
+                    customer.Sex = (bool)radio_sex.EditValue;
                     customer.Status = true;
                     customer.InterestId = 1;
                     customer.CreatedBy = _user.id;
                     customer.UpdatedBy = _user.id;
                     customer.CreatedAt = DateTime.Now;
                     customer.UpdatedAt = DateTime.Now;
-                    DataTable datasource = (DataTable)grcFriend.DataSource;
+                    DataTable datasource = (DataTable)grcAddFriend.DataSource;
                     List<Model.Friend> list_friend = datasource.AsEnumerable()
                         .Select(m => new Model.Friend()
                         {
@@ -149,6 +150,7 @@ namespace QLKH_v3.UI.Detail
                     if (check == true)
                     {
                         Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_add_data);
+                        ((Form)this.TopLevelControl).Close();
                     }
                     else
                     {
@@ -178,6 +180,8 @@ namespace QLKH_v3.UI.Detail
         private void uc_Add_Customer_Load(object sender, EventArgs e)
         {
             SetDataCbbCategory();
+            List<Model.Friend> lst_friend = new List<Model.Friend>();
+            grcAddFriend.DataSource = Util.ConvertToDataTable(lst_friend);
         }
     }
 }

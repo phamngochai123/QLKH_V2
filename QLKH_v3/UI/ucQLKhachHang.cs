@@ -58,6 +58,7 @@ namespace QLKH_v3.UI
             //grcFriend.Enabled = true;
 
             Detail_Infor Detail_Infor = new Detail_Infor();
+            Detail_Infor._user = _user;
             UI.Detail.uc_Add_Customer uc_Add_Customer = new UI.Detail.uc_Add_Customer();
             int height = uc_Add_Customer.Size.Height;
             int width = uc_Add_Customer.Size.Width;
@@ -112,9 +113,14 @@ namespace QLKH_v3.UI
             Detail_Infor Detail_Infor = new Detail_Infor();
             Detail_Infor.Str_Flag = Variable.detail_infor.Friend_Customer;
             Detail_Infor.idCustomer = idCustomer;
+            UI.Detail.uc_List_Friend uc_List_Friend = new UI.Detail.uc_List_Friend();
+            int height = uc_List_Friend.Size.Height;
+            int width = uc_List_Friend.Size.Width;
+            //uc_List_Friend.List_Friend = Data_Friend;
+            Detail_Infor.Size = new Size(width, height + 20);
             //Detail_Infor.Data_Friend = lst_friend;
             //Detail_Infor.Data = row;
-            //Detail_Infor._user = _user;
+            Detail_Infor._user = _user;
             Detail_Infor.ShowDialog();
         }
 

@@ -31,10 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_LichSuTraTien));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_cancel_historypaid = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_add_historypaid = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_them = new DevExpress.XtraEditors.SimpleButton();
             this.grcHistoryPaid = new DevExpress.XtraGrid.GridControl();
             this.grvHistoryPaid = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,103 +44,55 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_chitiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.radio_type_paid = new DevExpress.XtraEditors.RadioGroup();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_phone = new DevExpress.XtraEditors.TextEdit();
-            this.numeric_money = new System.Windows.Forms.NumericUpDown();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_cmnd = new DevExpress.XtraEditors.TextEdit();
-            this.txt_ghi_chu = new DevExpress.XtraEditors.MemoEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcHistoryPaid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvHistoryPaid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_chitiet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radio_type_paid.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_money)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_cmnd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelheader
             // 
             this.panelheader.Controls.Add(this.panelControl2);
-            this.panelheader.Controls.Add(this.panelControl1);
-            this.panelheader.Controls.Add(this.btn_cancel_historypaid);
-            this.panelheader.Controls.Add(this.btn_add_historypaid);
-            this.panelheader.Controls.Add(this.btn_them);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelheader.Location = new System.Drawing.Point(0, 0);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(923, 224);
+            this.panelheader.Size = new System.Drawing.Size(923, 66);
             this.panelheader.TabIndex = 5;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.btn_export_excel);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(919, 62);
+            this.panelControl2.TabIndex = 7;
             // 
             // btn_export_excel
             // 
             this.btn_export_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_export_excel.Appearance.Options.UseFont = true;
             this.btn_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("btn_export_excel.Image")));
-            this.btn_export_excel.Location = new System.Drawing.Point(46, 9);
+            this.btn_export_excel.Location = new System.Drawing.Point(757, 11);
             this.btn_export_excel.Name = "btn_export_excel";
             this.btn_export_excel.Size = new System.Drawing.Size(149, 40);
             this.btn_export_excel.TabIndex = 14;
             this.btn_export_excel.Text = "Xuất excel";
             this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
             // 
-            // btn_cancel_historypaid
-            // 
-            this.btn_cancel_historypaid.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel_historypaid.Appearance.Options.UseFont = true;
-            this.btn_cancel_historypaid.Enabled = false;
-            this.btn_cancel_historypaid.Location = new System.Drawing.Point(502, 178);
-            this.btn_cancel_historypaid.Name = "btn_cancel_historypaid";
-            this.btn_cancel_historypaid.Size = new System.Drawing.Size(81, 30);
-            this.btn_cancel_historypaid.TabIndex = 6;
-            this.btn_cancel_historypaid.Text = "Hủy";
-            this.btn_cancel_historypaid.Click += new System.EventHandler(this.btn_cancel_historypaid_Click);
-            // 
-            // btn_add_historypaid
-            // 
-            this.btn_add_historypaid.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_historypaid.Appearance.Options.UseFont = true;
-            this.btn_add_historypaid.Enabled = false;
-            this.btn_add_historypaid.Location = new System.Drawing.Point(414, 178);
-            this.btn_add_historypaid.Name = "btn_add_historypaid";
-            this.btn_add_historypaid.Size = new System.Drawing.Size(82, 30);
-            this.btn_add_historypaid.TabIndex = 5;
-            this.btn_add_historypaid.Text = "xác nhận";
-            this.btn_add_historypaid.Click += new System.EventHandler(this.btn_add_historypaid_Click);
-            // 
-            // btn_them
-            // 
-            this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_them.Appearance.Options.UseFont = true;
-            this.btn_them.Location = new System.Drawing.Point(119, 178);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(118, 30);
-            this.btn_them.TabIndex = 4;
-            this.btn_them.Text = "Nộp tiền";
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
             // grcHistoryPaid
             // 
             this.grcHistoryPaid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grcHistoryPaid.Location = new System.Drawing.Point(0, 224);
+            this.grcHistoryPaid.Location = new System.Drawing.Point(0, 66);
             this.grcHistoryPaid.MainView = this.grvHistoryPaid;
             this.grcHistoryPaid.Name = "grcHistoryPaid";
             this.grcHistoryPaid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btn_chitiet});
-            this.grcHistoryPaid.Size = new System.Drawing.Size(923, 286);
+            this.grcHistoryPaid.Size = new System.Drawing.Size(923, 444);
             this.grcHistoryPaid.TabIndex = 6;
             this.grcHistoryPaid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvHistoryPaid});
@@ -253,137 +203,6 @@
             this.btn_chitiet.Name = "btn_chitiet";
             this.btn_chitiet.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.radio_type_paid);
-            this.panelControl1.Controls.Add(this.labelControl5);
-            this.panelControl1.Controls.Add(this.txt_phone);
-            this.panelControl1.Controls.Add(this.numeric_money);
-            this.panelControl1.Controls.Add(this.labelControl4);
-            this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.txt_cmnd);
-            this.panelControl1.Controls.Add(this.txt_ghi_chu);
-            this.panelControl1.Controls.Add(this.labelControl2);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(2, 2);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(919, 162);
-            this.panelControl1.TabIndex = 67;
-            // 
-            // radio_type_paid
-            // 
-            this.radio_type_paid.EditValue = "<Null>";
-            this.radio_type_paid.Enabled = false;
-            this.radio_type_paid.Location = new System.Drawing.Point(109, 8);
-            this.radio_type_paid.Name = "radio_type_paid";
-            this.radio_type_paid.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.radio_type_paid.Properties.Appearance.Options.UseBackColor = true;
-            this.radio_type_paid.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radio_type_paid.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("0", "Tiền gốc"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Tiền lãi")});
-            this.radio_type_paid.Size = new System.Drawing.Size(190, 25);
-            this.radio_type_paid.TabIndex = 76;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Location = new System.Drawing.Point(0, 135);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(84, 16);
-            this.labelControl5.TabIndex = 75;
-            this.labelControl5.Text = "Số điện thoại";
-            // 
-            // txt_phone
-            // 
-            this.txt_phone.Location = new System.Drawing.Point(109, 132);
-            this.txt_phone.Name = "txt_phone";
-            this.txt_phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_phone.Properties.Appearance.Options.UseFont = true;
-            this.txt_phone.Properties.ReadOnly = true;
-            this.txt_phone.Size = new System.Drawing.Size(281, 22);
-            this.txt_phone.TabIndex = 74;
-            // 
-            // numeric_money
-            // 
-            this.numeric_money.Location = new System.Drawing.Point(109, 45);
-            this.numeric_money.Maximum = new decimal(new int[] {
-            1661992959,
-            1808227885,
-            5,
-            0});
-            this.numeric_money.Name = "numeric_money";
-            this.numeric_money.ReadOnly = true;
-            this.numeric_money.Size = new System.Drawing.Size(120, 21);
-            this.numeric_money.TabIndex = 73;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Location = new System.Drawing.Point(0, 50);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(45, 16);
-            this.labelControl4.TabIndex = 72;
-            this.labelControl4.Text = "Số tiền";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(0, 91);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(56, 16);
-            this.labelControl3.TabIndex = 71;
-            this.labelControl3.Text = "Số CMND";
-            // 
-            // txt_cmnd
-            // 
-            this.txt_cmnd.Location = new System.Drawing.Point(109, 88);
-            this.txt_cmnd.Name = "txt_cmnd";
-            this.txt_cmnd.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cmnd.Properties.Appearance.Options.UseFont = true;
-            this.txt_cmnd.Properties.ReadOnly = true;
-            this.txt_cmnd.Size = new System.Drawing.Size(281, 22);
-            this.txt_cmnd.TabIndex = 70;
-            // 
-            // txt_ghi_chu
-            // 
-            this.txt_ghi_chu.Location = new System.Drawing.Point(557, 10);
-            this.txt_ghi_chu.Name = "txt_ghi_chu";
-            this.txt_ghi_chu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ghi_chu.Properties.Appearance.Options.UseFont = true;
-            this.txt_ghi_chu.Properties.ReadOnly = true;
-            this.txt_ghi_chu.Size = new System.Drawing.Size(285, 71);
-            this.txt_ghi_chu.TabIndex = 69;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(452, 11);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(46, 16);
-            this.labelControl2.TabIndex = 68;
-            this.labelControl2.Text = "Ghi chú";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(0, 11);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 16);
-            this.labelControl1.TabIndex = 67;
-            this.labelControl1.Text = "Kiểu thanh toán";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl2.Controls.Add(this.btn_export_excel);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(721, 164);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(200, 58);
-            this.panelControl2.TabIndex = 7;
-            // 
             // uc_LichSuTraTien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,19 +214,11 @@
             this.Load += new System.EventHandler(this.uc_Category_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).EndInit();
             this.panelheader.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grcHistoryPaid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvHistoryPaid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_chitiet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radio_type_paid.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_money)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_cmnd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ghi_chu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -415,9 +226,6 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelheader;
-        private DevExpress.XtraEditors.SimpleButton btn_cancel_historypaid;
-        private DevExpress.XtraEditors.SimpleButton btn_add_historypaid;
-        private DevExpress.XtraEditors.SimpleButton btn_them;
         private DevExpress.XtraGrid.GridControl grcHistoryPaid;
         private DevExpress.XtraGrid.Views.Grid.GridView grvHistoryPaid;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -431,17 +239,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.SimpleButton btn_export_excel;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.RadioGroup radio_type_paid;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_phone;
-        private System.Windows.Forms.NumericUpDown numeric_money;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txt_cmnd;
-        private DevExpress.XtraEditors.MemoEdit txt_ghi_chu;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
 
     }
 }
