@@ -48,7 +48,6 @@
             this.labelControl1.Size = new System.Drawing.Size(189, 19);
             this.labelControl1.TabIndex = 26;
             this.labelControl1.Text = "QUẢN LÝ KHÁCH HÀNG";
-            this.labelControl1.UseWaitCursor = true;
             // 
             // btnExit
             // 

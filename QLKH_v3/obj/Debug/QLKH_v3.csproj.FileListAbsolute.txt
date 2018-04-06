@@ -241,3 +241,4 @@ F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_List_Friend.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Thanh_Toan.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Lichsuthanhtoan.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_ChangePassword.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Add_Customer.resources

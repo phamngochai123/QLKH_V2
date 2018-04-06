@@ -32,9 +32,9 @@
             this.grcLichsu = new DevExpress.XtraGrid.GridControl();
             this.grvLichsu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.fullname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rela = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.phone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.date = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.money = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.type = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grcLichsu)).BeginInit();
@@ -68,9 +68,9 @@
             // 
             this.grvLichsu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.fullname,
-            this.rela,
-            this.phone,
-            this.gridColumn10});
+            this.date,
+            this.money,
+            this.type});
             this.grvLichsu.GridControl = this.grcLichsu;
             this.grvLichsu.Name = "grvLichsu";
             this.grvLichsu.OptionsView.ShowGroupPanel = false;
@@ -85,35 +85,37 @@
             this.fullname.Visible = true;
             this.fullname.VisibleIndex = 0;
             // 
-            // rela
+            // date
             // 
-            this.rela.Caption = "Ngày thanh toán";
-            this.rela.FieldName = "CreatedAtHistory";
-            this.rela.Name = "rela";
-            this.rela.OptionsColumn.AllowEdit = false;
-            this.rela.OptionsColumn.ReadOnly = true;
-            this.rela.Visible = true;
-            this.rela.VisibleIndex = 1;
+            this.date.Caption = "Ngày thanh toán";
+            this.date.FieldName = "CreatedAtHistory";
+            this.date.Name = "date";
+            this.date.OptionsColumn.AllowEdit = false;
+            this.date.OptionsColumn.ReadOnly = true;
+            this.date.Visible = true;
+            this.date.VisibleIndex = 1;
             // 
-            // phone
+            // money
             // 
-            this.phone.Caption = "Số tiền";
-            this.phone.FieldName = "PaidMoney";
-            this.phone.Name = "phone";
-            this.phone.OptionsColumn.AllowEdit = false;
-            this.phone.OptionsColumn.ReadOnly = true;
-            this.phone.Visible = true;
-            this.phone.VisibleIndex = 2;
+            this.money.Caption = "Số tiền";
+            this.money.DisplayFormat.FormatString = "c0";
+            this.money.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.money.FieldName = "PaidMoney";
+            this.money.Name = "money";
+            this.money.OptionsColumn.AllowEdit = false;
+            this.money.OptionsColumn.ReadOnly = true;
+            this.money.Visible = true;
+            this.money.VisibleIndex = 2;
             // 
-            // gridColumn10
+            // type
             // 
-            this.gridColumn10.Caption = "Kiểu thanh toán";
-            this.gridColumn10.FieldName = "TypePaid";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.OptionsColumn.ReadOnly = true;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
+            this.type.Caption = "Kiểu thanh toán";
+            this.type.FieldName = "TypePaid";
+            this.type.Name = "type";
+            this.type.OptionsColumn.AllowEdit = false;
+            this.type.OptionsColumn.ReadOnly = true;
+            this.type.Visible = true;
+            this.type.VisibleIndex = 3;
             // 
             // uc_Lichsuthanhtoan
             // 
@@ -137,8 +139,8 @@
         private DevExpress.XtraGrid.GridControl grcLichsu;
         private DevExpress.XtraGrid.Views.Grid.GridView grvLichsu;
         private DevExpress.XtraGrid.Columns.GridColumn fullname;
-        private DevExpress.XtraGrid.Columns.GridColumn rela;
-        private DevExpress.XtraGrid.Columns.GridColumn phone;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn date;
+        private DevExpress.XtraGrid.Columns.GridColumn money;
+        private DevExpress.XtraGrid.Columns.GridColumn type;
     }
 }

@@ -177,6 +177,12 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>QLKH.tt</DependentUpon>
     </Compile>
+    <Compile Include="UI\Detail\uc_Add_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Detail\uc_Add_Customer.Designer.cs">
+      <DependentUpon>uc_Add_Customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Detail\uc_ChangePassword.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +298,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Detail\uc_Add_Customer.resx">
+      <DependentUpon>uc_Add_Customer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Detail\uc_ChangePassword.resx">
       <DependentUpon>uc_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>

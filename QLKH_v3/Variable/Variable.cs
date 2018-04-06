@@ -28,6 +28,7 @@ namespace QLKH_v3.Variable
         public string Paid_Money = "Paid_Money";
         public string History_Paid = "History_Paid";
         public string ChangePassword = "ChangePassword";
+        public string Form_Add_Customer = "Add_Customer";
     }
 
     

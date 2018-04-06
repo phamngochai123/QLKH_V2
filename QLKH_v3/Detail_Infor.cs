@@ -92,6 +92,14 @@ namespace QLKH_v3
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(uc_ChangePassword);
             }
+            if (Str_Flag == variable.detail_infor.Form_Add_Customer)
+            {
+                UI.Detail.uc_Add_Customer uc_Add_Customer = new UI.Detail.uc_Add_Customer();
+                uc_Add_Customer._user = _user;
+                uc_Add_Customer.Dock = DockStyle.Fill;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(uc_Add_Customer);
+            }
         }
         public void close_form()
         {

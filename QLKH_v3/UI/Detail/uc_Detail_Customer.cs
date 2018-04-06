@@ -52,6 +52,7 @@ namespace QLKH_v3.UI.Detail
                 txt_edit_address.Text = Data_Customer["Address"].ToString().Trim();
                 cbb_category.EditValue = int.Parse(Data_Customer["IdCategory"].ToString());
                 birthDay_customer.Text = (DateTime.Parse(Data_Customer["BirthDay"].ToString().Trim())).ToString(Variable.format_date);
+                date_paid.Text = (DateTime.Parse(Data_Customer["CreatedAt"].ToString().Trim())).ToString(Variable.format_date);
             }
         }
 
