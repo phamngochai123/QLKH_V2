@@ -42,10 +42,10 @@ namespace QLKH_v3.DAL
                     lst_Customer[i].AfterMoney = Get_After_Money(lst_Customer[i].id);
                     lst_Customer[i].InterestMoney = DAL_Lichsutratien.Get_Tien_Lai(lst_Customer[i].id);
                     lst_Customer[i].AfterDate = Get_After_Date(lst_Customer[i].id);
+                    lst_Customer[i].NextDay = Get_Next_Date(lst_Customer[i].id);
                 }
                 if (orderBy == Variable.orderByAfterDate)
                 {
-
                     lst_Customer = lst_Customer.OrderByDescending(x => x.AfterDate).ToList();
                 }
 
@@ -84,6 +84,18 @@ namespace QLKH_v3.DAL
                 return (DateTime.Now - Last_Paid.PaidDate).Days > Customer.cycle ? (DateTime.Now - Last_Paid.PaidDate).Days - Customer.cycle : 0;
             }
             return (DateTime.Now - Customer.CreatedAt).Days > Customer.cycle ? (DateTime.Now - Customer.CreatedAt).Days - Customer.cycle : 0;
+        }
+
+        public DateTime Get_Next_Date(int IdCustomer) //lấy ngày nộp lãi tiếp theo
+        {
+            customer Customer = new customer();
+            Customer = (from data in _db.customers
+                        where data.id == IdCustomer && data.Status == true
+                        select data).FirstOrDefault();
+            int countDay = (DateTime.Now - Customer.CreatedAt).Days;
+            int countPaid = Convert.ToInt32(Math.Ceiling((double)(countDay * 1.0 / Customer.cycle)));
+            int sumDay = countPaid * Customer.cycle - countDay;
+            return DateTime.Now.AddDays(sumDay);
         }
 
         public int Get_After_Money(int IdCustomer) //lấy số nợ còn phải trả

@@ -31,5 +31,6 @@ namespace QLKH_v3.Model
         public DateTime BirthDay { get; set; }
         public int IdCateGory { get; set; }
         public int Cycle { get; set; }
+        public DateTime NextDay { get; set; }
     }
 }

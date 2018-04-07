@@ -61,6 +61,7 @@
             this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_them = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcDanhSachKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDanhSachKhachHang)).BeginInit();
@@ -112,7 +113,8 @@
             this.gridColumn26,
             this.gridColumn27,
             this.gridColumn28,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2});
             this.grvDanhSachKhachHang.GridControl = this.grcDanhSachKhachHang;
             this.grvDanhSachKhachHang.Name = "grvDanhSachKhachHang";
             this.grvDanhSachKhachHang.OptionsFind.AlwaysVisible = true;
@@ -246,7 +248,7 @@
             this.gridColumn26.ColumnEdit = this.columnFriend;
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 12;
+            this.gridColumn26.VisibleIndex = 13;
             // 
             // columnFriend
             // 
@@ -263,7 +265,7 @@
             this.gridColumn27.ColumnEdit = this.columnPaid;
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 13;
+            this.gridColumn27.VisibleIndex = 14;
             // 
             // columnPaid
             // 
@@ -280,7 +282,7 @@
             this.gridColumn28.ColumnEdit = this.columnTransaction;
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 14;
+            this.gridColumn28.VisibleIndex = 15;
             // 
             // columnTransaction
             // 
@@ -358,6 +360,16 @@
             this.panelControl3.Size = new System.Drawing.Size(1270, 395);
             this.panelControl3.TabIndex = 89;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Ngày đóng lãi tiếp theo";
+            this.gridColumn2.FieldName = "NextDay";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 12;
+            // 
             // uc_QLDanhSachKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,5 +426,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_them;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
