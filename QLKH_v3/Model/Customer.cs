@@ -30,5 +30,6 @@ namespace QLKH_v3.Model
         public string SexString { get; set; }
         public DateTime BirthDay { get; set; }
         public int IdCateGory { get; set; }
+        public int Cycle { get; set; }
     }
 }

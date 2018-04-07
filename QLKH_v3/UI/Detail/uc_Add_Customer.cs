@@ -26,37 +26,37 @@ namespace QLKH_v3.UI.Detail
 
         private bool CheckValidate()
         {
-            if (txt_fullname.Text.ToString().Trim() == "")
+            if (txt_fullname.Text.ToString().Trim() == "" || txt_fullname.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập họ tên");
                 return false;
             }
-            if (txt_address.Text.ToString().Trim() == "")
+            if (txt_address.Text.ToString().Trim() == "" || txt_address.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập địa chỉ");
                 return false;
             }
-            if (txt_idcard.Text.ToString().Trim() == "")
+            if (txt_idcard.Text.ToString().Trim() == "" || txt_idcard.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số chứng minh thư");
                 return false;
             }
-            if (txt_money.Text.ToString().Trim() == "")
+            if (txt_money.Value == null || txt_money.Value == 0)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số tiền vay");
                 return false;
             }
-            if (txt_phone.Text.ToString().Trim() == "")
+            if (txt_phone.Text.ToString().Trim() == "" || txt_phone.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập");
                 return false;
             }
-            if (txt_familyphone.Text.ToString().Trim() == "")
+            if (txt_familyphone.Text.ToString().Trim() == "" || txt_familyphone.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số điện thoại gia đình");
                 return false;
             }
-            if (birthDay_customer.Text.ToString().Trim() == "")
+            if (birthDay_customer.Text.ToString().Trim() == "" || birthDay_customer.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập ngày sinh");
                 return false;
@@ -69,6 +69,11 @@ namespace QLKH_v3.UI.Detail
             if (cbb_category.EditValue == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng chọn đồ cần cầm");
+                return false;
+            }
+            if (txt_cycle.Value == 0 || txt_cycle.Value == null)
+            {
+                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập chu kỳ");
                 return false;
             }
             DataTable datasource = (DataTable)grcAddFriend.DataSource;
@@ -128,7 +133,7 @@ namespace QLKH_v3.UI.Detail
                     customer.CategoryId = int.Parse(cbb_category.EditValue.ToString());
                     customer.FullName = txt_fullname.Text.ToString().Trim();
                     customer.IdCard = txt_idcard.Text.ToString().Trim();
-                    customer.Money = int.Parse(txt_money.Text.ToString().Trim());
+                    customer.Money = Convert.ToInt32(txt_money.Value);
                     customer.FamilyPhoneNumber = txt_familyphone.Text.ToString().Trim();
                     customer.Sex = (bool)radio_sex.EditValue;
                     customer.Status = true;
@@ -137,6 +142,7 @@ namespace QLKH_v3.UI.Detail
                     customer.UpdatedBy = _user.id;
                     customer.CreatedAt = DateTime.Now;
                     customer.UpdatedAt = DateTime.Now;
+                    customer.cycle = Convert.ToInt32(txt_cycle.Value);
                     DataTable datasource = (DataTable)grcAddFriend.DataSource;
                     List<Model.Friend> list_friend = datasource.AsEnumerable()
                         .Select(m => new Model.Friend()

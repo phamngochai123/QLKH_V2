@@ -10,11 +10,10 @@ using System.Windows.Forms;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraEditors.Controls;
 
 namespace QLKH_v3.UI
 {
-    public partial class ucQLKhachHang : UserControl
+    public partial class uc_QLDanhSachKhachHang : UserControl
     {
         public user _user { set; get; }
         DAL.DAL_QLCategory DAL_QLCategory = new DAL.DAL_QLCategory();
@@ -22,7 +21,7 @@ namespace QLKH_v3.UI
         Util.Util Util = new Util.Util();
         Message.Message Message = new Message.Message();
         Variable.Variable Variable = new Variable.Variable();
-        public ucQLKhachHang()
+        public uc_QLDanhSachKhachHang()
         {
             InitializeComponent();
         }
@@ -31,7 +30,7 @@ namespace QLKH_v3.UI
         {
             try
             {
-                grcKhachHang.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer(Variable.orderByAfterDate));
+                grcDanhSachKhachHang.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer(Variable.orderByCreatedAt));
             }
             catch (Exception ex)
             {
@@ -42,21 +41,6 @@ namespace QLKH_v3.UI
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            //txt_fullname.ReadOnly = false;
-            //txt_address_customer.ReadOnly = false;
-            //txt_ghi_chu.ReadOnly = false;
-            //txt_idCard_customer.ReadOnly = false;
-            //txt_money.ReadOnly = false;
-            //txt_phone_customer.ReadOnly = false;
-            //txt_phone_family.ReadOnly = false;
-            //date_birthday.Enabled = true;
-            //radio_sex_customer.Enabled = true;
-            //cbb_category.Enabled = true;
-            //btn_add_customer.Enabled = true;
-            //btn_cancel_customer.Enabled = true;
-            //btn_them.Enabled = false;
-            //grcFriend.Enabled = true;
-
             Detail_Infor Detail_Infor = new Detail_Infor();
             Detail_Infor._user = _user;
             UI.Detail.uc_Add_Customer uc_Add_Customer = new UI.Detail.uc_Add_Customer();
@@ -72,12 +56,12 @@ namespace QLKH_v3.UI
             }
         }
 
-        private void ucQLKhachHang_Load(object sender, EventArgs e)
+        private void ucQLDanhSachKhachHang_Load(object sender, EventArgs e)
         {
             Load_Data();
         }
 
-        private void grvKhachHang_DoubleClick(object sender, EventArgs e)
+        private void grvDanhSachKhachHang_DoubleClick(object sender, EventArgs e)
         {
             try
             {
@@ -86,7 +70,7 @@ namespace QLKH_v3.UI
                 GridHitInfo info = view.CalcHitInfo(ea.Location);
                 if (info.InRow || info.InRowCell)
                 {
-                    DataRow row = grvKhachHang.GetDataRow(info.RowHandle);
+                    DataRow row = grvDanhSachKhachHang.GetDataRow(info.RowHandle);
                     int idCustomer = int.Parse(row["id"].ToString().Trim());
                     Detail_Infor Detail_Infor = new Detail_Infor();
                     Detail_Infor.Str_Flag = Variable.detail_infor.Customer;
@@ -106,9 +90,21 @@ namespace QLKH_v3.UI
             }
         }
 
-        private void repositoryItemButtonEdit1_Click(object sender, EventArgs e)
+        private void btn_export_excel_Click(object sender, EventArgs e)
         {
-            int idCustomer = int.Parse(grvKhachHang.GetFocusedRowCellValue("id").ToString());
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string path = folderBrowserDialog1.SelectedPath;
+                path = path.Replace('/', '\\');
+                grcDanhSachKhachHang.ExportToXls(@path + "\\Danh sách khách hàng" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
+            }
+        }
+
+        private void columnFriend_Click(object sender, EventArgs e)
+        {
+
+            int idCustomer = int.Parse(grvDanhSachKhachHang.GetFocusedRowCellValue("id").ToString());
             //int idCustomer = int.Parse(row["id"].ToString().Trim());
             Detail_Infor Detail_Infor = new Detail_Infor();
             Detail_Infor.Str_Flag = Variable.detail_infor.Friend_Customer;
@@ -124,9 +120,9 @@ namespace QLKH_v3.UI
             Detail_Infor.ShowDialog();
         }
 
-        private void btn_thanh_toan_Click(object sender, EventArgs e)
+        private void columnPaid_Click(object sender, EventArgs e)
         {
-            int idCustomer = int.Parse(grvKhachHang.GetFocusedRowCellValue("id").ToString());
+            int idCustomer = int.Parse(grvDanhSachKhachHang.GetFocusedRowCellValue("id").ToString());
             //int idCustomer = int.Parse(row["id"].ToString().Trim());
             Detail_Infor Detail_Infor = new Detail_Infor();
             Detail_Infor.Str_Flag = Variable.detail_infor.Paid_Money;
@@ -144,9 +140,9 @@ namespace QLKH_v3.UI
             }
         }
 
-        private void btn_lich_su_thanh_toan_Click(object sender, EventArgs e)
+        private void columnTransaction_Click(object sender, EventArgs e)
         {
-            int idCustomer = int.Parse(grvKhachHang.GetFocusedRowCellValue("id").ToString());
+            int idCustomer = int.Parse(grvDanhSachKhachHang.GetFocusedRowCellValue("id").ToString());
             //int idCustomer = int.Parse(row["id"].ToString().Trim());
             Detail_Infor Detail_Infor = new Detail_Infor();
             Detail_Infor.Str_Flag = Variable.detail_infor.History_Paid;
@@ -158,24 +154,6 @@ namespace QLKH_v3.UI
             Detail_Infor.idCustomer = idCustomer;
             Detail_Infor._user = _user;
             Detail_Infor.ShowDialog();
-        }
-
-        private void btn_export_excel_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string path = folderBrowserDialog1.SelectedPath;
-                path = path.Replace('/', '\\');
-                Object tmp_list = grcKhachHang.DataSource;
-                grvKhachHang.Columns.ColumnByName("danh_sach_ban_be").Visible = false;
-                grvKhachHang.Columns.ColumnByName("thanh_toan").Visible = false;
-                grvKhachHang.Columns.ColumnByName("lich_su_thanh_toan").Visible = false;
-                grcKhachHang.ExportToXls(@path + "\\Danh sách khách hàng" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
-                grvKhachHang.Columns.ColumnByName("danh_sach_ban_be").Visible = true;
-                grvKhachHang.Columns.ColumnByName("thanh_toan").Visible = true;
-                grvKhachHang.Columns.ColumnByName("lich_su_thanh_toan").Visible = true;
-            }
         }
     }
 }

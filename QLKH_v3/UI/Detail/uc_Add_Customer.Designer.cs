@@ -51,7 +51,6 @@
             this.btn_cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_money = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txt_address = new DevExpress.XtraEditors.TextEdit();
@@ -59,6 +58,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_fullname = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_money = new System.Windows.Forms.NumericUpDown();
+            this.txt_cycle = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.grvAddFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcAddFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -72,10 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_note.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -169,7 +172,7 @@
             // 
             // txt_familyphone
             // 
-            this.txt_familyphone.Location = new System.Drawing.Point(176, 335);
+            this.txt_familyphone.Location = new System.Drawing.Point(176, 371);
             this.txt_familyphone.Name = "txt_familyphone";
             this.txt_familyphone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_familyphone.Properties.Appearance.Options.UseFont = true;
@@ -216,7 +219,7 @@
             // 
             // radio_sex
             // 
-            this.radio_sex.Location = new System.Drawing.Point(174, 296);
+            this.radio_sex.Location = new System.Drawing.Point(174, 332);
             this.radio_sex.Name = "radio_sex";
             this.radio_sex.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.radio_sex.Properties.Appearance.Options.UseBackColor = true;
@@ -244,7 +247,7 @@
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Location = new System.Drawing.Point(54, 338);
+            this.labelControl9.Location = new System.Drawing.Point(54, 374);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(70, 16);
             this.labelControl9.TabIndex = 125;
@@ -253,7 +256,7 @@
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Location = new System.Drawing.Point(54, 300);
+            this.labelControl10.Location = new System.Drawing.Point(54, 336);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(51, 16);
             this.labelControl10.TabIndex = 124;
@@ -281,7 +284,7 @@
             // 
             this.btn_cancel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.Appearance.Options.UseFont = true;
-            this.btn_cancel.Location = new System.Drawing.Point(393, 477);
+            this.btn_cancel.Location = new System.Drawing.Point(393, 513);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(118, 30);
             this.btn_cancel.TabIndex = 121;
@@ -291,7 +294,7 @@
             // 
             this.btn_add.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Appearance.Options.UseFont = true;
-            this.btn_add.Location = new System.Drawing.Point(174, 477);
+            this.btn_add.Location = new System.Drawing.Point(174, 513);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(118, 30);
             this.btn_add.TabIndex = 120;
@@ -306,15 +309,6 @@
             this.labelControl5.Size = new System.Drawing.Size(73, 16);
             this.labelControl5.TabIndex = 119;
             this.labelControl5.Text = "Số tiền vay";
-            // 
-            // txt_money
-            // 
-            this.txt_money.Location = new System.Drawing.Point(174, 264);
-            this.txt_money.Name = "txt_money";
-            this.txt_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_money.Properties.Appearance.Options.UseFont = true;
-            this.txt_money.Size = new System.Drawing.Size(337, 22);
-            this.txt_money.TabIndex = 118;
             // 
             // labelControl6
             // 
@@ -345,7 +339,7 @@
             // 
             // txt_note
             // 
-            this.txt_note.Location = new System.Drawing.Point(174, 376);
+            this.txt_note.Location = new System.Drawing.Point(174, 412);
             this.txt_note.Name = "txt_note";
             this.txt_note.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_note.Properties.Appearance.Options.UseFont = true;
@@ -355,7 +349,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(54, 378);
+            this.labelControl2.Location = new System.Drawing.Point(54, 414);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 16);
             this.labelControl2.TabIndex = 113;
@@ -379,10 +373,46 @@
             this.txt_fullname.Size = new System.Drawing.Size(337, 22);
             this.txt_fullname.TabIndex = 111;
             // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Location = new System.Drawing.Point(51, 305);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(97, 16);
+            this.labelControl12.TabIndex = 137;
+            this.labelControl12.Text = "Chu kỳ đóng lãi";
+            // 
+            // txt_money
+            // 
+            this.txt_money.Location = new System.Drawing.Point(176, 266);
+            this.txt_money.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.txt_money.Name = "txt_money";
+            this.txt_money.Size = new System.Drawing.Size(335, 20);
+            this.txt_money.TabIndex = 138;
+            // 
+            // txt_cycle
+            // 
+            this.txt_cycle.Location = new System.Drawing.Point(178, 302);
+            this.txt_cycle.Maximum = new decimal(new int[] {
+            -1981284353,
+            -1966660860,
+            0,
+            0});
+            this.txt_cycle.Name = "txt_cycle";
+            this.txt_cycle.Size = new System.Drawing.Size(335, 20);
+            this.txt_cycle.TabIndex = 139;
+            // 
             // uc_Add_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_money);
+            this.Controls.Add(this.txt_cycle);
+            this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.date_paid);
             this.Controls.Add(this.labelControl4);
@@ -400,7 +430,6 @@
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txt_money);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txt_address);
@@ -424,10 +453,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_note.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,7 +488,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_cancel;
         private DevExpress.XtraEditors.SimpleButton btn_add;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_money;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txt_address;
@@ -466,5 +495,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_fullname;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private System.Windows.Forms.NumericUpDown txt_money;
+        private System.Windows.Forms.NumericUpDown txt_cycle;
     }
 }

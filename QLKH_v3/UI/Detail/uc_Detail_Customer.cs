@@ -46,7 +46,8 @@ namespace QLKH_v3.UI.Detail
                 txt_edit_note.Text = Data_Customer["Note"].ToString().Trim();
                 txt_edit_familyphone.Text = Data_Customer["FamilyPhone"].ToString().Trim();
                 txt_edit_idcard.Text = Data_Customer["IdCard"].ToString().Trim();
-                txt_edit_money.Text = Data_Customer["Money"].ToString().Trim();
+                txt_edit_money.Value = Convert.ToInt32(Data_Customer["Money"].ToString().Trim());
+                txt_cycle.Value = Convert.ToInt32(Data_Customer["Cycle"].ToString().Trim());
                 txt_edit_phone.Text = Data_Customer["PhoneNumber"].ToString().Trim();
                 radio_edit_sex.EditValue = (bool)Data_Customer["Sex"];
                 txt_edit_address.Text = Data_Customer["Address"].ToString().Trim();
@@ -58,37 +59,37 @@ namespace QLKH_v3.UI.Detail
 
         public bool CheckValidate()
         {
-            if (txt_edit_fullname.Text.ToString().Trim() == "")
+            if (txt_edit_fullname.Text.ToString().Trim() == "" || txt_edit_fullname.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập họ tên");
                 return false;
             }
-            if (txt_edit_address.Text.ToString().Trim() == "")
+            if (txt_edit_address.Text.ToString().Trim() == "" || txt_edit_address.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập địa chỉ");
                 return false;
             }
-            if (txt_edit_idcard.Text.ToString().Trim() == "")
+            if (txt_edit_idcard.Text.ToString().Trim() == "" || txt_edit_idcard.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số chứng minh thư");
                 return false;
             }
-            if (txt_edit_money.Text.ToString().Trim() == "")
+            if (txt_edit_money.Value == 0 || txt_edit_money.Value == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số tiền vay");
                 return false;
             }
-            if (txt_edit_phone.Text.ToString().Trim() == "")
+            if (txt_edit_phone.Text.ToString().Trim() == "" || txt_edit_phone.Text.ToString().Trim() == null)
             {
-                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập");
+                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số điện thoại khách hàng");
                 return false;
             }
-            if (txt_edit_familyphone.Text.ToString().Trim() == "")
+            if (txt_edit_familyphone.Text.ToString().Trim() == "" || txt_edit_familyphone.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số điện thoại gia đình");
                 return false;
             }
-            if (birthDay_customer.Text.ToString().Trim() == "")
+            if (birthDay_customer.Text.ToString().Trim() == "" || birthDay_customer.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập ngày sinh");
                 return false;
@@ -96,6 +97,11 @@ namespace QLKH_v3.UI.Detail
             if (cbb_category.EditValue == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng chọn đồ cần cầm");
+                return false;
+            }
+            if (txt_cycle.Value == 0 || txt_cycle.Value == null)
+            {
+                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập chu kỳ");
                 return false;
             }
             return true;
@@ -116,9 +122,10 @@ namespace QLKH_v3.UI.Detail
                     Customer.Sex = (bool)radio_edit_sex.EditValue;
                     Customer.FamilyPhoneNumber = txt_edit_familyphone.Text.ToString().Trim();
                     Customer.CategoryId = int.Parse(cbb_category.EditValue.ToString());
-                    Customer.Money = int.Parse(txt_edit_money.Text.ToString().Trim());
+                    Customer.Money = Convert.ToInt32(txt_edit_money.Value);
                     Customer.Note = txt_edit_note.Text.ToString().Trim();
                     Customer.id = _ID_CUSTOMER;
+                    Customer.cycle = Convert.ToInt32(txt_cycle.Value);
                     bool check = DAL_QLCustomer.Add_and_Edit_Customer(Customer, new List<Model.Friend>(), Variable.action_status.is_update, _user);
                     if (check == true)
                     {

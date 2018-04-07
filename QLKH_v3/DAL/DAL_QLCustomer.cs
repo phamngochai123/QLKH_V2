@@ -13,13 +13,14 @@ namespace QLKH_v3.DAL
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
         DAL_LichSuTraTien DAL_Lichsutratien = new DAL_LichSuTraTien();
-        public List<Model.Customer> Get_List_Customer()
+        public List<Model.Customer> Get_List_Customer(string orderBy)
         {
             List<Model.Customer> lst_Customer = new List<Model.Customer>();
             try
             {
                 lst_Customer = (from data in _db.customers
                                 where (data.Status == true)
+                                orderby data.id descending
                                 select new Model.Customer
                                 {
                                     id = data.id,
@@ -34,6 +35,7 @@ namespace QLKH_v3.DAL
                                     SexString = data.Sex ? "Nam" : "Nữ",
                                     BirthDay = data.BirthDay,
                                     IdCateGory = data.CategoryId,
+                                    Cycle = data.cycle,
                                 }).AsEnumerable().ToList();
                 for (int i = 0; i < lst_Customer.Count; i++)
                 {
@@ -41,7 +43,11 @@ namespace QLKH_v3.DAL
                     lst_Customer[i].InterestMoney = DAL_Lichsutratien.Get_Tien_Lai(lst_Customer[i].id);
                     lst_Customer[i].AfterDate = Get_After_Date(lst_Customer[i].id);
                 }
-                lst_Customer = lst_Customer.OrderByDescending(x => x.AfterDate).ToList();
+                if (orderBy == Variable.orderByAfterDate)
+                {
+
+                    lst_Customer = lst_Customer.OrderByDescending(x => x.AfterDate).ToList();
+                }
 
                 //for (int i = 0; i < lst_Customer.Count-1; i++)
                 //{
@@ -75,9 +81,9 @@ namespace QLKH_v3.DAL
                          select data).FirstOrDefault();
             if (Last_Paid != null)
             {
-                return (DateTime.Now - Last_Paid.PaidDate).Days > 10 ? (DateTime.Now - Last_Paid.PaidDate).Days - 10 : 0;
+                return (DateTime.Now - Last_Paid.PaidDate).Days > Customer.cycle ? (DateTime.Now - Last_Paid.PaidDate).Days - Customer.cycle : 0;
             }
-            return (DateTime.Now - Customer.CreatedAt).Days > 10 ? (DateTime.Now - Customer.CreatedAt).Days - 10 : 0;
+            return (DateTime.Now - Customer.CreatedAt).Days > Customer.cycle ? (DateTime.Now - Customer.CreatedAt).Days - Customer.cycle : 0;
         }
 
         public int Get_After_Money(int IdCustomer) //lấy số nợ còn phải trả
@@ -188,6 +194,7 @@ namespace QLKH_v3.DAL
                         data_edit.Note = customer.Note;
                         data_edit.UpdatedAt = DateTime.Now;
                         data_edit.UpdatedBy = user.id;
+                        data_edit.cycle = customer.cycle;
                     }
                     else if (action_status == Variable.action_status.is_delete)         // delete data
                     {

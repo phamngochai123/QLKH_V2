@@ -38,12 +38,12 @@ namespace QLKH_v3
         {
             if (ribbonControl.SelectedPage == tabQuanLy)
             {
-                set_color_button("btnQLKhachHang");
-                UI.ucQLKhachHang ucQLKhachHang = new UI.ucQLKhachHang();
-                ucQLKhachHang.Dock = DockStyle.Fill;
+                set_color_button("btnQLDanhSachKhachHang");
+                UI.uc_QLDanhSachKhachHang uc_QLDanhSachKhachHang = new UI.uc_QLDanhSachKhachHang();
+                uc_QLDanhSachKhachHang.Dock = DockStyle.Fill;
                 panelMain.Controls.Clear();
-                ucQLKhachHang._user = _user;
-                panelMain.Controls.Add(ucQLKhachHang);
+                uc_QLDanhSachKhachHang._user = _user;
+                panelMain.Controls.Add(uc_QLDanhSachKhachHang);
 
                 //GroupQLTang.Enabled = true;
                 //GroupQLPhong.Enabled = true;
@@ -254,6 +254,7 @@ namespace QLKH_v3
                 btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btn_tkdt.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
             }
             if (btnQLUser.Name == name_btn)
             {
@@ -263,6 +264,7 @@ namespace QLKH_v3
                 btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btn_tkdt.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
             }
             if (btnQLDanhMuc.Name == name_btn)
             {
@@ -272,6 +274,7 @@ namespace QLKH_v3
                 btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btn_tkdt.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
             }
             if (btnQLKhachHang.Name == name_btn)
             {
@@ -281,6 +284,7 @@ namespace QLKH_v3
                 btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.SkyBlue;
                 btn_tkdt.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
             }
             if (btn_tkdt.Name == name_btn)
             {
@@ -290,6 +294,7 @@ namespace QLKH_v3
                 btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btn_tkdt.ItemAppearance.Normal.BackColor = Color.SkyBlue;
                 btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
             }
             if (btnLichSuThanhToan.Name == name_btn)
             {
@@ -299,7 +304,28 @@ namespace QLKH_v3
                 btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btn_tkdt.ItemAppearance.Normal.BackColor = Color.Transparent;
                 btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.SkyBlue;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
             }
+            if (btnQLDanhSachKhachHang.Name == name_btn)
+            {
+                btnQLLaiSuat.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLUser.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhMuc.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLKhachHang.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btn_tkdt.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnLichSuThanhToan.ItemAppearance.Normal.BackColor = Color.Transparent;
+                btnQLDanhSachKhachHang.ItemAppearance.Normal.BackColor = Color.SkyBlue;
+            }
+        }
+
+        private void btnQLDanhSachKhachHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            set_color_button("btnQLDanhSachKhachHang");
+            UI.uc_QLDanhSachKhachHang uc_QLDanhSachKhachHang = new UI.uc_QLDanhSachKhachHang();
+            uc_QLDanhSachKhachHang.Dock = DockStyle.Fill;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(uc_QLDanhSachKhachHang);
+            uc_QLDanhSachKhachHang._user = _user;
         }
 
     }

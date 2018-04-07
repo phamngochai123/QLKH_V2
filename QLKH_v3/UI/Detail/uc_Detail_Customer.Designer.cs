@@ -39,7 +39,6 @@
             this.btn_xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_sua = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_edit_money = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txt_edit_address = new DevExpress.XtraEditors.TextEdit();
@@ -52,12 +51,14 @@
             this.txt_edit_familyphone = new DevExpress.XtraEditors.TextEdit();
             this.date_paid = new DevExpress.XtraEditors.DateEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_cycle = new System.Windows.Forms.NumericUpDown();
+            this.txt_edit_money = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_idcard.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radio_edit_sex.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_edit_money.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_note.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_fullname.Properties)).BeginInit();
@@ -65,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_familyphone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_edit_money)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl8
@@ -87,7 +90,7 @@
             // 
             // radio_edit_sex
             // 
-            this.radio_edit_sex.Location = new System.Drawing.Point(151, 296);
+            this.radio_edit_sex.Location = new System.Drawing.Point(151, 334);
             this.radio_edit_sex.Name = "radio_edit_sex";
             this.radio_edit_sex.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.radio_edit_sex.Properties.Appearance.Options.UseBackColor = true;
@@ -115,7 +118,7 @@
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Location = new System.Drawing.Point(31, 338);
+            this.labelControl9.Location = new System.Drawing.Point(31, 376);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(70, 16);
             this.labelControl9.TabIndex = 87;
@@ -124,7 +127,7 @@
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Location = new System.Drawing.Point(31, 300);
+            this.labelControl10.Location = new System.Drawing.Point(31, 338);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(51, 16);
             this.labelControl10.TabIndex = 86;
@@ -152,7 +155,7 @@
             // 
             this.btn_xoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.Appearance.Options.UseFont = true;
-            this.btn_xoa.Location = new System.Drawing.Point(370, 477);
+            this.btn_xoa.Location = new System.Drawing.Point(370, 515);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(118, 30);
             this.btn_xoa.TabIndex = 83;
@@ -163,7 +166,7 @@
             // 
             this.btn_sua.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sua.Appearance.Options.UseFont = true;
-            this.btn_sua.Location = new System.Drawing.Point(151, 477);
+            this.btn_sua.Location = new System.Drawing.Point(151, 515);
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(118, 30);
             this.btn_sua.TabIndex = 82;
@@ -178,15 +181,6 @@
             this.labelControl5.Size = new System.Drawing.Size(73, 16);
             this.labelControl5.TabIndex = 81;
             this.labelControl5.Text = "Số tiền vay";
-            // 
-            // txt_edit_money
-            // 
-            this.txt_edit_money.Location = new System.Drawing.Point(151, 264);
-            this.txt_edit_money.Name = "txt_edit_money";
-            this.txt_edit_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_edit_money.Properties.Appearance.Options.UseFont = true;
-            this.txt_edit_money.Size = new System.Drawing.Size(337, 22);
-            this.txt_edit_money.TabIndex = 80;
             // 
             // labelControl6
             // 
@@ -217,7 +211,7 @@
             // 
             // txt_edit_note
             // 
-            this.txt_edit_note.Location = new System.Drawing.Point(151, 376);
+            this.txt_edit_note.Location = new System.Drawing.Point(151, 414);
             this.txt_edit_note.Name = "txt_edit_note";
             this.txt_edit_note.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_edit_note.Properties.Appearance.Options.UseFont = true;
@@ -227,7 +221,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(31, 378);
+            this.labelControl2.Location = new System.Drawing.Point(31, 416);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 16);
             this.labelControl2.TabIndex = 73;
@@ -273,7 +267,7 @@
             // 
             // txt_edit_familyphone
             // 
-            this.txt_edit_familyphone.Location = new System.Drawing.Point(153, 335);
+            this.txt_edit_familyphone.Location = new System.Drawing.Point(153, 373);
             this.txt_edit_familyphone.Name = "txt_edit_familyphone";
             this.txt_edit_familyphone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_edit_familyphone.Properties.Appearance.Options.UseFont = true;
@@ -303,10 +297,46 @@
             this.labelControl4.TabIndex = 108;
             this.labelControl4.Text = "Ngày vay";
             // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Location = new System.Drawing.Point(31, 306);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(97, 16);
+            this.labelControl12.TabIndex = 111;
+            this.labelControl12.Text = "Chu kỳ đóng lãi";
+            // 
+            // txt_cycle
+            // 
+            this.txt_cycle.Location = new System.Drawing.Point(153, 306);
+            this.txt_cycle.Maximum = new decimal(new int[] {
+            -1981284353,
+            -1966660860,
+            0,
+            0});
+            this.txt_cycle.Name = "txt_cycle";
+            this.txt_cycle.Size = new System.Drawing.Size(335, 20);
+            this.txt_cycle.TabIndex = 112;
+            // 
+            // txt_edit_money
+            // 
+            this.txt_edit_money.Location = new System.Drawing.Point(151, 270);
+            this.txt_edit_money.Maximum = new decimal(new int[] {
+            1569325055,
+            23283064,
+            0,
+            0});
+            this.txt_edit_money.Name = "txt_edit_money";
+            this.txt_edit_money.Size = new System.Drawing.Size(335, 20);
+            this.txt_edit_money.TabIndex = 112;
+            // 
             // uc_Detail_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_edit_money);
+            this.Controls.Add(this.txt_cycle);
+            this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.date_paid);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txt_edit_familyphone);
@@ -323,7 +353,6 @@
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txt_edit_money);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txt_edit_address);
@@ -339,7 +368,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_edit_money.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_note.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_fullname.Properties)).EndInit();
@@ -347,6 +375,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_familyphone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_edit_money)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,7 +395,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_xoa;
         private DevExpress.XtraEditors.SimpleButton btn_sua;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_edit_money;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txt_edit_address;
@@ -378,5 +407,8 @@
         private DevExpress.XtraEditors.TextEdit txt_edit_familyphone;
         private DevExpress.XtraEditors.DateEdit date_paid;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private System.Windows.Forms.NumericUpDown txt_cycle;
+        private System.Windows.Forms.NumericUpDown txt_edit_money;
     }
 }

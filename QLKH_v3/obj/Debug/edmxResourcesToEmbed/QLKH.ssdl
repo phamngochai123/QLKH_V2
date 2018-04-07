@@ -34,6 +34,7 @@
     <Property Name="CreatedBy" Type="int" Nullable="false" />
     <Property Name="UpdatedBy" Type="int" Nullable="false" />
     <Property Name="Sex" Type="bit" Nullable="false" />
+    <Property Name="cycle" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="friend">
     <Key>

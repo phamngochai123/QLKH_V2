@@ -267,6 +267,12 @@
     <Compile Include="UI\ucThongKe.Designer.cs">
       <DependentUpon>ucThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\uc_QLDanhSachKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\uc_QLDanhSachKhachHang.Designer.cs">
+      <DependentUpon>uc_QLDanhSachKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\uc_thongkedoanhthu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\uc_LichSuTraTien.resx">
       <DependentUpon>uc_LichSuTraTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\uc_QLDanhSachKhachHang.resx">
+      <DependentUpon>uc_QLDanhSachKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\uc_thongkedoanhthu.resx">
       <DependentUpon>uc_thongkedoanhthu.cs</DependentUpon>

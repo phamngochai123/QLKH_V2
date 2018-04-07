@@ -37,6 +37,7 @@ namespace QLKH_v3
         public int CreatedBy { get; set; }
         public int UpdatedBy { get; set; }
         public bool Sex { get; set; }
+        public int cycle { get; set; }
     
         public virtual category category { get; set; }
         public virtual interestRate interestRate { get; set; }

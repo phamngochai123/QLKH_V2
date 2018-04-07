@@ -60,6 +60,7 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_them = new DevExpress.XtraEditors.SimpleButton();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -101,6 +102,7 @@
             this.gridColumn16,
             this.gridColumn4,
             this.gridColumn5,
+            this.gridColumn10,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
@@ -216,7 +218,7 @@
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 9;
+            this.gridColumn8.VisibleIndex = 10;
             // 
             // gridColumn9
             // 
@@ -226,7 +228,7 @@
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 10;
+            this.gridColumn9.VisibleIndex = 11;
             // 
             // gridColumn11
             // 
@@ -242,7 +244,7 @@
             this.danh_sach_ban_be.ColumnEdit = this.repositoryItemButtonEdit1;
             this.danh_sach_ban_be.Name = "danh_sach_ban_be";
             this.danh_sach_ban_be.Visible = true;
-            this.danh_sach_ban_be.VisibleIndex = 11;
+            this.danh_sach_ban_be.VisibleIndex = 12;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -259,7 +261,7 @@
             this.thanh_toan.ColumnEdit = this.btn_thanh_toan;
             this.thanh_toan.Name = "thanh_toan";
             this.thanh_toan.Visible = true;
-            this.thanh_toan.VisibleIndex = 12;
+            this.thanh_toan.VisibleIndex = 13;
             // 
             // btn_thanh_toan
             // 
@@ -276,7 +278,7 @@
             this.lich_su_thanh_toan.ColumnEdit = this.btn_lich_su_thanh_toan;
             this.lich_su_thanh_toan.Name = "lich_su_thanh_toan";
             this.lich_su_thanh_toan.Visible = true;
-            this.lich_su_thanh_toan.VisibleIndex = 13;
+            this.lich_su_thanh_toan.VisibleIndex = 14;
             // 
             // btn_lich_su_thanh_toan
             // 
@@ -341,10 +343,11 @@
             // 
             this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_them.Appearance.Options.UseFont = true;
+            this.btn_them.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_them.Image = ((System.Drawing.Image)(resources.GetObject("btn_them.Image")));
-            this.btn_them.Location = new System.Drawing.Point(487, 15);
+            this.btn_them.Location = new System.Drawing.Point(2, 2);
             this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(184, 39);
+            this.btn_them.Size = new System.Drawing.Size(184, 64);
             this.btn_them.TabIndex = 11;
             this.btn_them.Text = "Thêm khách hàng";
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
@@ -352,6 +355,14 @@
             // categoryBindingSource
             // 
             this.categoryBindingSource.DataSource = typeof(QLKH_v3.category);
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Chu kỳ đóng lãi";
+            this.gridColumn10.FieldName = "Cycle";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 9;
             // 
             // ucQLKhachHang
             // 
@@ -409,5 +420,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
         private DevExpress.XtraEditors.SimpleButton btn_export_excel;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

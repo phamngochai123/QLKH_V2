@@ -39,6 +39,7 @@
           <Property Name="CreatedBy" Type="int" Nullable="false" />
           <Property Name="UpdatedBy" Type="int" Nullable="false" />
           <Property Name="Sex" Type="bit" Nullable="false" />
+          <Property Name="cycle" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="friend">
           <Key>
@@ -648,6 +649,7 @@
           <Property Name="CreatedBy" Type="Int32" Nullable="false" />
           <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
           <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="cycle" Type="Int32" Nullable="false" />
           <NavigationProperty Name="category" Relationship="QLKHModel.FK_customer_category" FromRole="customer" ToRole="category" />
           <NavigationProperty Name="interestRate" Relationship="QLKHModel.FK_customer_interestRate" FromRole="customer" ToRole="interestRate" />
           <NavigationProperty Name="user" Relationship="QLKHModel.FK_customer_user" FromRole="customer" ToRole="user" />
@@ -1012,6 +1014,7 @@
           <EntitySetMapping Name="customers">
             <EntityTypeMapping TypeName="QLKHModel.customer">
               <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="cycle" ColumnName="cycle" />
                 <ScalarProperty Name="Sex" ColumnName="Sex" />
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />

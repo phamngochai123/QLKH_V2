@@ -37,6 +37,11 @@ namespace QLKH_v3.UI.Detail
                                     Relationship = m.Field<string>("Relationship"),
                                     Note = m.Field<string>("Note")
                                 }).ToList();
+            if (list_friend == null || list_friend.Count == 0)
+            {
+                Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập bạn bè");
+                return false;
+            }
             for (int i = 0; i < list_friend.Count; i++)
             {
                 if (list_friend[i].PhoneNumber == null || list_friend[i].PhoneNumber == "")

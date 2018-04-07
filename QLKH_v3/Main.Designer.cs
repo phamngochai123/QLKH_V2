@@ -334,6 +334,9 @@
             this.ribbonGalleryBarItem3 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonGalleryBarItem4 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnQLDanhSachKhachHang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
@@ -460,9 +463,10 @@
             this.ribbonGalleryBarItem5,
             this.barButtonItem1,
             this.btn_logout,
-            this.btn_change_password});
+            this.btn_change_password,
+            this.btnQLDanhSachKhachHang});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 406;
+            this.ribbonControl.MaxItemId = 407;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.tabQuanTri,
@@ -586,7 +590,7 @@
             // 
             // btnQLKhachHang
             // 
-            this.btnQLKhachHang.Caption = "Quản lý khách hàng";
+            this.btnQLKhachHang.Caption = "Quản lý thanh toán";
             this.btnQLKhachHang.Glyph = ((System.Drawing.Image)(resources.GetObject("btnQLKhachHang.Glyph")));
             this.btnQLKhachHang.Id = 391;
             this.btnQLKhachHang.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -707,6 +711,7 @@
             // tabQuanLy
             // 
             this.tabQuanLy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5,
             this.groupQLKhachHang,
             this.groupLichSuThanhToan,
             this.groupQLUser,
@@ -2476,6 +2481,37 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "Nurse-icon.png");
             // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnQLDanhSachKhachHang);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.ShowCaptionButton = false;
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Quản lý khách hàng";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 391;
+            this.barButtonItem2.ItemAppearance.Disabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.barButtonItem2.ItemAppearance.Disabled.Options.UseBackColor = true;
+            this.barButtonItem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.LargeWidth = 140;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // btnQLDanhSachKhachHang
+            // 
+            this.btnQLDanhSachKhachHang.Caption = "Quản lý khách hàng";
+            this.btnQLDanhSachKhachHang.Glyph = ((System.Drawing.Image)(resources.GetObject("btnQLDanhSachKhachHang.Glyph")));
+            this.btnQLDanhSachKhachHang.Id = 406;
+            this.btnQLDanhSachKhachHang.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnQLDanhSachKhachHang.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnQLDanhSachKhachHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnQLDanhSachKhachHang.LargeGlyph")));
+            this.btnQLDanhSachKhachHang.LargeWidth = 140;
+            this.btnQLDanhSachKhachHang.Name = "btnQLDanhSachKhachHang";
+            this.btnQLDanhSachKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLDanhSachKhachHang_ItemClick);
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -2605,6 +2641,9 @@
         private DevExpress.XtraBars.BarButtonItem btn_change_password;
         private DevExpress.XtraBars.BarButtonItem btn_logout;
         private System.Windows.Forms.ImageList imageList1;
+        private DevExpress.XtraBars.BarButtonItem btnQLDanhSachKhachHang;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
 
     }
 }
