@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraSplashScreen;
+using System.Threading;
 
 namespace QLKH_v3.UI
 {
@@ -36,9 +38,10 @@ namespace QLKH_v3.UI
 
         private void ucQLLaiSuat_Load(object sender, EventArgs e)
         {
-            this.UseWaitCursor = true;
+            SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
-            this.UseWaitCursor = false;
+            Thread.Sleep(300);
+            SplashScreenManager.CloseDefaultWaitForm();
         }
 
         private void btn_them_Click(object sender, EventArgs e)

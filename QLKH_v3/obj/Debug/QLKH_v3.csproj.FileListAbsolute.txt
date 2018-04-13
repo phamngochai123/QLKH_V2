@@ -243,3 +243,4 @@ F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Lichsuthanhtoan.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_ChangePassword.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.Detail.uc_Add_Customer.resources
 F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.UI.uc_QLDanhSachKhachHang.resources
+F:\work\QLKH_V2\QLKH_v3\obj\Debug\QLKH_v3.SplashScreen1.resources

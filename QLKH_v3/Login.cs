@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DevExpress.XtraSplashScreen;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -61,6 +63,9 @@ namespace QLKH_v3
                         btnExit.Enabled = false;
                         this.UseWaitCursor = true;
                         this.DialogResult = DialogResult.OK;
+                        SplashScreenManager.ShowDefaultWaitForm();
+                        Thread.Sleep(1000);
+                        SplashScreenManager.CloseDefaultWaitForm();
                         Show_Hide_Label(false, "");
                         _user = user;
                         this.Hide();
