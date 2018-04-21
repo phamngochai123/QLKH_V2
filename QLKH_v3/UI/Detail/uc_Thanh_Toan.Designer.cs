@@ -40,14 +40,14 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.num_tien_tra = new System.Windows.Forms.NumericUpDown();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.radio_type_paid = new DevExpress.XtraEditors.RadioGroup();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btn_thanh_toan = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.num_tien_tra)).BeginInit();
+            this.txt_money = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.radio_type_paid.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_fullname
@@ -158,18 +158,6 @@
             this.labelControl6.TabIndex = 104;
             this.labelControl6.Text = "Họ tên:";
             // 
-            // num_tien_tra
-            // 
-            this.num_tien_tra.Location = new System.Drawing.Point(183, 227);
-            this.num_tien_tra.Maximum = new decimal(new int[] {
-            -1304428545,
-            434162106,
-            542,
-            0});
-            this.num_tien_tra.Name = "num_tien_tra";
-            this.num_tien_tra.Size = new System.Drawing.Size(151, 20);
-            this.num_tien_tra.TabIndex = 106;
-            // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,16 +215,26 @@
             this.btn_thanh_toan.Text = "Thanh toán";
             this.btn_thanh_toan.Click += new System.EventHandler(this.btn_thanh_toan_Click);
             // 
+            // txt_money
+            // 
+            this.txt_money.Location = new System.Drawing.Point(183, 224);
+            this.txt_money.Name = "txt_money";
+            this.txt_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_money.Properties.Appearance.Options.UseFont = true;
+            this.txt_money.Size = new System.Drawing.Size(151, 22);
+            this.txt_money.TabIndex = 139;
+            this.txt_money.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_money_KeyUp);
+            // 
             // uc_Thanh_Toan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_money);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_thanh_toan);
             this.Controls.Add(this.radio_type_paid);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.num_tien_tra);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl1);
@@ -252,8 +250,8 @@
             this.Name = "uc_Thanh_Toan";
             this.Size = new System.Drawing.Size(393, 368);
             this.Load += new System.EventHandler(this.uc_Thanh_Toan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.num_tien_tra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radio_type_paid.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,11 +271,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private System.Windows.Forms.NumericUpDown num_tien_tra;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.RadioGroup radio_type_paid;
         private DevExpress.XtraEditors.SimpleButton btn_close;
         private DevExpress.XtraEditors.SimpleButton btn_thanh_toan;
+        private DevExpress.XtraEditors.TextEdit txt_money;
     }
 }

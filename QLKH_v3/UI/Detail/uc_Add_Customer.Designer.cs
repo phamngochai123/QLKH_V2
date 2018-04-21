@@ -53,14 +53,15 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_address = new DevExpress.XtraEditors.TextEdit();
             this.txt_note = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_fullname = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_money = new System.Windows.Forms.NumericUpDown();
-            this.txt_cycle = new System.Windows.Forms.NumericUpDown();
+            this.txt_address = new DevExpress.XtraEditors.TextEdit();
+            this.txt_money = new DevExpress.XtraEditors.TextEdit();
+            this.txt_cycle = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.grvAddFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcAddFriend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -74,11 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_note.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_money)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridColumn10
@@ -150,7 +151,7 @@
             // date_paid
             // 
             this.date_paid.EditValue = null;
-            this.date_paid.Location = new System.Drawing.Point(174, 225);
+            this.date_paid.Location = new System.Drawing.Point(176, 225);
             this.date_paid.Name = "date_paid";
             this.date_paid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_paid.Properties.Appearance.Options.UseFont = true;
@@ -158,7 +159,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_paid.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_paid.Size = new System.Drawing.Size(337, 22);
+            this.date_paid.Size = new System.Drawing.Size(335, 22);
             this.date_paid.TabIndex = 134;
             // 
             // labelControl4
@@ -328,15 +329,6 @@
             this.labelControl3.TabIndex = 116;
             this.labelControl3.Text = "Địa chỉ";
             // 
-            // txt_address
-            // 
-            this.txt_address.Location = new System.Drawing.Point(176, 118);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Properties.Appearance.Options.UseFont = true;
-            this.txt_address.Size = new System.Drawing.Size(337, 22);
-            this.txt_address.TabIndex = 115;
-            // 
             // txt_note
             // 
             this.txt_note.Location = new System.Drawing.Point(174, 412);
@@ -382,36 +374,52 @@
             this.labelControl12.TabIndex = 137;
             this.labelControl12.Text = "Chu kỳ đóng lãi";
             // 
+            // txt_address
+            // 
+            this.txt_address.Location = new System.Drawing.Point(176, 118);
+            this.txt_address.Name = "txt_address";
+            this.txt_address.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_address.Properties.Appearance.Options.UseFont = true;
+            this.txt_address.Size = new System.Drawing.Size(337, 22);
+            this.txt_address.TabIndex = 115;
+            // 
             // txt_money
             // 
-            this.txt_money.Location = new System.Drawing.Point(176, 266);
-            this.txt_money.Maximum = new decimal(new int[] {
-            1874919423,
-            2328306,
-            0,
-            0});
+            this.txt_money.Location = new System.Drawing.Point(176, 267);
             this.txt_money.Name = "txt_money";
-            this.txt_money.Size = new System.Drawing.Size(335, 20);
+            this.txt_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_money.Properties.Appearance.Options.UseFont = true;
+            this.txt_money.Size = new System.Drawing.Size(337, 22);
             this.txt_money.TabIndex = 138;
+            this.txt_money.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_money_KeyDown);
+            this.txt_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_money_KeyPress);
+            this.txt_money.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_money_KeyUp);
             // 
             // txt_cycle
             // 
-            this.txt_cycle.Location = new System.Drawing.Point(178, 302);
-            this.txt_cycle.Maximum = new decimal(new int[] {
-            -1981284353,
-            -1966660860,
-            0,
-            0});
+            this.txt_cycle.Location = new System.Drawing.Point(176, 302);
             this.txt_cycle.Name = "txt_cycle";
-            this.txt_cycle.Size = new System.Drawing.Size(335, 20);
+            this.txt_cycle.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cycle.Properties.Appearance.Options.UseFont = true;
+            this.txt_cycle.Size = new System.Drawing.Size(304, 22);
             this.txt_cycle.TabIndex = 139;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelControl13.Location = new System.Drawing.Point(486, 305);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(32, 16);
+            this.labelControl13.TabIndex = 140;
+            this.labelControl13.Text = "Ngày";
             // 
             // uc_Add_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txt_money);
+            this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.txt_cycle);
+            this.Controls.Add(this.txt_money);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.date_paid);
@@ -453,11 +461,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_phone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_note.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fullname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_money)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_cycle.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,13 +498,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txt_address;
         private DevExpress.XtraEditors.MemoEdit txt_note;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_fullname;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private System.Windows.Forms.NumericUpDown txt_money;
-        private System.Windows.Forms.NumericUpDown txt_cycle;
+        private DevExpress.XtraEditors.TextEdit txt_address;
+        private DevExpress.XtraEditors.TextEdit txt_money;
+        private DevExpress.XtraEditors.TextEdit txt_cycle;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
     }
 }

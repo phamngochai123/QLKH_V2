@@ -41,10 +41,10 @@ namespace QLKH_v3.UI.Detail
 
                 lbl_fullname.Text = Customer.FullName.ToString();
                 lbl_cmnd.Text = Customer.IdCard.ToString();
-                lbl_tien_goc.Text = tien_vay.ToString();
-                lbl_tien_goc_da_tra.Text = tien_goc_da_tra.ToString();
-                lbl_tien_goc_con_no.Text = tien_goc_con_no.ToString();
-                lbl_tien_lai.Text = tien_lai.ToString();
+                lbl_tien_goc.Text = Util.formatMoney(Convert.ToInt32(tien_vay));
+                lbl_tien_goc_da_tra.Text =  Util.formatMoney( Convert.ToInt32(tien_goc_da_tra));
+                lbl_tien_goc_con_no.Text = Util.formatMoney(Convert.ToInt32(tien_goc_con_no));
+                lbl_tien_lai.Text = Util.formatMoney(Convert.ToInt32(tien_lai));
             }
             catch (Exception)
             {
@@ -89,7 +89,7 @@ namespace QLKH_v3.UI.Detail
                 if (CheckValidate())
                 {
                     historyPaid paid = new historyPaid();
-                    paid.Money = Convert.ToInt32(num_tien_tra.Value);
+                    paid.Money = Convert.ToInt32(txt_money.Text.ToString().Trim().Replace(",", ""));
                     paid.TypePaid = radio_type_paid.EditValue.ToString();
                     paid.CustomerId = idCustomer;
                     paid.CreatedAt = DateTime.Now;
@@ -117,25 +117,34 @@ namespace QLKH_v3.UI.Detail
         {
             try
             {
-                if (num_tien_tra.Value == 0)
+                if (txt_money.Text.ToString().Trim() == "" || txt_money.Text.ToString().Trim() == null)
                 {
                     Util.Show_Message_Notification(Message.msg_notification, "Số tiền phải > 0");
                     return false;
+                }
+                else
+                {
+                    int parsedValue;
+                    if (!int.TryParse(txt_money.Text.ToString().Trim().Replace(",", ""), out parsedValue))
+                    {
+                        Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập đúng định dạng số tiền");
+                        return false;
+                    }
                 }
                 if (radio_type_paid.EditValue.ToString() == "<Null>")
                 {
                     Util.Show_Message_Notification(Message.msg_notification, "Vui lòng chọn kiểu thanh toán");
                     return false;
                 }
-                else if (radio_type_paid.EditValue.ToString() == "0" && num_tien_tra.Value > Convert.ToInt32(_tien_goc_con_no))
+                else if (radio_type_paid.EditValue.ToString() == "0" && Convert.ToInt32(txt_money.Text.ToString().Trim()) > Convert.ToInt32(_tien_goc_con_no))
                 {
                     Util.Show_Message_Notification(Message.msg_notification, "Số tiền không thể > số tiền đang nợ");
                     return false;
                 }
-                else if (radio_type_paid.EditValue.ToString() == "1" && num_tien_tra.Value != Convert.ToInt32(_tien_lai))
+                else if (radio_type_paid.EditValue.ToString() == "1" && Convert.ToInt32(txt_money.Text.ToString().Trim()) != Convert.ToInt32(_tien_lai))
                 {
                     Util.Show_Message_Notification(Message.msg_notification, "Số tiền trả phải bằng số tiền lãi đang nợ");
-                    num_tien_tra.Value = 0;
+                    txt_money.Text = "";
                     return false;
                 }
 
@@ -146,6 +155,11 @@ namespace QLKH_v3.UI.Detail
                 throw;
             }
             return true;
+        }
+
+        private void txt_money_KeyUp(object sender, KeyEventArgs e)
+        {
+            Util.formatTextToMoney(txt_money);
         }
     }
 }

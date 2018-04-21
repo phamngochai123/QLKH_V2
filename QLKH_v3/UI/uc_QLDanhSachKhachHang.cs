@@ -47,7 +47,7 @@ namespace QLKH_v3.UI
             int height = uc_Add_Customer.Size.Height;
             int width = uc_Add_Customer.Size.Width;
             //uc_List_Friend.List_Friend = Data_Friend;
-            Detail_Infor.Size = new Size(width, height);
+            Detail_Infor.Size = new Size(width, height + 60);
             Detail_Infor.Str_Flag = Variable.detail_infor.Form_Add_Customer;
             DialogResult dialog_result = Detail_Infor.ShowDialog();
             if (dialog_result == DialogResult.Cancel)

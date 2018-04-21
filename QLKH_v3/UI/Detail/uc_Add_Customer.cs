@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
+using System.Globalization;
 
 namespace QLKH_v3.UI.Detail
 {
@@ -29,30 +30,46 @@ namespace QLKH_v3.UI.Detail
             if (txt_fullname.Text.ToString().Trim() == "" || txt_fullname.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập họ tên");
+                txt_fullname.Focus();
                 return false;
             }
             if (txt_address.Text.ToString().Trim() == "" || txt_address.Text.ToString().Trim() == null)
             {
+                txt_address.Focus();
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập địa chỉ");
                 return false;
             }
             if (txt_idcard.Text.ToString().Trim() == "" || txt_idcard.Text.ToString().Trim() == null)
             {
+                txt_idcard.Focus();
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số chứng minh thư");
                 return false;
             }
-            if (txt_money.Value == null || txt_money.Value == 0)
+            if (txt_money.Text.ToString().Trim() == "" || txt_money.Text.ToString().Trim() == null)
             {
+                txt_money.Focus();
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số tiền vay");
                 return false;
             }
+            else
+            {
+                int parsedValue;
+                if (!int.TryParse(txt_money.Text.ToString().Trim().Replace(",", ""), out parsedValue))
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập đúng định dạng số tiền");
+                    txt_money.Focus();
+                    return false;
+                }
+            }
             if (txt_phone.Text.ToString().Trim() == "" || txt_phone.Text.ToString().Trim() == null)
             {
+                txt_phone.Focus();
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập");
                 return false;
             }
             if (txt_familyphone.Text.ToString().Trim() == "" || txt_familyphone.Text.ToString().Trim() == null)
             {
+                txt_familyphone.Focus();
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số điện thoại gia đình");
                 return false;
             }
@@ -71,10 +88,19 @@ namespace QLKH_v3.UI.Detail
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng chọn đồ cần cầm");
                 return false;
             }
-            if (txt_cycle.Value == 0 || txt_cycle.Value == null)
+            if (txt_cycle.Text.ToString().Trim() == "" || txt_cycle.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập chu kỳ");
                 return false;
+            }
+            else
+            {
+                int parsedValue;
+                if (!int.TryParse(txt_cycle.Text.ToString().Trim().Replace(",", ""), out parsedValue))
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập đúng định dạng chu kỳ");
+                    return false;
+                }
             }
             DataTable datasource = (DataTable)grcAddFriend.DataSource;
             if (datasource == null)
@@ -133,7 +159,7 @@ namespace QLKH_v3.UI.Detail
                     customer.CategoryId = int.Parse(cbb_category.EditValue.ToString());
                     customer.FullName = txt_fullname.Text.ToString().Trim();
                     customer.IdCard = txt_idcard.Text.ToString().Trim();
-                    customer.Money = Convert.ToInt32(txt_money.Value);
+                    customer.Money = Convert.ToInt32(txt_money.Text.ToString().Trim().Replace(",", ""));
                     customer.FamilyPhoneNumber = txt_familyphone.Text.ToString().Trim();
                     customer.Sex = (bool)radio_sex.EditValue;
                     customer.Status = true;
@@ -142,7 +168,7 @@ namespace QLKH_v3.UI.Detail
                     customer.UpdatedBy = _user.id;
                     customer.CreatedAt = DateTime.Now;
                     customer.UpdatedAt = DateTime.Now;
-                    customer.cycle = Convert.ToInt32(txt_cycle.Value);
+                    customer.cycle = Convert.ToInt32(txt_cycle.Text);
                     DataTable datasource = (DataTable)grcAddFriend.DataSource;
                     List<Model.Friend> list_friend = datasource.AsEnumerable()
                         .Select(m => new Model.Friend()
@@ -188,6 +214,26 @@ namespace QLKH_v3.UI.Detail
             SetDataCbbCategory();
             List<Model.Friend> lst_friend = new List<Model.Friend>();
             grcAddFriend.DataSource = Util.ConvertToDataTable(lst_friend);
+        }
+
+        private void txt_money_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_money_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_money_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txt_money_KeyUp(object sender, KeyEventArgs e)
+        {
+            Util.formatTextToMoney(txt_money);
         }
     }
 }

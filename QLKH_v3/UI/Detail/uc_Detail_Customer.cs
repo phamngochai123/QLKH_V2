@@ -46,7 +46,7 @@ namespace QLKH_v3.UI.Detail
                 txt_edit_note.Text = Data_Customer["Note"].ToString().Trim();
                 txt_edit_familyphone.Text = Data_Customer["FamilyPhone"].ToString().Trim();
                 txt_edit_idcard.Text = Data_Customer["IdCard"].ToString().Trim();
-                txt_edit_money.Value = Convert.ToInt32(Data_Customer["Money"].ToString().Trim());
+                txt_money.Text = Util.formatMoney(Convert.ToInt32(Data_Customer["Money"].ToString().Trim()));
                 txt_cycle.Value = Convert.ToInt32(Data_Customer["Cycle"].ToString().Trim());
                 txt_edit_phone.Text = Data_Customer["PhoneNumber"].ToString().Trim();
                 radio_edit_sex.EditValue = (bool)Data_Customer["Sex"];
@@ -74,10 +74,19 @@ namespace QLKH_v3.UI.Detail
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số chứng minh thư");
                 return false;
             }
-            if (txt_edit_money.Value == 0 || txt_edit_money.Value == null)
+            if (txt_money.Text.ToString().Trim() == "" || txt_money.Text.ToString().Trim() == null)
             {
                 Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số tiền vay");
                 return false;
+            }
+            else
+            {
+                int parsedValue;
+                if (!int.TryParse(txt_money.Text.ToString().Trim().Replace(",", ""), out parsedValue))
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập đúng định dạng số tiền");
+                    return false;
+                }
             }
             if (txt_edit_phone.Text.ToString().Trim() == "" || txt_edit_phone.Text.ToString().Trim() == null)
             {
@@ -122,7 +131,7 @@ namespace QLKH_v3.UI.Detail
                     Customer.Sex = (bool)radio_edit_sex.EditValue;
                     Customer.FamilyPhoneNumber = txt_edit_familyphone.Text.ToString().Trim();
                     Customer.CategoryId = int.Parse(cbb_category.EditValue.ToString());
-                    Customer.Money = Convert.ToInt32(txt_edit_money.Value);
+                    Customer.Money = Convert.ToInt32(txt_money.Text.ToString().Trim().Replace(",", ""));
                     Customer.Note = txt_edit_note.Text.ToString().Trim();
                     Customer.id = _ID_CUSTOMER;
                     Customer.cycle = Convert.ToInt32(txt_cycle.Value);
@@ -180,6 +189,11 @@ namespace QLKH_v3.UI.Detail
                 Util.Show_Message_Error(Message.msg_error, Message.msg_error_delete_data);
             }
 
+        }
+
+        private void txt_money_KeyUp(object sender, KeyEventArgs e)
+        {
+            Util.formatTextToMoney(txt_money);
         }
     }
 }

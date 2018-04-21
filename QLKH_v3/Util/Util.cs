@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,6 +74,33 @@ namespace QLKH_v3.Util
             Enumerable.Range(0, toDate.Subtract(fromDate).Days + 1)
                              .Select(d => count++);
             return count;
+        }
+
+        public void formatTextToMoney(TextEdit textbox)
+        {
+            long parsedValue;
+            string valueText = textbox.Text.Replace(",", "");
+            if (long.TryParse(valueText, out parsedValue))
+            {
+                long money = Convert.ToInt64(valueText);
+                if (money >= 1000)
+                {
+                    textbox.Text = money.ToString("C0", new CultureInfo("en-us"));
+                    textbox.Text = textbox.Text.Replace("$", "");
+                    textbox.SelectionStart = textbox.Text.Length; // add some logic if length is 0
+                    textbox.SelectionLength = 0;
+                }
+            }
+        }
+
+        public string formatMoney(int value)
+        {
+            string Text = value.ToString();
+            if (value >= 1000)
+                {
+                    Text = value.ToString("C0", new CultureInfo("en-us")).Replace("$", "");
+                }
+            return Text;
         }
     }
 }

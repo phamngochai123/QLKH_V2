@@ -53,7 +53,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.txt_cycle = new System.Windows.Forms.NumericUpDown();
-            this.txt_edit_money = new System.Windows.Forms.NumericUpDown();
+            this.txt_money = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_edit_idcard.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radio_edit_sex.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.birthDay_customer.Properties.CalendarTimeProperties)).BeginInit();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_edit_money)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl8
@@ -277,7 +277,7 @@
             // date_paid
             // 
             this.date_paid.EditValue = null;
-            this.date_paid.Location = new System.Drawing.Point(151, 225);
+            this.date_paid.Location = new System.Drawing.Point(153, 225);
             this.date_paid.Name = "date_paid";
             this.date_paid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_paid.Properties.Appearance.Options.UseFont = true;
@@ -318,23 +318,21 @@
             this.txt_cycle.Size = new System.Drawing.Size(335, 20);
             this.txt_cycle.TabIndex = 112;
             // 
-            // txt_edit_money
+            // txt_money
             // 
-            this.txt_edit_money.Location = new System.Drawing.Point(151, 270);
-            this.txt_edit_money.Maximum = new decimal(new int[] {
-            1569325055,
-            23283064,
-            0,
-            0});
-            this.txt_edit_money.Name = "txt_edit_money";
-            this.txt_edit_money.Size = new System.Drawing.Size(335, 20);
-            this.txt_edit_money.TabIndex = 112;
+            this.txt_money.Location = new System.Drawing.Point(153, 267);
+            this.txt_money.Name = "txt_money";
+            this.txt_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_money.Properties.Appearance.Options.UseFont = true;
+            this.txt_money.Size = new System.Drawing.Size(337, 22);
+            this.txt_money.TabIndex = 113;
+            this.txt_money.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_money_KeyUp);
             // 
             // uc_Detail_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txt_edit_money);
+            this.Controls.Add(this.txt_money);
             this.Controls.Add(this.txt_cycle);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.date_paid);
@@ -376,7 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_paid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_edit_money)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,6 +407,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private System.Windows.Forms.NumericUpDown txt_cycle;
-        private System.Windows.Forms.NumericUpDown txt_edit_money;
+        private DevExpress.XtraEditors.TextEdit txt_money;
     }
 }
