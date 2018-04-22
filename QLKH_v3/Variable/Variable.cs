@@ -9,11 +9,11 @@ namespace QLKH_v3.Variable
 {
     class Variable
     {
-        public string format_date_time = CultureInfo.CurrentUICulture.DateTimeFormat.FullDateTimePattern;
+        public string format_date_time = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.FullDateTimePattern;
         public string format_date_time_replace = "ddMMyyyyHHmmss";
         public string orderByCreatedAt = "orderByCreatedAt";
         public string orderByAfterDate = "orderByAfterDate";
-        public string format_date = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+        public string format_date = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
         public Action_Status action_status = new Action_Status();
         public Detail_Infor detail_infor = new Detail_Infor();
     }
