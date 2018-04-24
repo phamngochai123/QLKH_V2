@@ -76,10 +76,11 @@
             // 
             this.btn_export_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_export_excel.Appearance.Options.UseFont = true;
+            this.btn_export_excel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("btn_export_excel.Image")));
-            this.btn_export_excel.Location = new System.Drawing.Point(757, 11);
+            this.btn_export_excel.Location = new System.Drawing.Point(770, 0);
             this.btn_export_excel.Name = "btn_export_excel";
-            this.btn_export_excel.Size = new System.Drawing.Size(149, 40);
+            this.btn_export_excel.Size = new System.Drawing.Size(149, 62);
             this.btn_export_excel.TabIndex = 14;
             this.btn_export_excel.Text = "Xuất excel";
             this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);

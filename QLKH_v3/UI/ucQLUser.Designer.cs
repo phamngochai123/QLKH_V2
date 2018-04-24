@@ -452,7 +452,7 @@
             // Sex
             // 
             this.Sex.Caption = "Giới tính";
-            this.Sex.FieldName = "Sex";
+            this.Sex.FieldName = "SexString";
             this.Sex.Name = "Sex";
             this.Sex.OptionsColumn.AllowEdit = false;
             this.Sex.OptionsColumn.ReadOnly = true;

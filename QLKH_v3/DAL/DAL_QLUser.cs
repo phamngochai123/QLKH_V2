@@ -29,7 +29,8 @@ namespace QLKH_v3.DAL
                                 CMND = use.IdCard,
                                 BirthDay = use.BirthDay,
                                 PhoneNumber = use.PhoneNumber,
-                                Sex = use.Sex ? "Nam" : "Nữ",
+                                Sex = use.Sex,
+                                SexString = use.Sex ? "Nam" : "Nữ",
                                 Address = use.Address,
                                 Note = use.Note,
                                 Type = use.Type
@@ -97,7 +98,10 @@ namespace QLKH_v3.DAL
                         data_edit.IdCard = ctgr.IdCard;
                         data_edit.BirthDay = ctgr.BirthDay;
                         data_edit.Address = ctgr.Address;
-                        data_edit.PassWord = ctgr.PassWord;
+                        if (ctgr.PassWord != "" && ctgr.PassWord != null)
+                        {
+                            data_edit.PassWord = ctgr.PassWord;
+                        }
                     }
                     else if (action_status == Variable.action_status.is_delete)         // delete data
                     {

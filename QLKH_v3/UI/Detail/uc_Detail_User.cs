@@ -34,7 +34,7 @@ namespace QLKH_v3.UI.Detail
                 txt_idCard_user.Text = Data_User["CMND"].ToString().Trim();
                 txt_phone_user.Text = Data_User["PhoneNumber"].ToString().Trim();
                 txt_address_user.Text = Data_User["Address"].ToString().Trim();
-                radio_sex_user.EditValue = Data_User["Sex"];
+                radio_sex_user.EditValue = (bool)Data_User["Sex"];
                 radio_type_user.EditValue = Data_User["Type"];
                 birthDay_user.Text = (DateTime.Parse(Data_User["BirthDay"].ToString().Trim())).ToString(Variable.format_date);
             }
@@ -44,11 +44,45 @@ namespace QLKH_v3.UI.Detail
             bool check = true;
             try
             {
-
+                if (txt_address_user.Text.ToString().Trim() == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập địa chỉ");
+                    txt_address_user.Focus();
+                    return false;
+                }
+                if (txt_fullname.Text.ToString().Trim() == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập họ tên");
+                    txt_fullname.Focus();
+                    return false;
+                }
+                if (txt_idCard_user.Text.ToString().Trim() == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số chứng minh thư");
+                    txt_idCard_user.Focus();
+                    return false;
+                }
+                if (txt_phone_user.Text.ToString().Trim() == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập số điện thoại");
+                    txt_phone_user.Focus();
+                    return false;
+                }
+                if (txt_username.Text.ToString().Trim() == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng nhập username");
+                    txt_username.Focus();
+                    return false;
+                }
+                if (birthDay_user.Text.ToString().Trim() == "")
+                {
+                    Util.Show_Message_Notification(Message.msg_notification, "Vui lòng chọn ngày sinh");
+                    return false;
+                }
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             return check;
         }
@@ -60,11 +94,14 @@ namespace QLKH_v3.UI.Detail
                 if (CheckValidate() == true)
                 {
                     //ctgr.UserName = txt_name_category.Text.Trim();
+                    if (txt_password_user.Text.ToString().Trim() != "")
+                    {
+                        ctgr.PassWord = txt_password_user.Text.Trim();
+                    }
                     ctgr.FullName = txt_fullname.Text.Trim();
                     ctgr.PhoneNumber = txt_phone_user.Text.Trim();
                     ctgr.Address = txt_address_user.Text.Trim();
                     ctgr.Note = txt_Note.Text.Trim();
-                    ctgr.PassWord = txt_password_user.Text.Trim();
                     ctgr.BirthDay = DateTime.Parse(birthDay_user.Text.Trim());
                     ctgr.Sex = (bool)radio_sex_user.EditValue;
                     ctgr.Type = (string)radio_type_user.EditValue;

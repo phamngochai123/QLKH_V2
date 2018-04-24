@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraSplashScreen;
+using System.Threading;
 
 namespace QLKH_v3.UI
 {
@@ -22,7 +24,10 @@ namespace QLKH_v3.UI
 
         private void uc_thongkedoanhthu_Load(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
+            Thread.Sleep(1000);
+            SplashScreenManager.CloseDefaultWaitForm();
             SetDataCbbYear();
             List<Model.Statistic> statistic = DAL_Thongke.Get_List_Customer_By_Month();
             grcStatistic.DataSource = Util.ConvertToDataTable(statistic);

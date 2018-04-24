@@ -184,7 +184,7 @@ namespace QLKH_v3
                     Login Login = new Login();
                     this.Hide();
                     DialogResult result = Login.ShowDialog();
-                    if (result == DialogResult.Cancel)
+                    if (result == DialogResult.OK)
                     {
                         _user = Login._user;
                         UI.ucQLLaiSuat ucQLLaiSuat = new UI.ucQLLaiSuat();

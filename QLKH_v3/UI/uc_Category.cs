@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraSplashScreen;
+using System.Threading;
 
 namespace QLKH_v3.UI
 {
@@ -59,7 +61,10 @@ namespace QLKH_v3.UI
         }
         private void uc_Category_Load(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
+            Thread.Sleep(1000);
+            SplashScreenManager.CloseDefaultWaitForm();
         }
 
         private void Fill_Data_Category(int id_category)

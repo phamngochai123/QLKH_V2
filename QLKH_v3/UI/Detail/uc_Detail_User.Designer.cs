@@ -256,8 +256,8 @@
             this.radio_sex_user.Properties.Appearance.Options.UseBackColor = true;
             this.radio_sex_user.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radio_sex_user.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Nam", "Nam"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("Nữ", "Nữ")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Nam"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Nữ")});
             this.radio_sex_user.Size = new System.Drawing.Size(190, 25);
             this.radio_sex_user.TabIndex = 67;
             // 

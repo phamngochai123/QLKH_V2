@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraSplashScreen;
+using System.Threading;
 
 namespace QLKH_v3.UI
 {
@@ -38,7 +40,10 @@ namespace QLKH_v3.UI
         }
         private void ucQLUser_Load(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
+            Thread.Sleep(1000);
+            SplashScreenManager.CloseDefaultWaitForm();
         }
 
         private bool CheckValidate()
