@@ -17,6 +17,7 @@ namespace QLKH_v3.UI
 {
     public partial class ucQLUser : UserControl
     {
+        public user _user { get; set; }
         DAL.DAL_QLUser Dal_User = new DAL.DAL_QLUser();
         Util.Util Util = new Util.Util();
         Message.Message Message = new Message.Message();
@@ -30,7 +31,7 @@ namespace QLKH_v3.UI
         {
             try
             {
-                grcUser.DataSource = Util.ConvertToDataTable(Dal_User.Get_Data_User());
+                grcUser.DataSource = Util.ConvertToDataTable(Dal_User.Get_Data_User(_user));
             }
             catch (Exception ex)
             {
@@ -42,7 +43,6 @@ namespace QLKH_v3.UI
         {
             SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
-            Thread.Sleep(1000);
             SplashScreenManager.CloseDefaultWaitForm();
         }
 
@@ -112,19 +112,22 @@ namespace QLKH_v3.UI
 
         private void grvUser_DoubleClick(object sender, EventArgs e)
         {
-            DXMouseEventArgs ea = e as DXMouseEventArgs;
-            GridView view = sender as GridView;
-            GridHitInfo info = view.CalcHitInfo(ea.Location);
-            if (info.InRow || info.InRowCell)
+            if (_user.UserName == "admin")
             {
-                DataRow row = grvUser.GetDataRow(info.RowHandle);
-                Detail_Infor Detail_Infor = new Detail_Infor();
-                Detail_Infor.Str_Flag = Variable.detail_infor.User;
-                Detail_Infor.Data = row;
-                DialogResult dialog_result = Detail_Infor.ShowDialog();
-                if (dialog_result == DialogResult.Cancel)
+                DXMouseEventArgs ea = e as DXMouseEventArgs;
+                GridView view = sender as GridView;
+                GridHitInfo info = view.CalcHitInfo(ea.Location);
+                if (info.InRow || info.InRowCell)
                 {
-                    Load_Data();
+                    DataRow row = grvUser.GetDataRow(info.RowHandle);
+                    Detail_Infor Detail_Infor = new Detail_Infor();
+                    Detail_Infor.Str_Flag = Variable.detail_infor.User;
+                    Detail_Infor.Data = row;
+                    DialogResult dialog_result = Detail_Infor.ShowDialog();
+                    if (dialog_result == DialogResult.Cancel)
+                    {
+                        Load_Data();
+                    }
                 }
             }
         }

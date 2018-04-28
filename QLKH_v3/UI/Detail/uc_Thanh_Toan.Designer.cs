@@ -41,13 +41,13 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.radio_type_paid = new DevExpress.XtraEditors.RadioGroup();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.btn_thanh_toan = new DevExpress.XtraEditors.SimpleButton();
             this.txt_money = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.radio_type_paid.Properties)).BeginInit();
+            this.txt_money_lai = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money_lai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_fullname
@@ -161,37 +161,11 @@
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Location = new System.Drawing.Point(50, 227);
+            this.labelControl7.Location = new System.Drawing.Point(50, 197);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(50, 16);
+            this.labelControl7.Size = new System.Drawing.Size(77, 16);
             this.labelControl7.TabIndex = 107;
-            this.labelControl7.Text = "Số tiền:";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Location = new System.Drawing.Point(49, 195);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(107, 16);
-            this.labelControl8.TabIndex = 108;
-            this.labelControl8.Text = "Loại thanh toán:";
-            // 
-            // radio_type_paid
-            // 
-            this.radio_type_paid.EditValue = "<Null>";
-            this.radio_type_paid.Location = new System.Drawing.Point(183, 191);
-            this.radio_type_paid.Name = "radio_type_paid";
-            this.radio_type_paid.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.radio_type_paid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radio_type_paid.Properties.Appearance.Options.UseBackColor = true;
-            this.radio_type_paid.Properties.Appearance.Options.UseFont = true;
-            this.radio_type_paid.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.radio_type_paid.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("0", "Tiền gốc"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Tiền lãi")});
-            this.radio_type_paid.Size = new System.Drawing.Size(164, 25);
-            this.radio_type_paid.TabIndex = 109;
-            this.radio_type_paid.SelectedIndexChanged += new System.EventHandler(this.radio_type_paid_SelectedIndexChanged);
+            this.labelControl7.Text = "Số tiền gốc:";
             // 
             // btn_close
             // 
@@ -217,7 +191,7 @@
             // 
             // txt_money
             // 
-            this.txt_money.Location = new System.Drawing.Point(183, 224);
+            this.txt_money.Location = new System.Drawing.Point(183, 194);
             this.txt_money.Name = "txt_money";
             this.txt_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_money.Properties.Appearance.Options.UseFont = true;
@@ -225,15 +199,34 @@
             this.txt_money.TabIndex = 139;
             this.txt_money.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_money_KeyUp);
             // 
+            // txt_money_lai
+            // 
+            this.txt_money_lai.Location = new System.Drawing.Point(183, 228);
+            this.txt_money_lai.Name = "txt_money_lai";
+            this.txt_money_lai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_money_lai.Properties.Appearance.Options.UseFont = true;
+            this.txt_money_lai.Size = new System.Drawing.Size(151, 22);
+            this.txt_money_lai.TabIndex = 141;
+            this.txt_money_lai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_money_lai_KeyUp);
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Location = new System.Drawing.Point(50, 231);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(68, 16);
+            this.labelControl9.TabIndex = 140;
+            this.labelControl9.Text = "Số tiền lãi:";
+            // 
             // uc_Thanh_Toan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txt_money_lai);
+            this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.txt_money);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_thanh_toan);
-            this.Controls.Add(this.radio_type_paid);
-            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl6);
@@ -250,8 +243,8 @@
             this.Name = "uc_Thanh_Toan";
             this.Size = new System.Drawing.Size(393, 368);
             this.Load += new System.EventHandler(this.uc_Thanh_Toan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radio_type_paid.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_money.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money_lai.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,10 +265,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.RadioGroup radio_type_paid;
         private DevExpress.XtraEditors.SimpleButton btn_close;
         private DevExpress.XtraEditors.SimpleButton btn_thanh_toan;
         private DevExpress.XtraEditors.TextEdit txt_money;
+        private DevExpress.XtraEditors.TextEdit txt_money_lai;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
     }
 }

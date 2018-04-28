@@ -237,6 +237,12 @@
     <Compile Include="UI\Detail\uc_Thanh_Toan.Designer.cs">
       <DependentUpon>uc_Thanh_Toan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ucKhachHangBaoTruoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ucKhachHangBaoTruoc.Designer.cs">
+      <DependentUpon>ucKhachHangBaoTruoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ucQLKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Detail\uc_Thanh_Toan.resx">
       <DependentUpon>uc_Thanh_Toan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ucKhachHangBaoTruoc.resx">
+      <DependentUpon>ucKhachHangBaoTruoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ucQLKhachHang.resx">
       <DependentUpon>ucQLKhachHang.cs</DependentUpon>

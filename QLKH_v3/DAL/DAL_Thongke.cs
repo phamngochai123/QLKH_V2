@@ -33,6 +33,25 @@ namespace QLKH_v3.DAL
             return tong_tien;
         }
 
+        public int Get_Total_Customer()
+        {
+            int count_customer = 0;
+            List<customer> lst_customer = new List<customer>();
+            try
+            {
+                lst_customer = (from data in _db.customers
+                                select data).ToList();
+                count_customer = lst_customer.Count;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return count_customer;
+        }
+
         public double Get_Total_Money_Paid(string typePaid)
         {
             double tong_tien_da_tra = 0;

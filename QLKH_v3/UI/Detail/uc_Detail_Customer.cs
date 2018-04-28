@@ -162,7 +162,7 @@ namespace QLKH_v3.UI.Detail
                 double tien_no = DAL_QLCustomer.Get_After_Money(_ID_CUSTOMER);
                 if (tien_lai + tien_no > 0)
                 {
-                    Util.Show_Message_Notification(Message.msg_notification, "Không thể xóa vì khách hàng vẫn còn nợ \n tiền lãi: " + tien_lai.ToString() + "\n tiền gốc: " + tien_no.ToString());
+                    Util.Show_Message_Notification(Message.msg_notification, "Không thể xóa vì khách hàng vẫn còn nợ \n tiền lãi: " + Util.formatMoney(Convert.ToInt32(tien_lai)) + "\n tiền gốc: " + Util.formatMoney(Convert.ToInt32(tien_no)));
                 }
                 else
                 {
@@ -171,8 +171,9 @@ namespace QLKH_v3.UI.Detail
                     {
                         customer Customer = new customer();
                         Customer.id = _ID_CUSTOMER;
+                        bool check_delete_history_friend = DAL_QLCustomer.Delete_Info_Customer(Customer, _user);
                         bool check_delete = DAL_QLCustomer.Add_and_Edit_Customer(Customer, new List<Model.Friend>(), Variable.action_status.is_delete, _user);
-                        if (check_delete)
+                        if (check_delete_history_friend && check_delete)
                         {
                             Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
                             ((Form)this.TopLevelControl).Close();

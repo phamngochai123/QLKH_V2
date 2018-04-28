@@ -20,6 +20,7 @@ namespace QLKH_v3.UI
         public user _user { set; get; }
         DAL.DAL_QLCategory DAL_QLCategory = new DAL.DAL_QLCategory();
         DAL.DAL_QLCustomer DAL_QLCustomer = new DAL.DAL_QLCustomer();
+        DAL.DAL_Thongke DAL_Thongke = new DAL.DAL_Thongke();
         Util.Util Util = new Util.Util();
         Message.Message Message = new Message.Message();
         Variable.Variable Variable = new Variable.Variable();
@@ -32,6 +33,9 @@ namespace QLKH_v3.UI
         {
             try
             {
+                txt_total_customer.Text = Util.formatMoney(DAL_Thongke.Get_Total_Customer());
+                txt_total_money.Text = Util.formatMoney( Convert.ToInt32(DAL_Thongke.Get_Total_Money()));
+                txt_tien_thu.Text = Util.formatMoney(Convert.ToInt32(DAL_Thongke.Get_Total_Money_Paid("0") + DAL_Thongke.Get_Total_Money_Paid("1")));
                 grcDanhSachKhachHang.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer(Variable.orderByCreatedAt));
             }
             catch (Exception ex)
@@ -62,7 +66,6 @@ namespace QLKH_v3.UI
         {
             SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
-            Thread.Sleep(1000);
             SplashScreenManager.CloseDefaultWaitForm();
         }
 

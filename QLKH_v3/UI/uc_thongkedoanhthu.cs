@@ -26,7 +26,6 @@ namespace QLKH_v3.UI
         {
             SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
-            Thread.Sleep(1000);
             SplashScreenManager.CloseDefaultWaitForm();
             SetDataCbbYear();
             List<Model.Statistic> statistic = DAL_Thongke.Get_List_Customer_By_Month();

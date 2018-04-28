@@ -57,11 +57,11 @@ namespace QLKH_v3
                     if (user != null)
                     {
 
-                        btnLogin.UseWaitCursor = true;
-                        btnExit.UseWaitCursor = true;
-                        btnLogin.Enabled = false;
-                        btnExit.Enabled = false;
-                        this.UseWaitCursor = true;
+                        //btnLogin.UseWaitCursor = true;
+                        //btnExit.UseWaitCursor = true;
+                        //btnLogin.Enabled = false;
+                        //btnExit.Enabled = false;
+                        //this.UseWaitCursor = true;
                         this.DialogResult = DialogResult.OK;
                         SplashScreenManager.ShowDefaultWaitForm();
                         Thread.Sleep(1000);
@@ -69,7 +69,7 @@ namespace QLKH_v3
                         Show_Hide_Label(false, "");
                         _user = user;
                         this.Hide();
-                        this.UseWaitCursor = false;
+                        //this.UseWaitCursor = false;
                     }
                     else
                     {
@@ -141,6 +141,7 @@ namespace QLKH_v3
 
             txt_login_password.GotFocus += new EventHandler(RemoveTextPassWord);
             txt_login_password.LostFocus += new EventHandler(AddTextPassWord);
+            txt_login_username.Focus();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

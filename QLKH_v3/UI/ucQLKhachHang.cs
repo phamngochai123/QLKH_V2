@@ -78,7 +78,6 @@ namespace QLKH_v3.UI
         {
             SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
-            Thread.Sleep(1000);
             SplashScreenManager.CloseDefaultWaitForm();
         }
 
@@ -172,11 +171,10 @@ namespace QLKH_v3.UI
             {
                 string path = folderBrowserDialog1.SelectedPath;
                 path = path.Replace('/', '\\');
-                Object tmp_list = grcKhachHang.DataSource;
                 grvKhachHang.Columns.ColumnByName("danh_sach_ban_be").Visible = false;
                 grvKhachHang.Columns.ColumnByName("thanh_toan").Visible = false;
                 grvKhachHang.Columns.ColumnByName("lich_su_thanh_toan").Visible = false;
-                grcKhachHang.ExportToXls(@path + "\\Danh sách khách hàng" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
+                grcKhachHang.ExportToXls(@path + "\\Danh sách khách hàng chậm lãi" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
                 grvKhachHang.Columns.ColumnByName("danh_sach_ban_be").Visible = true;
                 grvKhachHang.Columns.ColumnByName("thanh_toan").Visible = true;
                 grvKhachHang.Columns.ColumnByName("lich_su_thanh_toan").Visible = true;

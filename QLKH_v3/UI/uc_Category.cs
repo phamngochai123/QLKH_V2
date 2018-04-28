@@ -63,7 +63,6 @@ namespace QLKH_v3.UI
         {
             SplashScreenManager.ShowDefaultWaitForm();
             Load_Data();
-            Thread.Sleep(1000);
             SplashScreenManager.CloseDefaultWaitForm();
         }
 
@@ -95,6 +94,11 @@ namespace QLKH_v3.UI
                 DataRow row = grvCategory.GetDataRow(info.RowHandle);
 
                 Detail_Infor Detail_Infor = new Detail_Infor();
+                UI.Detail.uc_Detail_Category uc_Detail_Category = new UI.Detail.uc_Detail_Category();
+                int height = uc_Detail_Category.Size.Height;
+                int width = uc_Detail_Category.Size.Width;
+                //uc_List_Friend.List_Friend = Data_Friend;
+                Detail_Infor.Size = new Size(width, height + 60);
                 Detail_Infor.Str_Flag = Variable.detail_infor.Category;
                 Detail_Infor.Data = row;
                 //Detail_Infor._userId = _userId;
@@ -115,33 +119,39 @@ namespace QLKH_v3.UI
             {
                 if (CheckValidate() == true)
                 {
-                    ctgr.Name = txt_name_category.Text.Trim();
-                    ctgr.Note = txt_ghi_chu.Text.Trim();
-                    ctgr.CreatedAt = DateTime.Now;
-                    ctgr.UpdatedAt = DateTime.Now;
-                    ctgr.Status = true;
+                    bool confirm = Util.Show_Message_YesNo(Message.msg_notification, "Thêm danh mục ?");
+                    if (confirm)
+                    {
+                        ctgr.Name = txt_name_category.Text.Trim();
+                        ctgr.Note = txt_ghi_chu.Text.Trim();
+                        ctgr.CreatedAt = DateTime.Now;
+                        ctgr.UpdatedAt = DateTime.Now;
+                        ctgr.Status = true;
 
-                    bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_add, _user);
-                    if (check == true)
-                    {
-                        Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_add_data);
-                        Load_Data();
-                    }
-                    else
-                    {
-                        Util.Show_Message_Error(Message.msg_error, Message.msg_error_add_data);
+                        bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_add, _user);
+                        if (check == true)
+                        {
+                            Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_add_data);
+                            Load_Data();
+                        }
+                        else
+                        {
+                            Util.Show_Message_Error(Message.msg_error, Message.msg_error_add_data);
+                        }
                     }
                     restart_form_add_category();
                 }
             }
             catch (Exception ex)
             {
-                Util.Show_Message_Error(Message.msg_error, ex.Message.ToString());
+                    Util.Show_Message_Error(Message.msg_error, ex.Message.ToString());
             }
         }
 
         private void btn_cancel_category_Click(object sender, EventArgs e)
         {
+            bool confirm = Util.Show_Message_YesNo(Message.msg_notification, "Bạn muốn hủy ?");
+            if (confirm)
             restart_form_add_category();
         }
         private void restart_form_add_category()

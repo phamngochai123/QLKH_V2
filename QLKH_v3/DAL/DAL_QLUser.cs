@@ -13,14 +13,14 @@ namespace QLKH_v3.DAL
         QLKHEntities _DB = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
-        public List<Model.User> Get_Data_User()
+        public List<Model.User> Get_Data_User(user user)
         {
             _DB = new QLKHEntities();
             List<Model.User> lst_user = new List<Model.User>();
             try
             {
                 lst_user = (from use in _DB.users
-                            where (use.Status == true)
+                            where (use.Status == true && use.id != user.id)
                             select new Model.User
                             {
                                 UserName = use.UserName,

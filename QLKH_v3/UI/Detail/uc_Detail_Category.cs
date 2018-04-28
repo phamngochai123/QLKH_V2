@@ -62,19 +62,23 @@ namespace QLKH_v3.UI.Detail
             {
                 if (CheckValidate() == true)
                 {
-                    ctgr.Name = txt_name_category.Text.Trim();
-                    ctgr.Note = txt_Note.Text.Trim();
-                    ctgr.UpdatedAt = DateTime.Now;
-                    ctgr.id = _ID_CATEGORY;
-                    bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_update, _user);
-                    if (check == true)
+                    bool confirm = Util.Show_Message_YesNo(Message.msg_notification, "Chắc chắn sửa ?");
+                    if (confirm)
                     {
-                        Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
-                        ((Form)this.TopLevelControl).Close();
-                    }
-                    else
-                    {
-                        Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
+                        ctgr.Name = txt_name_category.Text.Trim();
+                        ctgr.Note = txt_Note.Text.Trim();
+                        ctgr.UpdatedAt = DateTime.Now;
+                        ctgr.id = _ID_CATEGORY;
+                        bool check = DAL_QLCategory.Add_and_Edit_Category(ctgr, Variable.action_status.is_update, _user);
+                        if (check == true)
+                        {
+                            Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                            ((Form)this.TopLevelControl).Close();
+                        }
+                        else
+                        {
+                            Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
+                        }
                     }
                 }
             }

@@ -39,7 +39,7 @@ namespace QLKH_v3.DAL
                                 }).AsEnumerable().ToList();
                 for (int i = 0; i < lst_Customer.Count; i++)
                 {
-                    lst_Customer[i].AfterMoney = Get_After_Money(lst_Customer[i].id);
+                    lst_Customer[i].AfterMoney = Get_After_Money(lst_Customer[i].id); //lấy số tiền còn lại vay
                     lst_Customer[i].InterestMoney = DAL_Lichsutratien.Get_Tien_Lai(lst_Customer[i].id);
                     lst_Customer[i].AfterDate = Get_After_Date(lst_Customer[i].id);
                     lst_Customer[i].NextDay = Get_Next_Date(lst_Customer[i].id);
@@ -47,6 +47,7 @@ namespace QLKH_v3.DAL
                 if (orderBy == Variable.orderByAfterDate)
                 {
                     lst_Customer = lst_Customer.OrderByDescending(x => x.AfterDate).ToList();
+                    lst_Customer = lst_Customer.Where(x => x.AfterDate > 0).ToList();
                 }
 
                 //for (int i = 0; i < lst_Customer.Count-1; i++)
@@ -182,6 +183,47 @@ namespace QLKH_v3.DAL
         /// <param name="ctgr"></param>         model User
         /// <param name="action_status"></param>        status: (add; edit; insert)
         /// <returns></returns>
+        public bool Delete_Info_Customer(customer customer, user user)
+        {
+            try
+            {
+                (from f in _db.friends
+                 where f.CustomerId.Equals(customer.id)
+                 select f)
+                           .ToList()
+                           .ForEach(i => i.Status = false);
+                (from f in _db.friends
+                 where f.CustomerId.Equals(customer.id)
+                 select f)
+                           .ToList()
+                           .ForEach(i => i.UpdatedBy = user.id);
+                (from f in _db.friends
+                 where f.CustomerId.Equals(customer.id)
+                 select f)
+                           .ToList()
+                           .ForEach(i => i.UpdatedAt = DateTime.Now);
+                (from f in _db.historyPaids
+                 where f.CustomerId.Equals(customer.id)
+                 select f)
+                           .ToList()
+                           .ForEach(i => i.Status = false);
+                (from f in _db.historyPaids
+                 where f.CustomerId.Equals(customer.id)
+                 select f)
+           .ToList()
+           .ForEach(i => i.UpdatedBy = user.id);
+                (from f in _db.historyPaids
+                 where f.CustomerId.Equals(customer.id)
+                 select f)
+                           .ToList()
+                           .ForEach(i => i.UpdatedAt = DateTime.Now);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
         public bool Add_and_Edit_Customer(customer customer, List<Model.Friend> list_friend, int action_status, user user)
         {
             bool check = false;
