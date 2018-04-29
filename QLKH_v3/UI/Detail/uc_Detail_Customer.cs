@@ -175,7 +175,7 @@ namespace QLKH_v3.UI.Detail
                         bool check_delete = DAL_QLCustomer.Add_and_Edit_Customer(Customer, new List<Model.Friend>(), Variable.action_status.is_delete, _user);
                         if (check_delete_history_friend && check_delete)
                         {
-                            Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                            Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_delete_data);
                             ((Form)this.TopLevelControl).Close();
                         }
                         else

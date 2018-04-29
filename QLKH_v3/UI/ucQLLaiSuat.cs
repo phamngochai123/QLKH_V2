@@ -108,8 +108,10 @@ namespace QLKH_v3.UI
             {
                 historyInterestRate historyInterest = new historyInterestRate();
                 if (CheckValidate() == true)
-                {
-                    historyInterest.Percents = Double.Parse(txt_percent.Text.Trim());
+                    if (Util.Show_Message_YesNo(Message.msg_notification, "Chắc chắn muốn thêm ?"))
+                    {
+{
+                    historyInterest.Percents = Double.Parse(txt_percent.Text.Trim().Replace(".",","));
                     historyInterest.Note = txt_ghi_chu.Text.Trim();
                     historyInterest.CreatedAt = DateTime.Now;
                     historyInterest.UpdatedAt = DateTime.Now;
@@ -128,6 +130,8 @@ namespace QLKH_v3.UI
                     }
                     restartFormAddInterest();
                 }
+                    }
+
             }
             catch (Exception ex)
             {
@@ -138,7 +142,8 @@ namespace QLKH_v3.UI
 
         private void btn_cancel_interest_Click(object sender, EventArgs e)
         {
-            restartFormAddInterest();
+            if (Util.Show_Message_YesNo(Message.msg_notification, "Chắc chắn muốn hủy ?"))
+                restartFormAddInterest();
         }
     }
 }

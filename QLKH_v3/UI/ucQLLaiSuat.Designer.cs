@@ -284,7 +284,6 @@
             this.txt_percent.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_percent.Properties.Appearance.Options.UseFont = true;
             this.txt_percent.Properties.ReadOnly = true;
-            this.txt_percent.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_percent.Size = new System.Drawing.Size(123, 22);
             this.txt_percent.TabIndex = 4;
             // 

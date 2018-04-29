@@ -23,6 +23,7 @@ namespace QLKH_v3.DAL
                                     on data.CreatedBy equals data_user.id
                                     join data_customer in _db.customers
                                     on data.CustomerId equals data_customer.id
+                                    where data.Status == true
                                     select new Model.HistoryPaid
                                     {
                                         IdHistory = data.id,

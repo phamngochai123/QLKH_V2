@@ -217,6 +217,7 @@ namespace QLKH_v3.DAL
                  select f)
                            .ToList()
                            .ForEach(i => i.UpdatedAt = DateTime.Now);
+                _db.SaveChanges();
             }
             catch (Exception)
             {

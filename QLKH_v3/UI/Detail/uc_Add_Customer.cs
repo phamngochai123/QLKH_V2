@@ -166,7 +166,7 @@ namespace QLKH_v3.UI.Detail
                     customer.InterestId = 1;
                     customer.CreatedBy = _user.id;
                     customer.UpdatedBy = _user.id;
-                    customer.CreatedAt = DateTime.Now;
+                    customer.CreatedAt = (DateTime)date_paid.DateTime;
                     customer.UpdatedAt = DateTime.Now;
                     customer.cycle = Convert.ToInt32(txt_cycle.Text);
                     DataTable datasource = (DataTable)grcAddFriend.DataSource;

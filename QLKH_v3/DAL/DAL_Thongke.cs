@@ -13,9 +13,11 @@ namespace QLKH_v3.DAL
         QLKHEntities _db = new QLKHEntities();
         Variable.Variable Variable = new Variable.Variable();
         Util.Util Util = new Util.Util();
-
+        DAL.DAL_QLCustomer DAL_QLCustomer = new DAL_QLCustomer();
+        DAL.DAL_LichSuTraTien DAL_LichSuTraTien = new DAL_LichSuTraTien();
         public double Get_Total_Money()
         {
+            _db = new QLKHEntities();
             double tong_tien = 0;
             List<customer> lst_customer = new List<customer>();
             try
@@ -33,8 +35,58 @@ namespace QLKH_v3.DAL
             return tong_tien;
         }
 
+        public int Get_Total_Money_Day()
+        {
+            _db = new QLKHEntities();
+            int tong_tien = 0;
+            List<customer> lst_customer = new List<customer>();
+            try
+            {
+                lst_customer = (from data in _db.customers
+                                where data.Status == true
+                                select data).ToList();
+                foreach (var item in lst_customer)
+                {
+                    if (DAL_QLCustomer.Get_After_Date(item.id) > 0)
+                    {
+                        tong_tien += Convert.ToInt32(DAL_LichSuTraTien.Get_Tien_Lai(item.id));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return tong_tien;
+        }
+
+        public double Get_Money_Thu_Day()
+        {
+            _db = new QLKHEntities();
+            int tong_tien = 0;
+            List<historyPaid> lst_paid = new List<historyPaid>();
+            try
+            {
+                lst_paid = (from data in _db.historyPaids
+                            where data.TypePaid == "1"
+                                select data).ToList();
+                lst_paid = lst_paid.Where(x => x.PaidDate.Date.ToString() == DateTime.Now.Date.ToString()).ToList();
+                tong_tien = lst_paid.Select(m => m.Money).Sum();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return tong_tien;
+        }
+
         public int Get_Total_Customer()
         {
+            _db = new QLKHEntities();
             int count_customer = 0;
             List<customer> lst_customer = new List<customer>();
             try
@@ -54,6 +106,7 @@ namespace QLKH_v3.DAL
 
         public double Get_Total_Money_Paid(string typePaid)
         {
+            _db = new QLKHEntities();
             double tong_tien_da_tra = 0;
             List<historyPaid> lst_paid = new List<historyPaid>();
             try

@@ -21,6 +21,8 @@ namespace QLKH_v3.UI
         public user _user { set; get; }
         DAL.DAL_QLCategory DAL_QLCategory = new DAL.DAL_QLCategory();
         DAL.DAL_QLCustomer DAL_QLCustomer = new DAL.DAL_QLCustomer();
+        DAL.DAL_Thongke DAL_Thongke = new DAL.DAL_Thongke();
+        DAL.DAL_LichSuTraTien DAL_LichSuTraTien = new DAL.DAL_LichSuTraTien();
         Util.Util Util = new Util.Util();
         Message.Message Message = new Message.Message();
         Variable.Variable Variable = new Variable.Variable();
@@ -33,6 +35,14 @@ namespace QLKH_v3.UI
         {
             try
             {
+                int no = 0;
+                var lst_customer_no = DAL_QLCustomer.Get_List_Customer(Variable.orderByAfterDate);
+                foreach (var item in lst_customer_no)
+                {
+                    no += Convert.ToInt32(DAL_LichSuTraTien.Get_Tien_Lai(item.id));
+                }
+                txt_money_day.Text = Util.formatMoney(no);
+                txt_tien_thu_day.Text = Util.formatMoney(Convert.ToInt32(DAL_Thongke.Get_Money_Thu_Day()));
                 grcKhachHang.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer(Variable.orderByAfterDate));
             }
             catch (Exception ex)
