@@ -93,7 +93,7 @@ namespace QLKH_v3.DAL
             Customer = (from data in _db.customers
                         where data.id == IdCustomer && data.Status == true
                         select data).FirstOrDefault();
-            int countDay = (DateTime.Now - Customer.CreatedAt).Days;
+            int countDay = (DateTime.Now - Customer.CreatedAt).Days + 1;
             int countPaid = Convert.ToInt32(Math.Ceiling((double)(countDay * 1.0 / Customer.cycle)));
             int sumDay = countPaid * Customer.cycle - countDay;
             return DateTime.Now.AddDays(sumDay);

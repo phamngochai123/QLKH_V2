@@ -134,7 +134,7 @@ namespace QLKH_v3.DAL
                 double tien_lai = 0;
                 int so_tien_vay = customer.Money;
 
-                int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(start_date)).Days;
+                int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(start_date)).Days + 1;
 
                 for (int i = 0; i < demngay; i++)
                 {
