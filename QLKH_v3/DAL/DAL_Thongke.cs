@@ -92,6 +92,7 @@ namespace QLKH_v3.DAL
             try
             {
                 lst_customer = (from data in _db.customers
+                                where data.Status == true
                                 select data).ToList();
                 count_customer = lst_customer.Count;
             }
