@@ -59,13 +59,13 @@
             this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.panelheader = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btn_them = new DevExpress.XtraEditors.SimpleButton();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txt_tien_thu_day = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_money_day = new DevExpress.XtraEditors.TextEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_them = new DevExpress.XtraEditors.SimpleButton();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grcKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
@@ -77,11 +77,11 @@
             this.panelheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu_day.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money_day.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu_day.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_money_day.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // grcKhachHang
@@ -159,6 +159,8 @@
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Ngày sinh";
+            this.gridColumn12.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn12.FieldName = "BirthDay";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
@@ -185,6 +187,8 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Ngày vay";
+            this.gridColumn5.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn5.FieldName = "CreatedAt";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
@@ -308,6 +312,8 @@
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Ngày đóng lãi tiếp theo";
+            this.gridColumn13.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn13.FieldName = "NextDay";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
@@ -357,33 +363,6 @@
             this.panelControl1.Size = new System.Drawing.Size(1267, 68);
             this.panelControl1.TabIndex = 86;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl2.Controls.Add(this.btn_export_excel);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl2.Location = new System.Drawing.Point(1065, 2);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(200, 64);
-            this.panelControl2.TabIndex = 14;
-            // 
-            // btn_them
-            // 
-            this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_them.Appearance.Options.UseFont = true;
-            this.btn_them.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_them.Image = ((System.Drawing.Image)(resources.GetObject("btn_them.Image")));
-            this.btn_them.Location = new System.Drawing.Point(2, 2);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(184, 64);
-            this.btn_them.TabIndex = 11;
-            this.btn_them.Text = "Thêm khách hàng";
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(QLKH_v3.category);
-            // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -422,6 +401,33 @@
             this.txt_money_day.Size = new System.Drawing.Size(135, 22);
             this.txt_money_day.TabIndex = 41;
             // 
+            // panelControl2
+            // 
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.btn_export_excel);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelControl2.Location = new System.Drawing.Point(1065, 2);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(200, 64);
+            this.panelControl2.TabIndex = 14;
+            // 
+            // btn_them
+            // 
+            this.btn_them.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.Appearance.Options.UseFont = true;
+            this.btn_them.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_them.Image = ((System.Drawing.Image)(resources.GetObject("btn_them.Image")));
+            this.btn_them.Location = new System.Drawing.Point(2, 2);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(184, 64);
+            this.btn_them.TabIndex = 11;
+            this.btn_them.Text = "Thêm khách hàng";
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(QLKH_v3.category);
+            // 
             // ucQLKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,11 +449,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu_day.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_money_day.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu_day.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_money_day.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

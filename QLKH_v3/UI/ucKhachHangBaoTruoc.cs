@@ -68,5 +68,10 @@ namespace QLKH_v3.UI
                 grcKhachHangBaoTruoc.ExportToXls(@path + "\\Danh sách khách hàng cần báo trước" + DateTime.Now.ToString(Variable.format_date_time_replace) + ".xls", true);
             }
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            Load_Data();
+        }
     }
 }

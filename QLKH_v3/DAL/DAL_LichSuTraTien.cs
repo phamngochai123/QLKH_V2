@@ -136,7 +136,7 @@ namespace QLKH_v3.DAL
 
                 int demngay = (Convert.ToDateTime(DateTime.Now) - Convert.ToDateTime(start_date)).Days + 1;
 
-                for (int i = 0; i < demngay; i++)
+                for (int i = 0; i <= demngay; i++)
                 {
                     DateTime date_start = start_date.AddDays(i);//ngày để tính số tiền gốc đang nợ
                     double tien_goc = get_tien_goc_by_day(date_start, IdCustomer);

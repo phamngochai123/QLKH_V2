@@ -58,16 +58,16 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_them = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_tien_thu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txt_total_customer = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_total_money = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_tien_thu = new DevExpress.XtraEditors.TextEdit();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_them = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grcDanhSachKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDanhSachKhachHang)).BeginInit();
@@ -76,13 +76,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.columnTransaction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total_customer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total_money.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_total_customer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_total_money.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // categoryBindingSource
@@ -164,6 +164,8 @@
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Ngày sinh";
+            this.gridColumn15.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn15.FieldName = "BirthDay";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
@@ -190,6 +192,8 @@
             // gridColumn19
             // 
             this.gridColumn19.Caption = "Ngày vay";
+            this.gridColumn19.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn19.FieldName = "CreatedAt";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
@@ -313,6 +317,8 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Ngày đóng lãi tiếp theo";
+            this.gridColumn2.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn2.FieldName = "NextDay";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -340,6 +346,63 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1270, 73);
             this.panelControl1.TabIndex = 87;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Location = new System.Drawing.Point(766, 27);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(95, 16);
+            this.labelControl3.TabIndex = 40;
+            this.labelControl3.Text = "Số vốn đã thu:";
+            // 
+            // txt_tien_thu
+            // 
+            this.txt_tien_thu.Location = new System.Drawing.Point(867, 24);
+            this.txt_tien_thu.Name = "txt_tien_thu";
+            this.txt_tien_thu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tien_thu.Properties.Appearance.Options.UseFont = true;
+            this.txt_tien_thu.Properties.ReadOnly = true;
+            this.txt_tien_thu.Size = new System.Drawing.Size(123, 22);
+            this.txt_tien_thu.TabIndex = 39;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(204, 27);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(133, 16);
+            this.labelControl2.TabIndex = 38;
+            this.labelControl2.Text = "Tổng số khách hàng:";
+            // 
+            // txt_total_customer
+            // 
+            this.txt_total_customer.Location = new System.Drawing.Point(343, 24);
+            this.txt_total_customer.Name = "txt_total_customer";
+            this.txt_total_customer.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_total_customer.Properties.Appearance.Options.UseFont = true;
+            this.txt_total_customer.Properties.ReadOnly = true;
+            this.txt_total_customer.Size = new System.Drawing.Size(127, 22);
+            this.txt_total_customer.TabIndex = 37;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Location = new System.Drawing.Point(503, 27);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(102, 16);
+            this.labelControl1.TabIndex = 36;
+            this.labelControl1.Text = "Số vốn đã xuất:";
+            // 
+            // txt_total_money
+            // 
+            this.txt_total_money.Location = new System.Drawing.Point(611, 24);
+            this.txt_total_money.Name = "txt_total_money";
+            this.txt_total_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_total_money.Properties.Appearance.Options.UseFont = true;
+            this.txt_total_money.Properties.ReadOnly = true;
+            this.txt_total_money.Size = new System.Drawing.Size(135, 22);
+            this.txt_total_money.TabIndex = 35;
             // 
             // panelControl2
             // 
@@ -385,63 +448,6 @@
             this.panelControl3.Size = new System.Drawing.Size(1270, 390);
             this.panelControl3.TabIndex = 89;
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Location = new System.Drawing.Point(204, 27);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(133, 16);
-            this.labelControl2.TabIndex = 38;
-            this.labelControl2.Text = "Tổng số khách hàng:";
-            // 
-            // txt_total_customer
-            // 
-            this.txt_total_customer.Location = new System.Drawing.Point(343, 24);
-            this.txt_total_customer.Name = "txt_total_customer";
-            this.txt_total_customer.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total_customer.Properties.Appearance.Options.UseFont = true;
-            this.txt_total_customer.Properties.ReadOnly = true;
-            this.txt_total_customer.Size = new System.Drawing.Size(127, 22);
-            this.txt_total_customer.TabIndex = 37;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Location = new System.Drawing.Point(503, 27);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(102, 16);
-            this.labelControl1.TabIndex = 36;
-            this.labelControl1.Text = "Số vốn đã xuất:";
-            // 
-            // txt_total_money
-            // 
-            this.txt_total_money.Location = new System.Drawing.Point(611, 24);
-            this.txt_total_money.Name = "txt_total_money";
-            this.txt_total_money.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total_money.Properties.Appearance.Options.UseFont = true;
-            this.txt_total_money.Properties.ReadOnly = true;
-            this.txt_total_money.Size = new System.Drawing.Size(135, 22);
-            this.txt_total_money.TabIndex = 35;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Location = new System.Drawing.Point(766, 27);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(95, 16);
-            this.labelControl3.TabIndex = 40;
-            this.labelControl3.Text = "Số vốn đã thu:";
-            // 
-            // txt_tien_thu
-            // 
-            this.txt_tien_thu.Location = new System.Drawing.Point(867, 24);
-            this.txt_tien_thu.Name = "txt_tien_thu";
-            this.txt_tien_thu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tien_thu.Properties.Appearance.Options.UseFont = true;
-            this.txt_tien_thu.Properties.ReadOnly = true;
-            this.txt_tien_thu.Size = new System.Drawing.Size(123, 22);
-            this.txt_tien_thu.TabIndex = 39;
-            // 
             // uc_QLDanhSachKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,13 +467,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total_customer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total_money.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_total_customer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_total_money.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tien_thu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

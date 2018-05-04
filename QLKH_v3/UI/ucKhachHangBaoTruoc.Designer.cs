@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucKhachHangBaoTruoc));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucKhachHangBaoTruoc));
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnFilter = new DevExpress.XtraEditors.SimpleButton();
             this.numberDay = new System.Windows.Forms.NumericUpDown();
@@ -53,7 +54,7 @@
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_lich_su_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -78,6 +79,7 @@
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.simpleButton1);
             this.panelControl4.Controls.Add(this.btn_export_excel);
             this.panelControl4.Controls.Add(this.labelControl1);
             this.panelControl4.Controls.Add(this.btnFilter);
@@ -87,6 +89,19 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1241, 85);
             this.panelControl4.TabIndex = 3;
+            // 
+            // btn_export_excel
+            // 
+            this.btn_export_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_export_excel.Appearance.Options.UseFont = true;
+            this.btn_export_excel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("btn_export_excel.Image")));
+            this.btn_export_excel.Location = new System.Drawing.Point(1090, 2);
+            this.btn_export_excel.Name = "btn_export_excel";
+            this.btn_export_excel.Size = new System.Drawing.Size(149, 81);
+            this.btn_export_excel.TabIndex = 14;
+            this.btn_export_excel.Text = "Xuất excel";
+            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
             // 
             // labelControl1
             // 
@@ -189,6 +204,8 @@
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Ngày sinh";
+            this.gridColumn12.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn12.FieldName = "BirthDay";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
@@ -215,6 +232,8 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Ngày vay";
+            this.gridColumn5.DisplayFormat.FormatString = "dd-MM-yyyy HH:mm:ss";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn5.FieldName = "CreatedAt";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
@@ -225,6 +244,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Ngày đóng lãi tiếp theo";
+            this.gridColumn6.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn6.FieldName = "NextDay";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
@@ -254,18 +275,16 @@
             this.btn_lich_su_thanh_toan.Name = "btn_lich_su_thanh_toan";
             this.btn_lich_su_thanh_toan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
-            // btn_export_excel
+            // simpleButton1
             // 
-            this.btn_export_excel.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_export_excel.Appearance.Options.UseFont = true;
-            this.btn_export_excel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_export_excel.Image = ((System.Drawing.Image)(resources.GetObject("btn_export_excel.Image")));
-            this.btn_export_excel.Location = new System.Drawing.Point(1090, 2);
-            this.btn_export_excel.Name = "btn_export_excel";
-            this.btn_export_excel.Size = new System.Drawing.Size(149, 81);
-            this.btn_export_excel.TabIndex = 14;
-            this.btn_export_excel.Text = "Xuất excel";
-            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(407, 30);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.Text = "Tất cả";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // ucKhachHangBaoTruoc
             // 
@@ -316,6 +335,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_thanh_toan;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_lich_su_thanh_toan;
         private DevExpress.XtraEditors.SimpleButton btn_export_excel;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
 
     }
 }

@@ -108,6 +108,8 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Ngày bắt đầu";
+            this.gridColumn2.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn2.FieldName = "StartDateHistory";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -135,6 +137,8 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Ngày tạo";
+            this.gridColumn6.DisplayFormat.FormatString = "dd-MM-yyyy HH:mm:ss";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn6.FieldName = "CreateAtHisgory";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;

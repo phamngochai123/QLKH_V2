@@ -42,7 +42,6 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_chitiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelheader)).BeginInit();
             this.panelheader.SuspendLayout();
@@ -107,8 +106,7 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn5,
-            this.gridColumn4,
-            this.gridColumn6});
+            this.gridColumn4});
             this.grvHistoryPaid.GridControl = this.grcHistoryPaid;
             this.grvHistoryPaid.Name = "grvHistoryPaid";
             this.grvHistoryPaid.OptionsFind.AlwaysVisible = true;
@@ -181,20 +179,14 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Người tiếp nhận";
+            this.gridColumn4.DisplayFormat.FormatString = "dd-MM-yyyy HH:mm:ss";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn4.FieldName = "CreatedByUser";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Ngày tạo";
-            this.gridColumn6.FieldName = "CreatedAtHistory";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
             // 
             // btn_chitiet
             // 
@@ -237,7 +229,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_chitiet;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.SimpleButton btn_export_excel;
         private DevExpress.XtraEditors.PanelControl panelControl2;
 

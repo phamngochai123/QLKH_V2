@@ -88,6 +88,8 @@
             // date
             // 
             this.date.Caption = "Ngày thanh toán";
+            this.date.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.date.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.date.FieldName = "CreatedAtHistory";
             this.date.Name = "date";
             this.date.OptionsColumn.AllowEdit = false;

@@ -442,6 +442,8 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Ngày sinh";
+            this.gridColumn5.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn5.FieldName = "BirthDay";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
