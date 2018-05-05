@@ -92,33 +92,36 @@ namespace QLKH_v3.UI.Detail
             try
             {
                 if (CheckValidate() == true)
-                {
-                    //ctgr.UserName = txt_name_category.Text.Trim();
-                    if (txt_password_user.Text.ToString().Trim() != "")
+                    if (Util.Show_Message_YesNo(Message.msg_notification, "Chắc chắn sửa"))
                     {
-                        ctgr.PassWord = txt_password_user.Text.Trim();
+                        {
+                            //ctgr.UserName = txt_name_category.Text.Trim();
+                            if (txt_password_user.Text.ToString().Trim() != "")
+                            {
+                                ctgr.PassWord = txt_password_user.Text.Trim();
+                            }
+                            ctgr.FullName = txt_fullname.Text.Trim();
+                            ctgr.PhoneNumber = txt_phone_user.Text.Trim();
+                            ctgr.Address = txt_address_user.Text.Trim();
+                            ctgr.Note = txt_Note.Text.Trim();
+                            ctgr.BirthDay = DateTime.Parse(birthDay_user.Text.Trim());
+                            ctgr.Sex = (bool)radio_sex_user.EditValue;
+                            ctgr.Type = (string)radio_type_user.EditValue;
+                            ctgr.IdCard = txt_idCard_user.Text.Trim();
+                            ctgr.UpdatedAt = DateTime.Now;
+                            ctgr.id = _ID_USER;
+                            bool check = DAL_QLUser.Add_and_Edit_User(ctgr, Variable.action_status.is_update);
+                            if (check == true)
+                            {
+                                Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                                ((Form)this.TopLevelControl).Close();
+                            }
+                            else
+                            {
+                                Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
+                            }
+                        }
                     }
-                    ctgr.FullName = txt_fullname.Text.Trim();
-                    ctgr.PhoneNumber = txt_phone_user.Text.Trim();
-                    ctgr.Address = txt_address_user.Text.Trim();
-                    ctgr.Note = txt_Note.Text.Trim();
-                    ctgr.BirthDay = DateTime.Parse(birthDay_user.Text.Trim());
-                    ctgr.Sex = (bool)radio_sex_user.EditValue;
-                    ctgr.Type = (string)radio_type_user.EditValue;
-                    ctgr.IdCard = txt_idCard_user.Text.Trim();
-                    ctgr.UpdatedAt = DateTime.Now;
-                    ctgr.id = _ID_USER;
-                    bool check = DAL_QLUser.Add_and_Edit_User(ctgr, Variable.action_status.is_update);
-                    if (check == true)
-                    {
-                        Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
-                        ((Form)this.TopLevelControl).Close();
-                    }
-                    else
-                    {
-                        Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
-                    }
-                }
             }
             catch (Exception ex)
             {

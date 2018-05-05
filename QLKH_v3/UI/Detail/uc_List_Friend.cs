@@ -83,42 +83,45 @@ namespace QLKH_v3.UI.Detail
             {
                 if (CheckValidate())
                 {
-                    DataTable datasource = (DataTable)grcFriend.DataSource;
-                    List<Model.Friend> list_friend = datasource.AsEnumerable()
-                        .Select(m => new Model.Friend()
-                        {
-                            PhoneNumber = m.Field<string>("PhoneNumber"),
-                            FullName = m.Field<string>("FullName"),
-                            Relationship = m.Field<string>("Relationship"),
-                            Note = m.Field<string>("Note"),
-                            Id = m.Field<int>("Id")
-                        }).ToList();
-                    int count = 0;
-                    foreach (var friend in list_friend)
+                    if (Util.Show_Message_YesNo(Message.msg_notification, "Chắc chắn sửa ?"))
                     {
-                        friend friends = new friend();
-                        friends.FullName = friend.FullName;
-                        friends.PhoneNumber = friend.PhoneNumber;
-                        friends.Relationship = friend.Relationship;
-                        friends.Note = friend.Note;
-                        friends.UpdatedBy = _user.id;
-                        friends.id = friend.Id;
-                        bool check = DAL_QLFriend.Add_and_Edit_Friend(friends, Variable.action_status.is_update);
-                        if (check)
+                        DataTable datasource = (DataTable)grcFriend.DataSource;
+                        List<Model.Friend> list_friend = datasource.AsEnumerable()
+                            .Select(m => new Model.Friend()
+                            {
+                                PhoneNumber = m.Field<string>("PhoneNumber"),
+                                FullName = m.Field<string>("FullName"),
+                                Relationship = m.Field<string>("Relationship"),
+                                Note = m.Field<string>("Note"),
+                                Id = m.Field<int>("Id")
+                            }).ToList();
+                        int count = 0;
+                        foreach (var friend in list_friend)
                         {
-                            count++;
-                        }
+                            friend friends = new friend();
+                            friends.FullName = friend.FullName;
+                            friends.PhoneNumber = friend.PhoneNumber;
+                            friends.Relationship = friend.Relationship;
+                            friends.Note = friend.Note;
+                            friends.UpdatedBy = _user.id;
+                            friends.id = friend.Id;
+                            bool check = DAL_QLFriend.Add_and_Edit_Friend(friends, Variable.action_status.is_update);
+                            if (check)
+                            {
+                                count++;
+                            }
 
-                        else
-                        {
-                            Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
-                            ((Form)this.TopLevelControl).Close();
-                            break;
-                        }
-                        if (count == list_friend.Count)
-                        {
-                            Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
-                            ((Form)this.TopLevelControl).Close();
+                            else
+                            {
+                                Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
+                                ((Form)this.TopLevelControl).Close();
+                                break;
+                            }
+                            if (count == list_friend.Count)
+                            {
+                                Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                                ((Form)this.TopLevelControl).Close();
+                            }
                         }
                     }
                 }

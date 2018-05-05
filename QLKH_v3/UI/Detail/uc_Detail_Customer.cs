@@ -122,30 +122,33 @@ namespace QLKH_v3.UI.Detail
             {
                 customer Customer = new customer();
                 if (CheckValidate())
-                {
-                    Customer.Address = txt_edit_address.Text.ToString().Trim();
-                    Customer.BirthDay = DateTime.Parse(birthDay_customer.Text.ToString().Trim());
-                    Customer.FullName = txt_edit_fullname.Text.ToString().Trim();
-                    Customer.IdCard = txt_edit_idcard.Text.ToString().Trim();
-                    Customer.PhoneNumber = txt_edit_phone.Text.ToString().Trim();
-                    Customer.Sex = (bool)radio_edit_sex.EditValue;
-                    Customer.FamilyPhoneNumber = txt_edit_familyphone.Text.ToString().Trim();
-                    Customer.CategoryId = int.Parse(cbb_category.EditValue.ToString());
-                    Customer.Money = Convert.ToInt32(txt_money.Text.ToString().Trim().Replace(",", ""));
-                    Customer.Note = txt_edit_note.Text.ToString().Trim();
-                    Customer.id = _ID_CUSTOMER;
-                    Customer.cycle = Convert.ToInt32(txt_cycle.Value);
-                    bool check = DAL_QLCustomer.Add_and_Edit_Customer(Customer, new List<Model.Friend>(), Variable.action_status.is_update, _user);
-                    if (check == true)
+                    if (Util.Show_Message_YesNo(Message.msg_notification, "Chắc chắn sửa ?"))
                     {
-                        Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
-                        ((Form)this.TopLevelControl).Close();
+                        {
+                            Customer.Address = txt_edit_address.Text.ToString().Trim();
+                            Customer.BirthDay = DateTime.Parse(birthDay_customer.Text.ToString().Trim());
+                            Customer.FullName = txt_edit_fullname.Text.ToString().Trim();
+                            Customer.IdCard = txt_edit_idcard.Text.ToString().Trim();
+                            Customer.PhoneNumber = txt_edit_phone.Text.ToString().Trim();
+                            Customer.Sex = (bool)radio_edit_sex.EditValue;
+                            Customer.FamilyPhoneNumber = txt_edit_familyphone.Text.ToString().Trim();
+                            Customer.CategoryId = int.Parse(cbb_category.EditValue.ToString());
+                            Customer.Money = Convert.ToInt32(txt_money.Text.ToString().Trim().Replace(",", ""));
+                            Customer.Note = txt_edit_note.Text.ToString().Trim();
+                            Customer.id = _ID_CUSTOMER;
+                            Customer.cycle = Convert.ToInt32(txt_cycle.Value);
+                            bool check = DAL_QLCustomer.Add_and_Edit_Customer(Customer, new List<Model.Friend>(), Variable.action_status.is_update, _user);
+                            if (check == true)
+                            {
+                                Util.Show_Message_Notification(Message.msg_notification, Message.msg_success_edit_data);
+                                ((Form)this.TopLevelControl).Close();
+                            }
+                            else
+                            {
+                                Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
+                            }
+                        }
                     }
-                    else
-                    {
-                        Util.Show_Message_Error(Message.msg_error, Message.msg_error_edit_data);
-                    }
-                }
             }
             catch (Exception ex)
             {

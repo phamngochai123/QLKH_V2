@@ -27,7 +27,7 @@ namespace QLKH_v3.UI
         {
             try
             {
-                grcKhachHangBaoTruoc.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer(Variable.orderByAfterDate));
+                grcKhachHangBaoTruoc.DataSource = Util.ConvertToDataTable(DAL_QLCustomer.Get_List_Customer(Variable.orderByCreatedAt));
             }
             catch (Exception ex)
             {
@@ -51,8 +51,8 @@ namespace QLKH_v3.UI
             {
                 List<Model.Customer> lst_Customer = new List<Model.Customer>();
                 DateTime afterDate = DateTime.Now.AddDays(soNgay);
-                var DataSource = DAL_QLCustomer.Get_List_Customer(Variable.orderByAfterDate);
-                DataSource = DataSource.Where(x => (((afterDate - x.CreatedAt).Days + 1) % x.Cycle == 0)).ToList();
+                var DataSource = DAL_QLCustomer.Get_List_Customer(Variable.orderByCreatedAt);
+                DataSource = DataSource.Where(x => (((afterDate.Date - x.CreatedAt.Date).Days + 1) % x.Cycle == 0)).ToList();
                 grcKhachHangBaoTruoc.DataSource = Util.ConvertToDataTable(DataSource);
             }
             SplashScreenManager.CloseDefaultWaitForm();

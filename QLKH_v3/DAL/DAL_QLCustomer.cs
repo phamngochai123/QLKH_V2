@@ -71,6 +71,7 @@ namespace QLKH_v3.DAL
 
         public int Get_After_Date(int IdCustomer) //lấy số ngày chậm lãi
         {
+            _db = new QLKHEntities();
             customer Customer = new customer();
             Customer = (from data in _db.customers
                         where data.id == IdCustomer && data.Status == true
@@ -82,13 +83,14 @@ namespace QLKH_v3.DAL
                          select data).FirstOrDefault();
             if (Last_Paid != null)
             {
-                return (DateTime.Now - Last_Paid.PaidDate).Days > Customer.cycle ? (DateTime.Now - Last_Paid.PaidDate).Days - Customer.cycle : 0;
+                return (DateTime.Now - Last_Paid.PaidDate).Days + 1 > Customer.cycle ? (DateTime.Now - Last_Paid.PaidDate).Days + 1 - Customer.cycle : 0;
             }
-            return (DateTime.Now - Customer.CreatedAt).Days > Customer.cycle ? (DateTime.Now - Customer.CreatedAt).Days - Customer.cycle : 0;
+            return (DateTime.Now - Customer.CreatedAt).Days + 1 > Customer.cycle ? (DateTime.Now - Customer.CreatedAt).Days + 1 - Customer.cycle : 0;
         }
 
         public DateTime Get_Next_Date(int IdCustomer) //lấy ngày nộp lãi tiếp theo
         {
+            _db = new QLKHEntities();
             customer Customer = new customer();
             Customer = (from data in _db.customers
                         where data.id == IdCustomer && data.Status == true
@@ -101,6 +103,7 @@ namespace QLKH_v3.DAL
 
         public int Get_After_Money(int IdCustomer) //lấy số nợ còn phải trả
         {
+            _db = new QLKHEntities();
             int tien_goc = (from data in _db.customers
                             where data.Status == true && data.id == IdCustomer
                             select data.Money).FirstOrDefault();

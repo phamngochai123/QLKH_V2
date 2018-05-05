@@ -104,6 +104,7 @@ namespace QLKH_v3.DAL
         }
         public double Get_Tien_Lai(int IdCustomer)
         {
+            _db = new QLKHEntities();
             historyPaid history = new historyPaid();
             customer customer = new customer();
             try
