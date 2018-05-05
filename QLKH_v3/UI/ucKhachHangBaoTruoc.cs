@@ -52,7 +52,7 @@ namespace QLKH_v3.UI
                 List<Model.Customer> lst_Customer = new List<Model.Customer>();
                 DateTime afterDate = DateTime.Now.AddDays(soNgay);
                 var DataSource = DAL_QLCustomer.Get_List_Customer(Variable.orderByAfterDate);
-                DataSource = DataSource.Where(x => x.NextDay.Date == afterDate.Date).ToList();
+                DataSource = DataSource.Where(x => (((afterDate - x.CreatedAt).Days + 1) % x.Cycle == 0)).ToList();
                 grcKhachHangBaoTruoc.DataSource = Util.ConvertToDataTable(DataSource);
             }
             SplashScreenManager.CloseDefaultWaitForm();

@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucKhachHangBaoTruoc));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_export_excel = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnFilter = new DevExpress.XtraEditors.SimpleButton();
@@ -50,11 +51,9 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.btn_lich_su_thanh_toan = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
@@ -89,6 +88,17 @@
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(1241, 85);
             this.panelControl4.TabIndex = 3;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(407, 30);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.Text = "Tất cả";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btn_export_excel
             // 
@@ -163,8 +173,7 @@
             this.gridColumn12,
             this.gridColumn16,
             this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn5});
             this.grvKhachHangBaoTruoc.GridControl = this.grcKhachHangBaoTruoc;
             this.grvKhachHangBaoTruoc.Name = "grvKhachHangBaoTruoc";
             this.grvKhachHangBaoTruoc.OptionsFind.AlwaysVisible = true;
@@ -208,6 +217,8 @@
             this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn12.FieldName = "BirthDay";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
+            this.gridColumn12.OptionsColumn.ReadOnly = true;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 3;
             // 
@@ -216,6 +227,8 @@
             this.gridColumn16.Caption = "Giới tính";
             this.gridColumn16.FieldName = "SexString";
             this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.OptionsColumn.ReadOnly = true;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 5;
             // 
@@ -241,21 +254,11 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 6;
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Ngày đóng lãi tiếp theo";
-            this.gridColumn6.DisplayFormat.FormatString = "dd-MM-yyyy";
-            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn6.FieldName = "NextDay";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 7;
-            // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -263,7 +266,7 @@
             // 
             this.btn_thanh_toan.AutoHeight = false;
             this.btn_thanh_toan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_thanh_toan.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_thanh_toan.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.btn_thanh_toan.Name = "btn_thanh_toan";
             this.btn_thanh_toan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -271,20 +274,9 @@
             // 
             this.btn_lich_su_thanh_toan.AutoHeight = false;
             this.btn_lich_su_thanh_toan.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_lich_su_thanh_toan.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btn_lich_su_thanh_toan.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.btn_lich_su_thanh_toan.Name = "btn_lich_su_thanh_toan";
             this.btn_lich_su_thanh_toan.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(407, 30);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "Tất cả";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // ucKhachHangBaoTruoc
             // 
@@ -330,7 +322,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_thanh_toan;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_lich_su_thanh_toan;
